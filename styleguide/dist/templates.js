@@ -153,17 +153,18 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "				<div class=\"con-row\" ng-repeat=\"searchField in vm.searchOptions.searchFields\" ng-if=\"$even\">\n" +
     "					<div class=\"full-padding\">\n" +
     "						<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index]\" id=\"criteria-{{vm.searchOptions.searchFields[$index]}}\"\n" +
-    "						 class=\"con-flex\" type=\"text\" ng-keyup=\"$event.which === 13 && vm.advancedSearch()\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}\"\n" +
+    "						 class=\"con-flex\" type=\"text\" ng-keyup=\"vm.onSearchFieldInputKeyUp($event)\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}\"\n" +
     "						 ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]\" />\n" +
     "					</div>\n" +
     "					<div class=\"full-padding\">\n" +
     "						<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index + 1]\" id=\"criteria-{{vm.searchOptions.searchFields[$index + 1]}}\"\n" +
-    "						 class=\"con-flex\" type=\"text\" ng-keyup=\"$event.which === 13 && vm.advancedSearch()\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}\"\n" +
+    "						 class=\"con-flex\" type=\"text\" ng-keyup=\"vm.onSearchFieldInputKeyUp($event)\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}\"\n" +
     "						 ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]\" />\n" +
     "					</div>\n" +
     "				</div>\n" +
     "				<div class=\"con-footer\">\n" +
-    "					<button id=\"go-advanced-search\" class=\"wfm-btn wfm-btn-invis-primary\" ng-click=\"vm.advancedSearch()\">{{'Search' | translate}}</button>\n" +
+    "					<button class=\"wfm-btn wfm-btn-invis-default\" type=\"reset\" ng-click=\"vm.clearSearch()\">{{'Clear'|translate}}</button>\n" +
+    "					<button id=\"go-advanced-search\" type=\"submit\" class=\"wfm-btn wfm-btn-invis-primary\" ng-click=\"vm.advancedSearch()\">{{'Search' | translate}}</button>\n" +
     "				</div>\n" +
     "			</form>\n" +
     "		</div>\n" +
