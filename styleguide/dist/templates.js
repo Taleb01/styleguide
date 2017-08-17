@@ -141,7 +141,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
 
   $templateCache.put('directives/wfm-multiple-search/wfm-multiple-search-input.tpl.html',
     "<div class=\"wfm-multiple-search-wrapper\">\n" +
-    "	<input id=\"advanced-search\" class=\"advanced-input\" type=\"text\" placeholder=\"{{vm.title}}\" ng-class=\"{'expand-advanced-input': vm.showAdvancedSearchOption}\"\n" +
+    "	<input id=\"advanced-search\" class=\"advanced-input\" type=\"text\" placeholder=\"{{vm.searchTitle}}\" ng-class=\"{'expand-advanced-input': vm.showAdvancedSearchOption}\"\n" +
     "	 ng-model=\"vm.searchOptions.keyword\" ng-keyup=\"vm.searchTextInputKeyup($event)\" ng-focus=\"vm.openAdvancedSearchOption($event)\"\n" +
     "	 ng-change=\"vm.searchTextChange()\" ng-click=\"vm.openAdvancedSearchOption($event)\" />\n" +
     "	<div class=\"advanced-input-dropdown\" ng-cloak ng-if=\"vm.showAdvancedSearchOption\" outside-click=\"vm.turnOffAdvancedSearch($event);\">\n" +
