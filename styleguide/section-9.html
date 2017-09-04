@@ -86,16 +86,28 @@
       <li class="kss-nav__menu-item">
         <a href="section-9.html">
           <span class="kss-nav__ref">9</span
-          ><span class="kss-nav__name">Resources</span>
+          ><span class="kss-nav__name">Naming and best practice</span>
         </a>
         <ul class="kss-nav__menu-child">
             <li class="kss-nav__menu-item">
               <a href="section-9.html#kssref-9-1">
                 <span class="kss-nav__ref">9.1</span
-                ><span class="kss-nav__name">Urls</span>
+                ><span class="kss-nav__name">States</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-9.html#kssref-9-2">
+                <span class="kss-nav__ref">9.2</span
+                ><span class="kss-nav__name">Translations</span>
               </a>
             </li>
         </ul>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-10.html">
+          <span class="kss-nav__ref">10</span
+          ><span class="kss-nav__name">Resources</span>
+        </a>
       </li>
     </ul>
   </nav>
@@ -108,15 +120,11 @@
       <h1 class="kss-title kss-title--level-1">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">9</span
-          >Resources
+          >Naming and best practice
         </a>
       </h1>
 
 
-      <div class="kss-description">
-        <p>Here you can find some links to go further in CSS best practices</p>
-
-      </div>
     </div>
 
 
@@ -127,18 +135,70 @@
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">9.1</span
-          >Urls
+          >States
         </a>
       </h2>
 
 
       <div class="kss-description">
-        <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">https://developer.mozilla.org/en-US/docs/Web/CSS</a></p>
-<p><a href="http://philipwalton.com/articles/css-architecture/">http://philipwalton.com/articles/css-architecture/</a></p>
-<p><a href="http://styleguides.io/">http://styleguides.io/</a></p>
-<p><a href="http://alistapart.com/article/creating-style-guides">http://alistapart.com/article/creating-style-guides</a></p>
-<p><a href="http://axbom.com/slaying-5-ux-myths-good-mankind/">http://axbom.com/slaying-5-ux-myths-good-mankind/</a></p>
-<p><a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md</a></p>
+        <p>Setting the state correctly is important due to our online help, since the online help link is based on the state.
+When a state changes, it will result in a new online help link which may cause customers to meet an empty page if this has not been handled in the online help.
+Therefore, avoid creating temporary or hidden states as much as possible.
+Talk to Lina if changing states or adding new ones.</p>
+<p>When creating a new state, name it using &quot;spinal-case&quot;.</p>
+<p>When working to replace an existing state, name the new state &quot;state-name-new&quot; until its ready. When it is, replace it with &quot;state-name&quot;.</p>
+<p>Note: &quot;config&quot; cannot be used as a child state name.</p>
+<div class="jsprewrap">
+<div ng-cloak ng-click="showjs = !showjs" class="ksscopy">Example</div>
+<div ng-show="showjs">
+    <code><pre>
+function stateConfig($stateProvider) {
+  $stateProvider.state(&#39;example&#39;,
+  {
+    url: &#39;/example&#39;,
+    templateUrl: &#39;app/example/example.html&#39;,
+    controller: &#39;ExampleController&#39;
+  })
+  .state(&#39;example.child&#39;,
+  {
+    url: &#39;/child&#39;,
+    templateUrl: &#39;app/example/example-child.html&#39;,
+    controller: &#39;ExampleChildController&#39;
+  })
+  .state(&#39;example.another-view&#39;,
+  {
+    url: &#39;/another-view&#39;,
+    templateUrl: &#39;app/example/another-view.html&#39;,
+    controller: &#39;ExampleSecondViewController&#39;
+  })
+}
+    </pre></code>
+</div>
+</div>
+      </div>
+    </div>
+
+
+      </section>
+      <section id="kssref-9-2" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">9.2</span
+          >Translations
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Add translation keys to the resource file and provide the string and a description.
+If you need to change the string on a previously added key, please choose one of the following options:
+<br/>
+Remove the key completely (in all translation files as well) and add a new key
+<b>OR</b>
+Change the string for the original key, and delete all previous translation of that key
+</ul></p>
 
       </div>
     </div>
