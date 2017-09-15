@@ -2,7 +2,12 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   'use strict';
 
   $templateCache.put('directives/badge/badge.tpl.html',
-    "<span class=\"wfm-badge material-depth-1 grow-out\" ng-class=\"$ctrl.status\"  ng-if=\"$ctrl.badgeModel>0\">{{$ctrl.badgeModel}}</span>\n"
+    "<span class=\"wfm-badge material-depth-1 grow-out\" ng-class=\"$ctrl.status\" ng-show=\"$ctrl.badgeModel>0 || $ctrl.showEmpty\">\n" +
+    "  <p id=\"pulse-element\"></p>\n" +
+    "  <span class=\"wfm-badge-content\" ng-if=\"$ctrl.badgeModel>0\" >\n" +
+    "    {{$ctrl.badgeModel}}\n" +
+    "  </span>\n" +
+    "</span>\n"
   );
 
 

@@ -1615,7 +1615,7 @@ $scope.reset = function(form) {
      <div tabindex="0">
 			<span><i class="mdi" ng-class="item.title"></i></span>
 				<b>Multi card title</b>
-			<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+         <span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
      </div>
 		</card-header>
 		<card-body class="panel">
@@ -1640,7 +1640,7 @@ $scope.reset = function(form) {
      &lt;div tabindex=&quot;0&quot;&gt;
 			&lt;span&gt;&lt;i class=&quot;mdi&quot; ng-class=&quot;item.title&quot;&gt;&lt;/i&gt;&lt;/span&gt;
 				&lt;b&gt;Multi card title&lt;/b&gt;
-			&lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+         &lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
      &lt;/div&gt;
 		&lt;/card-header&gt;
 		&lt;card-body class=&quot;panel&quot;&gt;
@@ -1655,6 +1655,79 @@ $scope.reset = function(form) {
 		&lt;/card-body&gt;
 	&lt;/wfm-card&gt;
 &lt;/wfm-card-list&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-4-6-3" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">4.6.3</span
+          >Open multiple by default
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>The multi select cards can be set to be open by default.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <wfm-card-list multi-select>
+	  <wfm-card ng-repeat="item in items" open="item.bool">
+		 <card-header tabindex="-1">
+      <div tabindex="0">
+			  <span><i class="mdi" ng-class="item.title"></i></span>
+				 <b>Multi card title</b>
+			  <span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+      </div>
+		 </card-header>
+		 <card-body class="panel">
+ 			 <div class="con-row demo-outline">
+    		 <div class="con-flex">Content
+          </div>
+ 			 </div>
+  		 <div class="con-footer">
+	 			  <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    		 <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  		 </div>
+		 </card-body>
+	  </wfm-card>
+</wfm-card-list>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;wfm-card-list multi-select&gt;
+	  &lt;wfm-card ng-repeat=&quot;item in items&quot; open=&quot;item.bool&quot;&gt;
+		 &lt;card-header tabindex=&quot;-1&quot;&gt;
+      &lt;div tabindex=&quot;0&quot;&gt;
+			  &lt;span&gt;&lt;i class=&quot;mdi&quot; ng-class=&quot;item.title&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+				 &lt;b&gt;Multi card title&lt;/b&gt;
+			  &lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+      &lt;/div&gt;
+		 &lt;/card-header&gt;
+		 &lt;card-body class=&quot;panel&quot;&gt;
+ 			 &lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		 &lt;div class=&quot;con-flex&quot;&gt;Content
+          &lt;/div&gt;
+ 			 &lt;/div&gt;
+  		 &lt;div class=&quot;con-footer&quot;&gt;
+	 			  &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		 &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		 &lt;/div&gt;
+		 &lt;/card-body&gt;
+	  &lt;/wfm-card&gt;
+&lt;/wfm-card-list&gt;
+</code></pre>
       </div>
 
       </section>
