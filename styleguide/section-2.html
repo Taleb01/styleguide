@@ -95,6 +95,12 @@
                 ><span class="kss-nav__name">Numeric value</span>
               </a>
             </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-2.html#kssref-2-9">
+                <span class="kss-nav__ref">2.9</span
+                ><span class="kss-nav__name">Skill picker</span>
+              </a>
+            </li>
         </ul>
       </li>
       <li class="kss-nav__menu-item">
@@ -619,6 +625,109 @@ The directive accepts the &quot;float-number&quot; tag attribute. Without it the
   &lt;/form&gt;
   
         </code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-2-9" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">2.9</span
+          >Skill picker
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>The skill picker is used to switch between selected skills and selected skill groups.</p>
+<p><div class="jsprewrap"></p>
+<p><div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div></p>
+<p><div ng-show="showjs">
+<code><pre>
+vm.mockSkills = [
+ {
+   Id: &#39;XYZ&#39;,
+   Name: &#39;skill1&#39;
+ },
+ {
+   Id: &#39;ABC&#39;,
+   Name: &#39;skill2&#39;
+ }
+];
+vm.mockedSkillGroups = [
+ {
+   Name: &#39;SkillArea1&#39;,
+   Id: &#39;123&#39;,
+   Skills: [
+     {
+       Id: &#39;XYZ&#39;,
+       Name: &#39;skill1&#39;
+     }
+   ]
+ },
+ {
+   Name: &#39;SkillArea2&#39;,
+   Id: &#39;321&#39;,
+   Skills: [
+     {
+       Id: &#39;ABC&#39;,
+       Name: &#39;skill2&#39;
+     }
+   ]
+ }
+];
+vm.preselectedSkill = {skillIds: [&#39;XYZ&#39;]};
+vm.preselectedSkillGroup = {skillAreaId: [&#39;XYZ&#39;]};
+$scope.output = function (selectedItem){
+  $scope.filterOutput = selectedItem;
+}
+};
+    </pre></code>
+</div>
+</div></p>
+<table class="wfm-table">
+<thead>
+    <tr>
+        <th>Attribute Name</th>
+        <th>Usage</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>skills</td>
+        <td>Model for binding skills</td>
+    </tr>
+    <tr>
+        <td>skill-areas</td>
+        <td>Model for binding skill groups</td>
+    </tr>
+   <tr>
+     <td>item-to-return</td>
+     <td>The currently selected item (skill or group) returned as a callback function</td>
+   </tr>
+   <tr>
+     <td>preselected</td>
+     <td>Send in a item to be preselected on load</td>
+   </tr>
+</tbody>
+</table>
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <skill-picker skills="mockSkills" skill-areas="mockedSkillGroups" item-to-return="output" preselected-item="preselected"></skill-picker>
+<p ng-if="filterOutput">Selected skill/group: <span ng-bind="filterOutput.Name"></span></p>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;skill-picker skills=&quot;mockSkills&quot; skill-areas=&quot;mockedSkillGroups&quot; item-to-return=&quot;output&quot; preselected-item=&quot;preselected&quot;&gt;&lt;/skill-picker&gt;
+&lt;p ng-if=&quot;filterOutput&quot;&gt;Selected skill/group: &lt;span ng-bind=&quot;filterOutput.Name&quot;&gt;&lt;/span&gt;&lt;/p&gt;</code></pre>
       </div>
 
       </section>
