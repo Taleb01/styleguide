@@ -23,7 +23,7 @@
 <body id="kss-node" ng-view ng-controller="mainCtrl">
 
   <div class="kss-sidebar kss-style">
-    <a href="index.html">
+    <a href="index.html" title="Homepage">
       <header class="kss-header">
         <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="30px" style="vertical-align:bottom;">
         <h1 class="kss-doc-title">Style Guide</h1>
@@ -83,6 +83,12 @@
                 <a href="section-4.html#kssref-4-4">
                   <span class="kss-nav__ref">4.4</span
                     ><span class="kss-nav__name">Form layout</span>
+                  </a>
+                </li>
+              <li class="kss-nav__menu-item">
+                <a href="section-4.html#kssref-4-5">
+                  <span class="kss-nav__ref">4.5</span
+                    ><span class="kss-nav__name">Card</span>
                   </a>
                 </li>
               <li class="kss-nav__menu-item">
@@ -172,7 +178,7 @@ When building a new view, start by picking one or several containers and a flex 
 
 
               <div class="kss-description">
-                <p>The layout consists of the flex grid. Since the grid is adapting to the number of items inside it but does not wrap, be careful not to use too many in one row. If many are needed, consider using a tabbed container, a card-grid or spreading them out over several rows.</p>
+                <p>The default layout grid is a flex-row that splits its width evenly among the number of flex-items inside it (i.e one flex-item will take 100%, two flex-items will take 50%, four flex-items will take 25% and so on). The default layout will keep its flex-items in a row until the screen gets small enough that it gives each flex-item 100% width;</p>
 <p><table class="wfm-table"></p>
 <p><thead>
     <tr>
@@ -266,6 +272,85 @@ When building a new view, start by picking one or several containers and a flex 
    &lt;div class=&quot;con-flex x2&quot;&gt;50%&lt;/div&gt;
    &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
    &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+        </section>
+          <section id="kssref-4-1-1" class="kss-section kss-section--depth-3">
+
+            <div class="kss-style">
+              <h3 class="kss-title kss-title--level-3">
+              <a class="kss-title__permalink">
+                <span class="kss-title__ref">4.1.1</span
+                  >Fluid layout
+                </a>
+              </h3>
+
+
+              <div class="kss-description">
+                <p>A fluid layout will wrap the flex-items into columns instead of dividing the width evenly depending on the number.
+It is important to remember that if the items have different height, the tallest item will set the height for the whole row.</p>
+
+              </div>
+            </div>
+
+            <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__heading kss-style">
+                Example
+              </div>
+              <div class="kss-modifier__example">
+                <div class="con-fluid-row">
+<div class="con-fluid-flex" ng-repeat="item in bigList">
+(<span ng-bind="item.id"></span>) Default to 1/3
+</div>
+</div>
+              </div>
+            </div>
+
+            <div class="kss-markup kss-style">
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;con-fluid-row&quot;&gt;
+&lt;div class=&quot;con-fluid-flex&quot; ng-repeat=&quot;item in bigList&quot;&gt;
+(&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;) Default to 1/3
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+        </section>
+          <section id="kssref-4-1-2" class="kss-section kss-section--depth-3">
+
+            <div class="kss-style">
+              <h3 class="kss-title kss-title--level-3">
+              <a class="kss-title__permalink">
+                <span class="kss-title__ref">4.1.2</span
+                  >Dense fluid layout
+                </a>
+              </h3>
+
+
+              <div class="kss-description">
+                <p>A more dense version of the fluid layout for smaller elements.</p>
+
+              </div>
+            </div>
+
+            <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__heading kss-style">
+                Example
+              </div>
+              <div class="kss-modifier__example">
+                <div class="con-fluid-row dense">
+<div class="con-fluid-flex" ng-repeat="item in bigList">
+(<span ng-bind="item.id"></span>) Default to 1/5
+</div>
+</div>
+              </div>
+            </div>
+
+            <div class="kss-markup kss-style">
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;con-fluid-row dense&quot;&gt;
+&lt;div class=&quot;con-fluid-flex&quot; ng-repeat=&quot;item in bigList&quot;&gt;
+(&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;) Default to 1/5
+&lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
 
@@ -1498,6 +1583,152 @@ $scope.reset = function(form) {
   &lt;/form&gt;
 &lt;/div&gt;
 </code></pre>
+            </div>
+
+        </section>
+          <section id="kssref-4-5" class="kss-section kss-section--depth-2">
+
+            <div class="kss-style">
+              <h2 class="kss-title kss-title--level-2">
+              <a class="kss-title__permalink">
+                <span class="kss-title__ref">4.5</span
+                  >Card
+                </a>
+              </h2>
+
+
+              <div class="kss-description">
+                <p>The card is a simpler version of the panel with more direct actions available in the footer.
+The card can have different colors by applying notice-info, notice-warning, notice-error and notice-success classes to the card element.</p>
+
+              </div>
+            </div>
+
+            <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__heading kss-style">
+                Example
+              </div>
+              <div class="kss-modifier__example">
+                <div class="card panel material-depth-1">
+   <div class="sub-header">
+     <h2>Card title</h2>
+   </div>
+ <div class="con-row">
+    <div class="con-flex">Content</div>
+ </div>
+ <div class="card-footer con-row">
+   <span class="con-flex card-footer-section">
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-duck"></i>
+     </div>
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-alert"></i>
+     </div>
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-settings"></i>
+     </div>
+   </span>
+   <span class="con-flex line-right card-footer-section">
+     <button class="wfm-btn wfm-btn-invis-default">Default</button>
+     <button class="wfm-btn wfm-btn-invis-primary">Primary</button>
+   </span>
+ </div>
+</div>
+<h3>With color:
+<select ng-model="selectedClass">
+<option>notice-success</option>
+<option>notice-info</option>
+<option>notice-error</option>
+<option>notice-warning</option>
+</select>
+</h3>
+<div class="card panel material-depth-1" ng-class="selectedClass">
+   <div class="sub-header">
+     <h2>Colorful card title</h2>
+   </div>
+ <div class="con-row">
+    <div class="con-flex">Content</div>
+ </div>
+ <div class="card-footer con-row">
+   <span class="con-flex card-footer-section">
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-duck"></i>
+     </div>
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-alert"></i>
+     </div>
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-settings"></i>
+     </div>
+   </span>
+   <span class="con-flex line-right card-footer-section">
+     <button class="wfm-btn wfm-btn-invis-default">Default</button>
+     <button class="wfm-btn wfm-btn-invis-primary">Primary</button>
+   </span>
+ </div>
+</div>
+              </div>
+            </div>
+
+            <div class="kss-markup kss-style">
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;card panel material-depth-1&quot;&gt;
+   &lt;div class=&quot;sub-header&quot;&gt;
+     &lt;h2&gt;Card title&lt;/h2&gt;
+   &lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+    &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;card-footer con-row&quot;&gt;
+   &lt;span class=&quot;con-flex card-footer-section&quot;&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-duck&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-alert&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-settings&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+   &lt;/span&gt;
+   &lt;span class=&quot;con-flex line-right card-footer-section&quot;&gt;
+     &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Default&lt;/button&gt;
+     &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Primary&lt;/button&gt;
+   &lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;With color:
+&lt;select ng-model=&quot;selectedClass&quot;&gt;
+&lt;option&gt;notice-success&lt;/option&gt;
+&lt;option&gt;notice-info&lt;/option&gt;
+&lt;option&gt;notice-error&lt;/option&gt;
+&lt;option&gt;notice-warning&lt;/option&gt;
+&lt;/select&gt;
+&lt;/h3&gt;
+&lt;div class=&quot;card panel material-depth-1&quot; ng-class=&quot;selectedClass&quot;&gt;
+   &lt;div class=&quot;sub-header&quot;&gt;
+     &lt;h2&gt;Colorful card title&lt;/h2&gt;
+   &lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+    &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;card-footer con-row&quot;&gt;
+   &lt;span class=&quot;con-flex card-footer-section&quot;&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-duck&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-alert&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-settings&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+   &lt;/span&gt;
+   &lt;span class=&quot;con-flex line-right card-footer-section&quot;&gt;
+     &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Default&lt;/button&gt;
+     &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Primary&lt;/button&gt;
+   &lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</code></pre>
             </div>
 
         </section>

@@ -117,6 +117,15 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   );
 
 
+  $templateCache.put('directives/popup-menu/popup.tpl.html',
+    "<div class=\"wfm-popup-wrap animate-show modal-box\" ng-show=\"$ctrl.show\">\n" +
+    "  <div class='modalbg' ng-click='$ctrl.show = !$ctrl.show'></div>\n" +
+    "  <div class=\"popup-panel panel material-depth-2\" ng-transclude></div>\n" +
+    "</div>\n" +
+    "</div>\n"
+  );
+
+
   $templateCache.put('directives/skill-picker/skill-picker.tpl.html',
     "<div class=\"con-row\">\n" +
     "    <div class=\"con-flex\">\n" +

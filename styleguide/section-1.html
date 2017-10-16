@@ -23,7 +23,7 @@
 <body id="kss-node" ng-view ng-controller="mainCtrl">
 
   <div class="kss-sidebar kss-style">
-    <a href="index.html">
+    <a href="index.html" title="Homepage">
       <header class="kss-header">
         <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="30px" style="vertical-align:bottom;">
         <h1 class="kss-doc-title">Style Guide</h1>
@@ -106,7 +106,7 @@
               <li class="kss-nav__menu-item">
                 <a href="section-1.html#kssref-1-12">
                   <span class="kss-nav__ref">1.12</span
-                    ><span class="kss-nav__name">Context menus</span>
+                    ><span class="kss-nav__name">Menus</span>
                   </a>
                 </li>
               <li class="kss-nav__menu-item">
@@ -142,18 +142,12 @@
               <li class="kss-nav__menu-item">
                 <a href="section-1.html#kssref-1-18">
                   <span class="kss-nav__ref">1.18</span
-                    ><span class="kss-nav__name">Card grid</span>
+                    ><span class="kss-nav__name">Chips</span>
                   </a>
                 </li>
               <li class="kss-nav__menu-item">
                 <a href="section-1.html#kssref-1-19">
                   <span class="kss-nav__ref">1.19</span
-                    ><span class="kss-nav__name">Chips</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-1.html#kssref-1-20">
-                  <span class="kss-nav__ref">1.20</span
                     ><span class="kss-nav__name">Badge</span>
                   </a>
                 </li>
@@ -1236,15 +1230,29 @@ Using buttons, icons can be disabled.</p>
               <h2 class="kss-title kss-title--level-2">
               <a class="kss-title__permalink">
                 <span class="kss-title__ref">1.12</span
-                  >Context menus
+                  >Menus
                 </a>
               </h2>
 
 
+            </div>
+
+
+        </section>
+          <section id="kssref-1-12-1" class="kss-section kss-section--depth-3">
+
+            <div class="kss-style">
+              <h3 class="kss-title kss-title--level-3">
+              <a class="kss-title__permalink">
+                <span class="kss-title__ref">1.12.1</span
+                  >Context menus
+                </a>
+              </h3>
+
+
               <div class="kss-description">
-                <p>Context menus are used where more actions are needed.
-To keep them manageable, limit the number of actions displayed within to a maximum of 5.
-Additionally a menu can not trigger a child menu from within itself.</p>
+                <p>A content menu contains only a list of actions, to keep them manageable, try to limit the number of actions displayed within to a maximum of 5.
+Additionally a context menu can not trigger another context menu from within itself.</p>
 
               </div>
             </div>
@@ -1422,6 +1430,65 @@ Additionally a menu can not trigger a child menu from within itself.</p>
  		&lt;/ul&gt;
  	&lt;/span&gt;
  &lt;/div&gt;</code></pre>
+            </div>
+
+        </section>
+          <section id="kssref-1-12-2" class="kss-section kss-section--depth-3">
+
+            <div class="kss-style">
+              <h3 class="kss-title kss-title--level-3">
+              <a class="kss-title__permalink">
+                <span class="kss-title__ref">1.12.2</span
+                  >Pop-up menu
+                </a>
+              </h3>
+
+
+              <div class="kss-description">
+                <p>A popup menu is similar to a context menu but can contain any number of things. It will adapt to the width of the content so be careful not to squeeze in elements that wont fit on small screens.</p>
+
+              </div>
+            </div>
+
+            <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__heading kss-style">
+                Example
+              </div>
+              <div class="kss-modifier__example">
+                <button class="wfm-btn wfm-btn-default" ng-click="toggle =!toggle">Default</button>
+<wfm-popup show="toggle">
+ <div class="sub-header">
+   <h2>Popup Title</h2>
+ </div>
+ <div class="con-row">
+   <div class="con-flex">
+       Content
+     </div>
+ </div>
+ <div class="con-footer">
+   <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+   <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+ </div>
+</wfm-popup>
+              </div>
+            </div>
+
+            <div class="kss-markup kss-style">
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-btn wfm-btn-default&quot; ng-click=&quot;toggle =!toggle&quot;&gt;Default&lt;/button&gt;
+&lt;wfm-popup show=&quot;toggle&quot;&gt;
+ &lt;div class=&quot;sub-header&quot;&gt;
+   &lt;h2&gt;Popup Title&lt;/h2&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;
+       Content
+     &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;con-footer&quot;&gt;
+   &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+   &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+ &lt;/div&gt;
+&lt;/wfm-popup&gt;</code></pre>
             </div>
 
         </section>
@@ -2125,181 +2192,6 @@ $scope.gridOptions.enableGridMenu = true;
               <h2 class="kss-title kss-title--level-2">
               <a class="kss-title__permalink">
                 <span class="kss-title__ref">1.18</span
-                  >Card grid
-                </a>
-              </h2>
-
-
-              <div class="kss-description">
-                <p>Cards are used to show a large number of similar content. Providing filters or ways to sort cards is appreciated.
-Card actions should be triggered on click of the whole card.</p>
-
-              </div>
-            </div>
-
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="wfm-grid">
-<div class="grid-card">
- <div class="list-content">
-	 <h2>Card header</h2>
-	 <span>Short card tag line</span>
- </div>
-</div>
-<div class="grid-card">
- <div class="list-content">
-	 <h2>Card header</h2>
-	 <span>Short card tag line</span>
- </div>
-</div>
-<div class="grid-card">
- <div class="list-content">
-	 <h2>Card header</h2>
-	 <span>Short card tag line</span>
- </div>
-</div>
-</div>
-              </div>
-            </div>
-
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wfm-grid&quot;&gt;
-&lt;div class=&quot;grid-card&quot;&gt;
- &lt;div class=&quot;list-content&quot;&gt;
-	 &lt;h2&gt;Card header&lt;/h2&gt;
-	 &lt;span&gt;Short card tag line&lt;/span&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-card&quot;&gt;
- &lt;div class=&quot;list-content&quot;&gt;
-	 &lt;h2&gt;Card header&lt;/h2&gt;
-	 &lt;span&gt;Short card tag line&lt;/span&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-card&quot;&gt;
- &lt;div class=&quot;list-content&quot;&gt;
-	 &lt;h2&gt;Card header&lt;/h2&gt;
-	 &lt;span&gt;Short card tag line&lt;/span&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-
-        </section>
-          <section id="kssref-1-18-1" class="kss-section kss-section--depth-3">
-
-            <div class="kss-style">
-              <h3 class="kss-title kss-title--level-3">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">1.18.1</span
-                  >Mini card grid
-                </a>
-              </h3>
-
-
-              <div class="kss-description">
-                <p>Smaller cards that provide more items on screen at once.</p>
-
-              </div>
-            </div>
-
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="wfm-grid">
-<div class="grid-card-mini">
- <div class="list-content">
-	 <h2>Card header</h2>
-	 <span>Short card tag line</span>
- </div>
-</div>
-<div class="grid-card-mini">
- <div class="list-content">
-	 <h2>Card header</h2>
-	 <span>Short card tag line</span>
- </div>
-</div>
-<div class="grid-card-mini">
- <div class="list-content">
-	 <h2>Card header</h2>
-	 <span>Short card tag line</span>
- </div>
-</div>
-<div class="grid-card-mini">
- <div class="list-content">
-	 <h2>Card header</h2>
-	 <span>Short card tag line</span>
- </div>
-</div>
-<div class="grid-card-mini">
- <div class="list-content">
-	 <h2>Card header</h2>
-	 <span>Short card tag line</span>
- </div>
-</div>
-<div class="grid-card-mini">
- <div class="list-content">
-	 <h2>Card header</h2>
-	 <span>Short card tag line</span>
- </div>
-</div>
-</div>
-              </div>
-            </div>
-
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wfm-grid&quot;&gt;
-&lt;div class=&quot;grid-card-mini&quot;&gt;
- &lt;div class=&quot;list-content&quot;&gt;
-	 &lt;h2&gt;Card header&lt;/h2&gt;
-	 &lt;span&gt;Short card tag line&lt;/span&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-card-mini&quot;&gt;
- &lt;div class=&quot;list-content&quot;&gt;
-	 &lt;h2&gt;Card header&lt;/h2&gt;
-	 &lt;span&gt;Short card tag line&lt;/span&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-card-mini&quot;&gt;
- &lt;div class=&quot;list-content&quot;&gt;
-	 &lt;h2&gt;Card header&lt;/h2&gt;
-	 &lt;span&gt;Short card tag line&lt;/span&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-card-mini&quot;&gt;
- &lt;div class=&quot;list-content&quot;&gt;
-	 &lt;h2&gt;Card header&lt;/h2&gt;
-	 &lt;span&gt;Short card tag line&lt;/span&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-card-mini&quot;&gt;
- &lt;div class=&quot;list-content&quot;&gt;
-	 &lt;h2&gt;Card header&lt;/h2&gt;
-	 &lt;span&gt;Short card tag line&lt;/span&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-card-mini&quot;&gt;
- &lt;div class=&quot;list-content&quot;&gt;
-	 &lt;h2&gt;Card header&lt;/h2&gt;
-	 &lt;span&gt;Short card tag line&lt;/span&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-
-        </section>
-          <section id="kssref-1-19" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">1.19</span
                   >Chips
                 </a>
               </h2>
@@ -2414,12 +2306,12 @@ The indicator can have warning classes to show severity or a short category text
             </div>
 
         </section>
-          <section id="kssref-1-19-1" class="kss-section kss-section--depth-3">
+          <section id="kssref-1-18-1" class="kss-section kss-section--depth-3">
 
             <div class="kss-style">
               <h3 class="kss-title kss-title--level-3">
               <a class="kss-title__permalink">
-                <span class="kss-title__ref">1.19.1</span
+                <span class="kss-title__ref">1.18.1</span
                   >Chips with filter
                 </a>
               </h3>
@@ -2480,12 +2372,12 @@ The indicator can have warning classes to show severity or a short category text
             </div>
 
         </section>
-          <section id="kssref-1-20" class="kss-section kss-section--depth-2">
+          <section id="kssref-1-19" class="kss-section kss-section--depth-2">
 
             <div class="kss-style">
               <h2 class="kss-title kss-title--level-2">
               <a class="kss-title__permalink">
-                <span class="kss-title__ref">1.20</span
+                <span class="kss-title__ref">1.19</span
                   >Badge
                 </a>
               </h2>
