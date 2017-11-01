@@ -155,7 +155,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "        md-items=\"skillArea in $ctrl.skillAreas | filter:skillAreaFilterText\"\n" +
     "        md-selected-item-change=\"$ctrl.selectSkillArea(skillArea)\"\n" +
     "        md-item-text=\"skillArea.Name\"\n" +
-    "        placeholder=\"{{'SelectSkillArea' | translate}}\">\n" +
+    "        placeholder=\"{{'SelectSkillGroup' | translate}}\">\n" +
     "            <md-item-template>\n" +
     "                <span ng-bind=\"skillArea.Name\"></span>\n" +
     "            </md-item-template>\n" +
