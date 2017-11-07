@@ -1314,26 +1314,13 @@ $scope.reset = function(form) {
         <h3>Preferences</h3>
         <div class="form-input-wrap">
           <label>Pick the best one:</label>
-          <div class="wfm-radio">
-            <label>
-              <input type="radio" name="item" data-ng-model="radio" data-ng-value="item">
-              <span class="wfm-radio-toggle"></span>
-              <span class="wfm-radio-label">Cake</span>
-            </label>
-          </div>
-          <div class="wfm-radio">
-            <label>
-              <input type="radio" name="item" data-ng-model="radio" data-ng-value="item">
-              <span class="wfm-radio-toggle"></span>
-              <span class="wfm-radio-label">Pie</span>
-            </label>
-          </div>
-          <div class="wfm-radio">
-            <label>
-              <input type="radio" name="item" data-ng-model="radio" data-ng-value="item">
-              <span class="wfm-radio-toggle"></span>
-              <span class="wfm-radio-label">Pudding</span>
-            </label>
+          <md-radio-group ng-model="devidedForm.dessert">
+            <md-radio-button value="Option 1" aria-label="radio">Cake</md-radio-button>
+            <md-radio-button value="Option 2" aria-label="radio">Pie</md-radio-button>
+            <md-radio-button value="Option 3" aria-label="radio">Ice cream</md-radio-button>
+          </md-radio-group>
+          <div ng-cloak class="animate-show" ng-show ="devidedForm.$submitted || devidedForm.dessert.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:!devidedForm.dessert}">At least one is required</div>
           </div>
         </div>
       </div>
@@ -1387,26 +1374,13 @@ $scope.reset = function(form) {
         &lt;h3&gt;Preferences&lt;/h3&gt;
         &lt;div class=&quot;form-input-wrap&quot;&gt;
           &lt;label&gt;Pick the best one:&lt;/label&gt;
-          &lt;div class=&quot;wfm-radio&quot;&gt;
-            &lt;label&gt;
-              &lt;input type=&quot;radio&quot; name=&quot;item&quot; data-ng-model=&quot;radio&quot; data-ng-value=&quot;item&quot;&gt;
-              &lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;wfm-radio-label&quot;&gt;Cake&lt;/span&gt;
-            &lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;wfm-radio&quot;&gt;
-            &lt;label&gt;
-              &lt;input type=&quot;radio&quot; name=&quot;item&quot; data-ng-model=&quot;radio&quot; data-ng-value=&quot;item&quot;&gt;
-              &lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;wfm-radio-label&quot;&gt;Pie&lt;/span&gt;
-            &lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;wfm-radio&quot;&gt;
-            &lt;label&gt;
-              &lt;input type=&quot;radio&quot; name=&quot;item&quot; data-ng-model=&quot;radio&quot; data-ng-value=&quot;item&quot;&gt;
-              &lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;wfm-radio-label&quot;&gt;Pudding&lt;/span&gt;
-            &lt;/label&gt;
+          &lt;md-radio-group ng-model=&quot;devidedForm.dessert&quot;&gt;
+            &lt;md-radio-button value=&quot;Option 1&quot; aria-label=&quot;radio&quot;&gt;Cake&lt;/md-radio-button&gt;
+            &lt;md-radio-button value=&quot;Option 2&quot; aria-label=&quot;radio&quot;&gt;Pie&lt;/md-radio-button&gt;
+            &lt;md-radio-button value=&quot;Option 3&quot; aria-label=&quot;radio&quot;&gt;Ice cream&lt;/md-radio-button&gt;
+          &lt;/md-radio-group&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;devidedForm.$submitted || devidedForm.dessert.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:!devidedForm.dessert}&quot;&gt;At least one is required&lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -1493,20 +1467,8 @@ $scope.reset = function(form) {
       <div class="con-flex x3">
         <div class="form-input-wrap">
           <label>Group:</label>
-          <div class="wfm-checkbox">
-            <input type="checkbox" ng-model="splitForm.box1" name="Box1" id="box1" required=""/>
-            <label for="box1">
-              <span class="wfm-checkbox-toggle"></span>
-              <span class="wfm-checkbox-label">Group A</span>
-            </label>
-          </div>
-          <div class="wfm-checkbox">
-            <input type="checkbox" ng-model="splitForm.box2" name="Box2" id="box2" required=""/>
-            <label for="box2">
-              <span class="wfm-checkbox-toggle"></span>
-              <span class="wfm-checkbox-label">Group B</span>
-            </label>
-          </div>
+          <md-checkbox ng-model="splitForm.box1" aria-label="Checkbox">Option 1</md-checkbox>
+          <md-checkbox ng-model="splitForm.box2" aria-label="Checkbox">Option 2</md-checkbox>
         </div>
       </div>
     </div>
@@ -1559,20 +1521,8 @@ $scope.reset = function(form) {
       &lt;div class=&quot;con-flex x3&quot;&gt;
         &lt;div class=&quot;form-input-wrap&quot;&gt;
           &lt;label&gt;Group:&lt;/label&gt;
-          &lt;div class=&quot;wfm-checkbox&quot;&gt;
-            &lt;input type=&quot;checkbox&quot; ng-model=&quot;splitForm.box1&quot; name=&quot;Box1&quot; id=&quot;box1&quot; required=&quot;&quot;/&gt;
-            &lt;label for=&quot;box1&quot;&gt;
-              &lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;wfm-checkbox-label&quot;&gt;Group A&lt;/span&gt;
-            &lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;wfm-checkbox&quot;&gt;
-            &lt;input type=&quot;checkbox&quot; ng-model=&quot;splitForm.box2&quot; name=&quot;Box2&quot; id=&quot;box2&quot; required=&quot;&quot;/&gt;
-            &lt;label for=&quot;box2&quot;&gt;
-              &lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;wfm-checkbox-label&quot;&gt;Group B&lt;/span&gt;
-            &lt;/label&gt;
-          &lt;/div&gt;
+          &lt;md-checkbox ng-model=&quot;splitForm.box1&quot; aria-label=&quot;Checkbox&quot;&gt;Option 1&lt;/md-checkbox&gt;
+          &lt;md-checkbox ng-model=&quot;splitForm.box2&quot; aria-label=&quot;Checkbox&quot;&gt;Option 2&lt;/md-checkbox&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;

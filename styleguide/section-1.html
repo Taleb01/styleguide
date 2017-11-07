@@ -608,65 +608,37 @@ However, don&#39;t mix standard inputs and prepend ones. These inputs should hav
                 Example
               </div>
               <div class="kss-modifier__example">
-                <form>
-	<div class="wfm-radio">
-		<input type="radio" name="group1" id="radio1" checked="true"/>
-		<label for="radio1">
-			<span class="wfm-radio-toggle"></span>
-			<span class="wfm-radio-label">This</span>
-		</label>
-	</div>
-	<div class="wfm-radio">
-		<input type="radio" name="group1" id="radio2" />
-		<label for="radio2">
-			<span class="wfm-radio-toggle"></span>
-			<span class="wfm-radio-label">That</span>
-		</label>
-	</div>
-</form>
-<h3>Using ng-repeat:</h3>
+                <h3>Simple (<span ng-bind="data1"></span>)</h3>
 <form>
-	<div ng-repeat="item in demos">
-		<div class="wfm-radio">
-			<label>
-				<input type="radio" name="radio" value="value">
-				<span class="wfm-radio-toggle"></span>
-				<span class="wfm-radio-label">Im looped out!</span>
-			</label>
-		</div>
-	</div>
+ <md-radio-group ng-model="data1">
+   <md-radio-button value="Option 1" aria-label="radio">Option 1</md-radio-button>
+   <md-radio-button value="Option 2" aria-label="radio">Option 2</md-radio-button>
+   <md-radio-button value="Option 3" aria-label="radio">Option 3</md-radio-button>
+ </md-radio-group>
+<h3>Repeated (<span ng-bind="data2"></span>)</h3>
+ <md-radio-group ng-model="data2">
+   <md-radio-button ng-repeat="item in demos" ng-value="item.id" aria-label="">
+    Option <span ng-bind="item.id"></span>
+   </md-radio-button>
+ </md-radio-group>
 </form>
               </div>
             </div>
 
             <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form&gt;
-	&lt;div class=&quot;wfm-radio&quot;&gt;
-		&lt;input type=&quot;radio&quot; name=&quot;group1&quot; id=&quot;radio1&quot; checked=&quot;true&quot;/&gt;
-		&lt;label for=&quot;radio1&quot;&gt;
-			&lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
-			&lt;span class=&quot;wfm-radio-label&quot;&gt;This&lt;/span&gt;
-		&lt;/label&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;wfm-radio&quot;&gt;
-		&lt;input type=&quot;radio&quot; name=&quot;group1&quot; id=&quot;radio2&quot; /&gt;
-		&lt;label for=&quot;radio2&quot;&gt;
-			&lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
-			&lt;span class=&quot;wfm-radio-label&quot;&gt;That&lt;/span&gt;
-		&lt;/label&gt;
-	&lt;/div&gt;
-&lt;/form&gt;
-&lt;h3&gt;Using ng-repeat:&lt;/h3&gt;
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h3&gt;Simple (&lt;span ng-bind=&quot;data1&quot;&gt;&lt;/span&gt;)&lt;/h3&gt;
 &lt;form&gt;
-	&lt;div ng-repeat=&quot;item in demos&quot;&gt;
-		&lt;div class=&quot;wfm-radio&quot;&gt;
-			&lt;label&gt;
-				&lt;input type=&quot;radio&quot; name=&quot;radio&quot; value=&quot;value&quot;&gt;
-				&lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
-				&lt;span class=&quot;wfm-radio-label&quot;&gt;Im looped out!&lt;/span&gt;
-			&lt;/label&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
+ &lt;md-radio-group ng-model=&quot;data1&quot;&gt;
+   &lt;md-radio-button value=&quot;Option 1&quot; aria-label=&quot;radio&quot;&gt;Option 1&lt;/md-radio-button&gt;
+   &lt;md-radio-button value=&quot;Option 2&quot; aria-label=&quot;radio&quot;&gt;Option 2&lt;/md-radio-button&gt;
+   &lt;md-radio-button value=&quot;Option 3&quot; aria-label=&quot;radio&quot;&gt;Option 3&lt;/md-radio-button&gt;
+ &lt;/md-radio-group&gt;
+&lt;h3&gt;Repeated (&lt;span ng-bind=&quot;data2&quot;&gt;&lt;/span&gt;)&lt;/h3&gt;
+ &lt;md-radio-group ng-model=&quot;data2&quot;&gt;
+   &lt;md-radio-button ng-repeat=&quot;item in demos&quot; ng-value=&quot;item.id&quot; aria-label=&quot;&quot;&gt;
+    Option &lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;
+   &lt;/md-radio-button&gt;
+ &lt;/md-radio-group&gt;
 &lt;/form&gt;</code></pre>
             </div>
 
@@ -700,66 +672,22 @@ However, don&#39;t mix standard inputs and prepend ones. These inputs should hav
                 Example
               </div>
               <div class="kss-modifier__example">
-                <form>
-	<div class="wfm-checkbox">
-		<input type="checkbox" id="check1" checked="true"/>
-		<label for="check1">
-			<span class="wfm-checkbox-toggle"></span>
-			<span class="wfm-checkbox-label">Check </span>
-		</label>
-	</div>
-	<div class="wfm-checkbox">
-		<input type="checkbox" id="check2" />
-		<label for="check2">
-			<span class="wfm-checkbox-toggle"></span>
-			<span class="wfm-checkbox-label">Check </span>
-		</label>
-	</div>
-</form>
-<h3>Using ng-repeat:</h3>
-<form>
-	<div ng-repeat="item in demos">
-		<div class="wfm-checkbox">
-			<label>
-				<input type="checkbox" name="checkbox" value="value">
-				<span class="wfm-checkbox-toggle"></span>
-				<span class="wfm-checkbox-label">Im looped out!</span>
-			</label>
-		</div>
-	</div>
-</form>
+                 <h3>Simple</h3>
+ <md-checkbox ng-model="checkData1" aria-label="Checkbox">Option 1</md-checkbox>
+ <md-checkbox ng-model="checkData2" aria-label="Checkbox">Option 2</md-checkbox>
+ <md-checkbox ng-model="checkData3" aria-label="Checkbox">Option 3</md-checkbox>
+ <h3>Repeated</h3>
+ <md-checkbox ng-repeat="item in demos" ng-model="item.checked" aria-label="Checkbox">Option <span ng-bind="item.id"></span></md-checkbox>
               </div>
             </div>
 
             <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form&gt;
-	&lt;div class=&quot;wfm-checkbox&quot;&gt;
-		&lt;input type=&quot;checkbox&quot; id=&quot;check1&quot; checked=&quot;true&quot;/&gt;
-		&lt;label for=&quot;check1&quot;&gt;
-			&lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
-			&lt;span class=&quot;wfm-checkbox-label&quot;&gt;Check &lt;/span&gt;
-		&lt;/label&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;wfm-checkbox&quot;&gt;
-		&lt;input type=&quot;checkbox&quot; id=&quot;check2&quot; /&gt;
-		&lt;label for=&quot;check2&quot;&gt;
-			&lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
-			&lt;span class=&quot;wfm-checkbox-label&quot;&gt;Check &lt;/span&gt;
-		&lt;/label&gt;
-	&lt;/div&gt;
-&lt;/form&gt;
-&lt;h3&gt;Using ng-repeat:&lt;/h3&gt;
-&lt;form&gt;
-	&lt;div ng-repeat=&quot;item in demos&quot;&gt;
-		&lt;div class=&quot;wfm-checkbox&quot;&gt;
-			&lt;label&gt;
-				&lt;input type=&quot;checkbox&quot; name=&quot;checkbox&quot; value=&quot;value&quot;&gt;
-				&lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
-				&lt;span class=&quot;wfm-checkbox-label&quot;&gt;Im looped out!&lt;/span&gt;
-			&lt;/label&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/form&gt;</code></pre>
+              <pre class="prettyprint linenums lang-html"><code data-language="html"> &lt;h3&gt;Simple&lt;/h3&gt;
+ &lt;md-checkbox ng-model=&quot;checkData1&quot; aria-label=&quot;Checkbox&quot;&gt;Option 1&lt;/md-checkbox&gt;
+ &lt;md-checkbox ng-model=&quot;checkData2&quot; aria-label=&quot;Checkbox&quot;&gt;Option 2&lt;/md-checkbox&gt;
+ &lt;md-checkbox ng-model=&quot;checkData3&quot; aria-label=&quot;Checkbox&quot;&gt;Option 3&lt;/md-checkbox&gt;
+ &lt;h3&gt;Repeated&lt;/h3&gt;
+ &lt;md-checkbox ng-repeat=&quot;item in demos&quot; ng-model=&quot;item.checked&quot; aria-label=&quot;Checkbox&quot;&gt;Option &lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;&lt;/md-checkbox&gt;</code></pre>
             </div>
 
         </section>
@@ -785,24 +713,18 @@ However, don&#39;t mix standard inputs and prepend ones. These inputs should hav
                 Example
               </div>
               <div class="kss-modifier__example">
-                <div class="wfm-switch">
-	<input type="checkbox" id="switch1" />
-	<label for="switch1">
-		<span class="wfm-switch-label">Show selected items</span>
-		<span class="wfm-switch-toggle"></span>
-	</label>
-</div>
+                <md-switch ng-model="switchData1" aria-label="Switch">
+<span ng-if="!switchData1">Toggle me</span>
+<span ng-if="switchData1">Thanks!</span>
+</md-switch>
               </div>
             </div>
 
             <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wfm-switch&quot;&gt;
-	&lt;input type=&quot;checkbox&quot; id=&quot;switch1&quot; /&gt;
-	&lt;label for=&quot;switch1&quot;&gt;
-		&lt;span class=&quot;wfm-switch-label&quot;&gt;Show selected items&lt;/span&gt;
-		&lt;span class=&quot;wfm-switch-toggle&quot;&gt;&lt;/span&gt;
-	&lt;/label&gt;
-&lt;/div&gt;</code></pre>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;md-switch ng-model=&quot;switchData1&quot; aria-label=&quot;Switch&quot;&gt;
+&lt;span ng-if=&quot;!switchData1&quot;&gt;Toggle me&lt;/span&gt;
+&lt;span ng-if=&quot;switchData1&quot;&gt;Thanks!&lt;/span&gt;
+&lt;/md-switch&gt;</code></pre>
             </div>
 
         </section>
@@ -1040,6 +962,11 @@ Using buttons, icons can be disabled.</p>
 	<i class="mdi mdi-comment-remove-outline"></i>
 	<md-tooltip>disabled</md-tooltip>
 </button>
+<h3>Loading</h3>
+<div tabindex=0 class="context-menu card-context context-loading">
+	<i class="mdi mdi-cake"></i>
+	<md-tooltip>Options</md-tooltip>
+</div>
 <h3>Toggle</h3>
 <div tabindex=0 class="context-menu card-context" ng-click="toggle = !toggle">
 	<i class="mdi mdi-account" ng-class="{'mdi-account-outline':toggle}"></i>
@@ -1048,6 +975,10 @@ Using buttons, icons can be disabled.</p>
 <div tabindex=0 class="context-menu card-context" ng-click="toggle2 = !toggle2" ng-class="{'notice-success':toggle2, 'notice-info':!toggle2}">
 	<i class="mdi mdi-checkbox-blank-outline" ng-class="{'mdi-checkbox-marked':toggle2}"></i>
 	<md-tooltip>Toggle something</md-tooltip>
+</div>
+<div tabindex=0 class="context-menu card-context" ng-click="loading()" ng-class="{'context-loading':waitAMoment}">
+	<i class="mdi mdi-cake"></i>
+	<md-tooltip>Options</md-tooltip>
 </div>
               </div>
             </div>
@@ -1071,6 +1002,11 @@ Using buttons, icons can be disabled.</p>
 	&lt;i class=&quot;mdi mdi-comment-remove-outline&quot;&gt;&lt;/i&gt;
 	&lt;md-tooltip&gt;disabled&lt;/md-tooltip&gt;
 &lt;/button&gt;
+&lt;h3&gt;Loading&lt;/h3&gt;
+&lt;div tabindex=0 class=&quot;context-menu card-context context-loading&quot;&gt;
+	&lt;i class=&quot;mdi mdi-cake&quot;&gt;&lt;/i&gt;
+	&lt;md-tooltip&gt;Options&lt;/md-tooltip&gt;
+&lt;/div&gt;
 &lt;h3&gt;Toggle&lt;/h3&gt;
 &lt;div tabindex=0 class=&quot;context-menu card-context&quot; ng-click=&quot;toggle = !toggle&quot;&gt;
 	&lt;i class=&quot;mdi mdi-account&quot; ng-class=&quot;{&#x27;mdi-account-outline&#x27;:toggle}&quot;&gt;&lt;/i&gt;
@@ -1079,7 +1015,79 @@ Using buttons, icons can be disabled.</p>
 &lt;div tabindex=0 class=&quot;context-menu card-context&quot; ng-click=&quot;toggle2 = !toggle2&quot; ng-class=&quot;{&#x27;notice-success&#x27;:toggle2, &#x27;notice-info&#x27;:!toggle2}&quot;&gt;
 	&lt;i class=&quot;mdi mdi-checkbox-blank-outline&quot; ng-class=&quot;{&#x27;mdi-checkbox-marked&#x27;:toggle2}&quot;&gt;&lt;/i&gt;
 	&lt;md-tooltip&gt;Toggle something&lt;/md-tooltip&gt;
+&lt;/div&gt;
+&lt;div tabindex=0 class=&quot;context-menu card-context&quot; ng-click=&quot;loading()&quot; ng-class=&quot;{&#x27;context-loading&#x27;:waitAMoment}&quot;&gt;
+	&lt;i class=&quot;mdi mdi-cake&quot;&gt;&lt;/i&gt;
+	&lt;md-tooltip&gt;Options&lt;/md-tooltip&gt;
 &lt;/div&gt;</code></pre>
+            </div>
+
+        </section>
+          <section id="kssref-1-8-6" class="kss-section kss-section--depth-3">
+
+            <div class="kss-style">
+              <h3 class="kss-title kss-title--level-3">
+              <a class="kss-title__permalink">
+                <span class="kss-title__ref">1.8.6</span
+                  >Button group
+                </a>
+              </h3>
+
+
+              <div class="kss-description">
+                <p>A dynamic group of buttons that act in a radio way</p>
+<table class="wfm-table">
+<thead>
+    <tr>
+        <th>Attribute Name</th>
+        <th>Usage</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>items</td>
+        <td>Array of button labels</td>
+    </tr>
+    <tr>
+        <td>selected</td>
+        <td>Item to be selected</td>
+    </tr>
+   <tr>
+     <td>output</td>
+     <td>Callback function on item click</td>
+   </tr>
+   <tr>
+     <td>btn-class</td>
+     <td>Style for unselected item (&#39;wfm-btn-default&#39; / &#39;wfm-btn-invis-default&#39;)</td>
+   </tr>
+   <tr>
+     <td>selection-class</td>
+     <td>Style for selected item (&#39;wfm-btn-primary&#39; / &#39;wfm-btn-invis-primary&#39;)</td>
+   </tr>
+</tbody>
+</table>
+              </div>
+            </div>
+
+            <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__heading kss-style">
+                Example
+              </div>
+              <div class="kss-modifier__example">
+                <h3>Raised <span ng-bind="outputItem1"></span> </h3>
+<wfm-btn-group items="demoArr" selected="demoArr[1]" output="outputCallback1" btn-class="'wfm-btn-default'" selection-class="'wfm-btn-primary'"></wfm-btn-group>
+<br/>
+<h3>Flat <span ng-bind="outputItem2"></span> </h3>
+<wfm-btn-group items="demoArr" output="outputCallback2" btn-class="'wfm-btn-invis-default'" selection-class="'wfm-btn-invis-primary'"></wfm-btn-group>
+              </div>
+            </div>
+
+            <div class="kss-markup kss-style">
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h3&gt;Raised &lt;span ng-bind=&quot;outputItem1&quot;&gt;&lt;/span&gt; &lt;/h3&gt;
+&lt;wfm-btn-group items=&quot;demoArr&quot; selected=&quot;demoArr[1]&quot; output=&quot;outputCallback1&quot; btn-class=&quot;&#x27;wfm-btn-default&#x27;&quot; selection-class=&quot;&#x27;wfm-btn-primary&#x27;&quot;&gt;&lt;/wfm-btn-group&gt;
+&lt;br/&gt;
+&lt;h3&gt;Flat &lt;span ng-bind=&quot;outputItem2&quot;&gt;&lt;/span&gt; &lt;/h3&gt;
+&lt;wfm-btn-group items=&quot;demoArr&quot; output=&quot;outputCallback2&quot; btn-class=&quot;&#x27;wfm-btn-invis-default&#x27;&quot; selection-class=&quot;&#x27;wfm-btn-invis-primary&#x27;&quot;&gt;&lt;/wfm-btn-group&gt;</code></pre>
             </div>
 
         </section>
