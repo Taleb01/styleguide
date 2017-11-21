@@ -13,7 +13,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
 
   $templateCache.put('directives/btn-group/btn-group.tpl.html',
     "<div class=\"wfm-btn-group\" ng-class=\"{'material-depth-1':$ctrl.btnClass == 'wfm-btn-default'}\">\n" +
-    "  <button ng-repeat=\"item in $ctrl.items\" class=\"wfm-btn {{$ctrl.btnClass}}\" ng-class=\"{'{{$ctrl.selectionClass}}': $ctrl.selected === item, 'first':$first, 'last':$last}\" ng-click=\"$ctrl.output(item); $ctrl.selected = item\">{{item}}</button>\n" +
+    "  <button ng-repeat=\"item in $ctrl.items\" class=\"wfm-btn {{$ctrl.btnClass}}\" ng-class=\"{'{{$ctrl.selectionClass}}': $ctrl.selected === item, 'first':$first, 'last':$last}\" ng-click=\"$ctrl.output(item); $ctrl.selected = item\">{{item | translate}}</button>\n" +
     "</div>\n"
   );
 
