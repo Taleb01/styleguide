@@ -249,7 +249,11 @@
     display: block; }
 
 html {
-  overflow-y: auto !important; }
+  overflow-y: auto !important;
+  background: #ebebeb !important; }
+
+body {
+  background: transparent !important; }
 
 .spacer {
   margin: 25px;
@@ -258,31 +262,82 @@ html {
   display: inline-block;
   background: white; }
 
-.jsprewrap {
-  width: 98%;
-  margin: 0 auto;
-  cursor: pointer; }
-
 .con-flex, .form-input-wrap, .con-fluid-flex {
   border: 1px dashed rgba(0, 0, 0, 0.26); }
 
 .ksscopy {
-  margin: -10px -10px 10px -10px;
   padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #eee;
-  font-weight: bold; }
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.06); }
+
+.kss-modifier__wrapper {
+  border: none !important; }
 
 /*template styles*/
 .kss-sidebar {
   position: fixed !important; }
 
+.sidebar-toggle {
+  position: fixed !important;
+  top: 20px;
+  left: 0px;
+  z-index: 100;
+  background: white !important; }
+
+#kss-node .kss-sidebar {
+  background: white;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 0; }
+
+.kss-sidebar-hidden {
+  visibility: hidden; }
+
 #kss-node .kss-title__permalink {
   font-size: 30px;
   font-weight: normal; }
 
-#kss-node .kss-section {
-  max-width: 80%; }
+.kss-header {
+  margin: 0 !important;
+  padding: 1rem; }
+
+.kss-nav__menu-item {
+  padding: 0.5rem; }
+  .kss-nav__menu-item a {
+    color: rgba(0, 0, 0, 0.87) !important; }
+
+.kss-nav__menu > .kss-nav__menu-item {
+  padding: 0; }
+  .kss-nav__menu > .kss-nav__menu-item > a {
+    display: block;
+    height: 100%;
+    padding: 0.5rem; }
+  .kss-nav__menu > .kss-nav__menu-item > a:hover {
+    background: rgba(0, 0, 0, 0.06); }
+
+.kss-nav__menu-child {
+  background: rgba(0, 0, 0, 0.06); }
+  .kss-nav__menu-child .kss-nav__menu-item:hover {
+    background: rgba(0, 0, 0, 0.06) !important; }
+
+.section-hero {
+  background: #0099FF !important;
+  outline: 420px solid #0099FF;
+  z-index: -1;
+  position: relative; }
+  .section-hero .kss-style {
+    color: white !important; }
+    .section-hero .kss-style a {
+      color: white !important; }
+    .section-hero .kss-style h1 {
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); }
+    .section-hero .kss-style .kss-title__ref {
+      display: none !important; }
 
 .kss-style code {
   font-size: 12px;
@@ -292,20 +347,25 @@ html {
 #kss-node ol.linenums li {
   border: none; }
 
-#kss-node .kss-sidebar {
+#kss-node .kss-section {
+  max-width: 100%;
   background: white;
-  top: 0;
-  z-index: 9;
-  max-height: 100%;
-  overflow-y: auto; }
+  padding: 0.5rem;
+  margin-bottom: 2rem !important; }
 
 @media screen and (min-width: 769px) {
   #kss-node .kss-sidebar {
     background: white;
     top: 0;
+    bottom: 0;
     z-index: 9;
     max-height: 100%;
-    overflow-y: auto; } }
+    overflow-y: auto; }
+  #kss-node .kss-section {
+    max-width: 98%; } }
+
+li.L0 > span:nth-child(1) {
+  display: none !important; }
 
 .styleguide-break {
   background-color: #ffc285;
@@ -322,11 +382,24 @@ md-tooltip {
 
 .darktheme-background {
   background: #303030 !important;
-  color: rgba(255, 255, 255, 0.87) !important; }
+  color: rgba(255, 255, 255, 0.87) !important;
+  overflow-x: hidden; }
+  .darktheme-background article {
+    color: #d1d1d1; }
 
 .classictheme-background {
   background: rgba(0, 0, 0, 0.06) !important;
-  color: rgba(0, 0, 0, 0.87); }
+  color: rgba(0, 0, 0, 0.87);
+  overflow-x: hidden; }
+
+.swatch {
+  transform-origin: center;
+  transform: scale(0.9); }
+
+.swatch-list .spacer {
+  width: 100%;
+  height: 100px;
+  background: transparent !important; }
 
 .swatch-list .blue-500-swatch {
   background: #0099FF !important; }
@@ -558,12 +631,13 @@ md-tooltip {
 
 .swatch-list li {
   position: relative;
-  width: 100px;
-  height: 100px; }
-  .swatch-list li .white-color-text {
-    color: #ffffff; }
-  .swatch-list li p {
+  height: 250px;
+  text-align: left; }
+  .swatch-list li article {
     left: 0;
     right: 0;
     bottom: 0;
-    position: absolute; }
+    position: absolute;
+    background: #ffffff;
+    height: 100px;
+    padding: 10px; }

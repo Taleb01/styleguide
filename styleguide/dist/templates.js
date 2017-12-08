@@ -216,12 +216,12 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "				<div class=\"con-row\" ng-repeat=\"searchField in vm.searchOptions.searchFields\" ng-if=\"$even\">\n" +
     "					<div class=\"full-padding\">\n" +
     "						<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index]\" id=\"criteria-{{vm.searchOptions.searchFields[$index]}}\"\n" +
-    "						 class=\"con-flex\" type=\"text\" ng-keyup=\"vm.onSearchFieldInputKeyUp($event)\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}\"\n" +
+    "						 class=\"con-flex advanced-search-field\" type=\"text\" ng-keyup=\"vm.onSearchFieldInputKeyUp($event)\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}\"\n" +
     "						 ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]\" />\n" +
     "					</div>\n" +
     "					<div class=\"full-padding\">\n" +
     "						<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index + 1]\" id=\"criteria-{{vm.searchOptions.searchFields[$index + 1]}}\"\n" +
-    "						 class=\"con-flex\" type=\"text\" ng-keyup=\"vm.onSearchFieldInputKeyUp($event)\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}\"\n" +
+    "						 class=\"con-flex advanced-search-field\" type=\"text\" ng-keyup=\"vm.onSearchFieldInputKeyUp($event)\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}\"\n" +
     "						 ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]\" />\n" +
     "					</div>\n" +
     "				</div>\n" +
@@ -234,7 +234,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "	</div>\n" +
     "\n" +
     "	<div class=\"search-button inline-block\">\n" +
-    "		<span class=\"cursor-pointer search-icon\" ng-focus=\"vm.turnOffAdvancedSearch()\" ng-click=\"vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch();vm.resetFocusSearch()\">\n" +
+    "		<span class=\"cursor-pointer search-icon\" ng-focus=\"vm.turnOffAdvancedSearch()\" ng-click=\"vm.searchIconClickFn()\">\n" +
     "			<i class=\"mdi mdi-magnify\" ng-class=\"{'focusing-search': vm.searchOptions.focusingSearch}\"></i>\n" +
     "			<md-tooltip>{{'Search' | translate}}</md-tooltip>\n" +
     "		</span>\n" +
@@ -383,19 +383,15 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "\n" +
     "<div ng-repeat=\"WorkingPeriod in workingHours\">\n" +
     "	<div class=\"con-row working-hours-row\">\n" +
-    "		<div class=\"con-flex\">\n" +
+    "		<div class=\"con-flex working-hours-period\">\n" +
     "			<h2>{{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</h2>\n" +
     "		</div>\n" +
-    "		<div class=\"con-flex\" ng-repeat=\"WeekDay in WorkingPeriod.WeekDaySelections\">\n" +
-    "			<div class=\"wfm-checkbox working-hours-radio\">\n" +
-    "				<input type=\"checkbox\" id=\"check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}\" ng-model=\"WeekDay.Checked\"/>\n" +
-    "				<label for=\"check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}\" ng-click=\"enforceRadioBehavior($parent.$index, WeekDay.WeekDay)\">\n" +
-    "					<span class=\"wfm-checkbox-toggle\"></span>\n" +
-    "					<span class=\"wfm-checkbox-label\"><span translate>{{WeekDay | showWeekdays}}</span></span>\n" +
-    "				</label>\n" +
-    "			</div>\n" +
+    "		<div class=\"con-flex working-hours-day\" ng-repeat=\"WeekDay in WorkingPeriod.WeekDaySelections\">\n" +
+    "			<md-checkbox ng-model=\"WeekDay.Checked\" aria-label=\"Checkbox\" ng-click=\"enforceRadioBehavior($parent.$index, WeekDay.WeekDay)\">\n" +
+    "					<span translate>{{WeekDay | showWeekdays}}</span>\n" +
+    "			</md-checkbox>\n" +
     "		</div>\n" +
-    "		<div class=\"con-flex\">\n" +
+    "		<div class=\"con-flex working-hours-action\">\n" +
     "			<div tabindex=0 class=\"context-menu card-context\" ng-click=\"$parent.removeWorkingPeriod($index)\">\n" +
     "				<i class=\"mdi mdi-delete\"></i>\n" +
     "				<md-tooltip>{{'DeletePeriod' | translate}} {{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</md-tooltip>\n" +
@@ -406,7 +402,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "			</div>\n" +
     "		</div>\n" +
     "	</div>\n" +
-    "</div>\n"
+    "</div>"
   );
 
 }]);

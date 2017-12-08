@@ -22,198 +22,234 @@
 </head>
 <body id="kss-node" ng-view ng-controller="mainCtrl">
 
-  <div class="kss-sidebar kss-style">
-    <a href="index.html" title="Homepage">
-      <header class="kss-header">
-        <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="30px" style="vertical-align:bottom;">
-        <h1 class="kss-doc-title">Style Guide</h1>
-      </header>
+  <!-- <div tabindex=0 class="context-menu card-context sidebar-toggle material-depth-2" ng-click="hideSidebar = !hideSidebar">
+  <i class="mdi mdi-backburger"></i>
+  <md-tooltip>Options</md-tooltip>
+</div> -->
+<div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
+  <header class="kss-header line-center">
+    <a href="index.html">
+      <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
     </a>
-    <nav class="kss-nav">
-      <ul class="kss-nav__menu">
-        <li class="kss-nav__menu-item">
-          <a href="section-0.html">
-            <span class="kss-nav__ref">0</span
-              ><span class="kss-nav__name">Overview</span>
+  </header>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a href="section-0.html">
+          <i class="mdi" ng-class="getChapteIcon('Overview')"></i>
+          <span class="kss-nav__name">Overview</span>
+        </a>
+        </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-1.html">
+          <i class="mdi" ng-class="getChapteIcon('Elements')"></i>
+          <span class="kss-nav__name">Elements</span>
+        </a>
+        </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-2.html">
+          <i class="mdi" ng-class="getChapteIcon('Components')"></i>
+          <span class="kss-nav__name">Components</span>
+        </a>
+        </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-3.html">
+          <i class="mdi" ng-class="getChapteIcon('Colors')"></i>
+          <span class="kss-nav__name">Colors</span>
+        </a>
+        </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-4.html">
+          <i class="mdi" ng-class="getChapteIcon('Containers')"></i>
+          <span class="kss-nav__name">Containers</span>
+        </a>
+        <ul class="kss-nav__menu-child">
+          <a href="section-4.html#kssref-4-1">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.1</span
+                ><span class="kss-nav__name">Layout</span>
+
+              </li>
             </a>
-            </li>
-        <li class="kss-nav__menu-item">
-          <a href="section-1.html">
-            <span class="kss-nav__ref">1</span
-              ><span class="kss-nav__name">Elements</span>
+          <a href="section-4.html#kssref-4-2">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.2</span
+                ><span class="kss-nav__name">Fluid layout</span>
+
+              </li>
             </a>
-            </li>
-        <li class="kss-nav__menu-item">
-          <a href="section-2.html">
-            <span class="kss-nav__ref">2</span
-              ><span class="kss-nav__name">Components</span>
+          <a href="section-4.html#kssref-4-3">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.3</span
+                ><span class="kss-nav__name">Fluid layout (dense)</span>
+
+              </li>
             </a>
-            </li>
-        <li class="kss-nav__menu-item">
-          <a href="section-3.html">
-            <span class="kss-nav__ref">3</span
-              ><span class="kss-nav__name">Colors</span>
+          <a href="section-4.html#kssref-4-4">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.4</span
+                ><span class="kss-nav__name">Panel</span>
+
+              </li>
             </a>
-            </li>
-        <li class="kss-nav__menu-item">
-          <a href="section-4.html">
-            <span class="kss-nav__ref">4</span
-              ><span class="kss-nav__name">Containers</span>
+          <a href="section-4.html#kssref-4-5">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.5</span
+                ><span class="kss-nav__name">Multiple search panel</span>
+
+              </li>
             </a>
-            <ul class="kss-nav__menu-child">
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-1">
-                  <span class="kss-nav__ref">4.1</span
-                    ><span class="kss-nav__name">Layout</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-2">
-                  <span class="kss-nav__ref">4.2</span
-                    ><span class="kss-nav__name">Fluid layout</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-3">
-                  <span class="kss-nav__ref">4.3</span
-                    ><span class="kss-nav__name">Fluid layout (dense)</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-4">
-                  <span class="kss-nav__ref">4.4</span
-                    ><span class="kss-nav__name">Panel</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-5">
-                  <span class="kss-nav__ref">4.5</span
-                    ><span class="kss-nav__name">Multiple search panel</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-6">
-                  <span class="kss-nav__ref">4.6</span
-                    ><span class="kss-nav__name">Panel with sidebar</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-7">
-                  <span class="kss-nav__ref">4.7</span
-                    ><span class="kss-nav__name">Tabbed panel</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-8">
-                  <span class="kss-nav__ref">4.8</span
-                    ><span class="kss-nav__name">Tabbed panel (badges)</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-9">
-                  <span class="kss-nav__ref">4.9</span
-                    ><span class="kss-nav__name">Wizard panel</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-10">
-                  <span class="kss-nav__ref">4.10</span
-                    ><span class="kss-nav__name">Basic Form panel</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-11">
-                  <span class="kss-nav__ref">4.11</span
-                    ><span class="kss-nav__name">Devided Form panel</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-12">
-                  <span class="kss-nav__ref">4.12</span
-                    ><span class="kss-nav__name">Split Form panel</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-13">
-                  <span class="kss-nav__ref">4.13</span
-                    ><span class="kss-nav__name">Card</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-14">
-                  <span class="kss-nav__ref">4.14</span
-                    ><span class="kss-nav__name">Card list</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-15">
-                  <span class="kss-nav__ref">4.15</span
-                    ><span class="kss-nav__name">Card list (multiple)</span>
-                  </a>
-                </li>
-              <li class="kss-nav__menu-item">
-                <a href="section-4.html#kssref-4-16">
-                  <span class="kss-nav__ref">4.16</span
-                    ><span class="kss-nav__name">Card list (open by default)</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-        <li class="kss-nav__menu-item">
-          <a href="section-5.html">
-            <span class="kss-nav__ref">5</span
-              ><span class="kss-nav__name">Tree</span>
+          <a href="section-4.html#kssref-4-6">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.6</span
+                ><span class="kss-nav__name">Panel with sidebar</span>
+
+              </li>
             </a>
-            </li>
-        <li class="kss-nav__menu-item">
-          <a href="section-6.html">
-            <span class="kss-nav__ref">6</span
-              ><span class="kss-nav__name">Language</span>
+          <a href="section-4.html#kssref-4-7">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.7</span
+                ><span class="kss-nav__name">Tabbed panel</span>
+
+              </li>
             </a>
-            </li>
-        <li class="kss-nav__menu-item">
-          <a href="section-7.html">
-            <span class="kss-nav__ref">7</span
-              ><span class="kss-nav__name">Icons</span>
+          <a href="section-4.html#kssref-4-8">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.8</span
+                ><span class="kss-nav__name">Tabbed panel (badges)</span>
+
+              </li>
             </a>
-            </li>
-        <li class="kss-nav__menu-item">
-          <a href="section-8.html">
-            <span class="kss-nav__ref">8</span
-              ><span class="kss-nav__name">Helper classes</span>
+          <a href="section-4.html#kssref-4-9">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.9</span
+                ><span class="kss-nav__name">Wizard panel</span>
+
+              </li>
             </a>
-            </li>
-        <li class="kss-nav__menu-item">
-          <a href="section-9.html">
-            <span class="kss-nav__ref">9</span
-              ><span class="kss-nav__name">Naming and best practice</span>
+          <a href="section-4.html#kssref-4-10">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.10</span
+                ><span class="kss-nav__name">Basic Form panel</span>
+
+              </li>
             </a>
-            </li>
-        <li class="kss-nav__menu-item">
-          <a href="section-10.html">
-            <span class="kss-nav__ref">10</span
-              ><span class="kss-nav__name">Resources</span>
+          <a href="section-4.html#kssref-4-11">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.11</span
+                ><span class="kss-nav__name">Devided Form panel</span>
+
+              </li>
             </a>
-            </li>
+          <a href="section-4.html#kssref-4-12">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.12</span
+                ><span class="kss-nav__name">Split Form panel</span>
+
+              </li>
+            </a>
+          <a href="section-4.html#kssref-4-13">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.13</span
+                ><span class="kss-nav__name">Card</span>
+
+              </li>
+            </a>
+          <a href="section-4.html#kssref-4-14">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.14</span
+                ><span class="kss-nav__name">Card list</span>
+
+              </li>
+            </a>
+          <a href="section-4.html#kssref-4-15">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.15</span
+                ><span class="kss-nav__name">Card list (multiple)</span>
+
+              </li>
+            </a>
+          <a href="section-4.html#kssref-4-16">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.16</span
+                ><span class="kss-nav__name">Card list (open by default)</span>
+
+              </li>
+            </a>
           </ul>
-        </nav>
-      </div>
+        </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-5.html">
+          <i class="mdi" ng-class="getChapteIcon('Tree')"></i>
+          <span class="kss-nav__name">Tree</span>
+        </a>
+        </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-6.html">
+          <i class="mdi" ng-class="getChapteIcon('Language')"></i>
+          <span class="kss-nav__name">Language</span>
+        </a>
+        </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-7.html">
+          <i class="mdi" ng-class="getChapteIcon('Icons')"></i>
+          <span class="kss-nav__name">Icons</span>
+        </a>
+        </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-8.html">
+          <i class="mdi" ng-class="getChapteIcon('Helper classes')"></i>
+          <span class="kss-nav__name">Helper classes</span>
+        </a>
+        </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-9.html">
+          <i class="mdi" ng-class="getChapteIcon('Naming and best practice')"></i>
+          <span class="kss-nav__name">Naming and best practice</span>
+        </a>
+        </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-10.html">
+          <i class="mdi" ng-class="getChapteIcon('Resources')"></i>
+          <span class="kss-nav__name">Resources</span>
+        </a>
+        </li>
+      </ul>
+      <br/>
+    </nav>
+  </div>
 
-      <article role="main">
-      <article role="main" class="kss-main">
-        <div     id="kssref-4" class="kss-section kss-section--depth-1">
+  <article role="main">
+    <article role="main" class="kss-main">
+      <div id="kssref-4" class="kss-section section-hero kss-section--depth-1">
 
-            <div class="kss-style">
-              <h1 class="kss-title kss-title--level-1">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4</span
-                  >Containers
-                </a>
-              </h1>
+          <div class="kss-style">
+            <h1 class="kss-title kss-title--level-1">
+            <a class="kss-title__permalink">
+              Containers
+            </a>
+          </h1>
+          <small class="kss-title__ref">4 </small>
 
 
-              <div class="kss-description">
-                <p>Containers are responsible for shaping the layout and creates structure to the views.
+          <div class="kss-description">
+            <p>Containers are responsible for shaping the layout and creates structure to the views.
 Almost everything described in the elements chapter should be housed inside a container.
 There are different kinds of containers that all have different applications, what they do however have in common is the ability to house flex grids and/or elements.
 When building a new view, start by picking one or several containers and a flex layout that fits with your views content.</p>
@@ -221,24 +257,24 @@ When building a new view, start by picking one or several containers and a flex 
 <p> Note: Layout rows and flex elements can be nested if needed. However, avoid putting panels/containers inside other panels/containers.</p>
 <p> Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.</p>
 <input style="opacity:0;pointer-events:none;" autofocus>
-              </div>
-            </div>
-
-
           </div>
-          <section id="kssref-4-1" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.1</span
-                  >Layout
-                </a>
-              </h2>
+        </div>
 
 
-              <div class="kss-description">
-                <p>The default layout grid is a flex-row that splits its width evenly among the number of flex-items inside it (i.e one flex-item will take 100%, two flex-items will take 50%, four flex-items will take 25% and so on). The default layout will keep its flex-items in a row until the screen gets small enough that it gives each flex-item 100% width;</p>
+    </div>
+        <section id="kssref-4-1" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Layout
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.1 </small>
+
+
+          <div class="kss-description">
+            <p>The default layout grid is a flex-row that splits its width evenly among the number of flex-items inside it (i.e one flex-item will take 100%, two flex-items will take 50%, four flex-items will take 25% and so on). The default layout will keep its flex-items in a row until the screen gets small enough that it gives each flex-item 100% width;</p>
 <p><table class="wfm-table"></p>
 <p><thead>
     <tr>
@@ -267,15 +303,58 @@ When building a new view, start by picking one or several containers and a flex 
 </table>
 <br></p>
 
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="con-row">
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Layout'] = !markupShow['Layout']">
+            <span ng-hide="markupShow['Layout']">Show</span>
+            <span ng-show="markupShow['Layout']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Layout']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;100%&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;50%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;50%&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;33%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;33%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;33%&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex x3&quot;&gt;75%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+&lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex x2&quot;&gt;50%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <div class="con-row">
    <div class="con-flex">100%</div>
 </div>
 <div class="con-row">
@@ -302,144 +381,186 @@ When building a new view, start by picking one or several containers and a flex 
    <div class="con-flex">25%</div>
    <div class="con-flex">25%</div>
 </div>
-              </div>
-            </div>
-
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;con-row&quot;&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;100%&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;con-row&quot;&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;50%&lt;/div&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;50%&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;con-row&quot;&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;33%&lt;/div&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;33%&lt;/div&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;33%&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;con-row&quot;&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;con-row&quot;&gt;
-   &lt;div class=&quot;con-flex x3&quot;&gt;75%&lt;/div&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
-&lt;/div&gt;
- &lt;div class=&quot;con-row&quot;&gt;
-   &lt;div class=&quot;con-flex x2&quot;&gt;50%&lt;/div&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
-   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-
-        </section>
-          <section id="kssref-4-2" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.2</span
-                  >Fluid layout
-                </a>
-              </h2>
+        </div>
+      </div>
 
 
-              <div class="kss-description">
-                <p>A fluid layout will wrap the flex-items into columns instead of dividing the width evenly depending on the number.
+
+  </section>
+        <section id="kssref-4-2" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Fluid layout
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.2 </small>
+
+
+          <div class="kss-description">
+            <p>A fluid layout will wrap the flex-items into columns instead of dividing the width evenly depending on the number.
 It is important to remember that if the items have different height, the tallest item will set the height for the whole row.</p>
 
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="con-fluid-row">
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Fluid layout'] = !markupShow['Fluid layout']">
+            <span ng-hide="markupShow['Fluid layout']">Show</span>
+            <span ng-show="markupShow['Fluid layout']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Fluid layout']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;con-fluid-row&quot;&gt;
+&lt;div class=&quot;con-fluid-flex&quot; ng-repeat=&quot;item in bigList&quot;&gt;
+(&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;) Default to 1/3
+&lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <div class="con-fluid-row">
 <div class="con-fluid-flex" ng-repeat="item in bigList">
 (<span ng-bind="item.id"></span>) Default to 1/3
 </div>
 </div>
-              </div>
-            </div>
+        </div>
+      </div>
 
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;con-fluid-row&quot;&gt;
+
+
+  </section>
+        <section id="kssref-4-3" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Fluid layout (dense)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.3 </small>
+
+
+          <div class="kss-description">
+            <p>A more dense version of the fluid layout for smaller elements.</p>
+
+          </div>
+        </div>
+
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Fluid layout (dense)'] = !markupShow['Fluid layout (dense)']">
+            <span ng-hide="markupShow['Fluid layout (dense)']">Show</span>
+            <span ng-show="markupShow['Fluid layout (dense)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Fluid layout (dense)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;con-fluid-row dense&quot;&gt;
 &lt;div class=&quot;con-fluid-flex&quot; ng-repeat=&quot;item in bigList&quot;&gt;
-(&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;) Default to 1/3
+(&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;) Default to 1/5
 &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
 
-        </section>
-          <section id="kssref-4-3" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.3</span
-                  >Fluid layout (dense)
-                </a>
-              </h2>
-
-
-              <div class="kss-description">
-                <p>A more dense version of the fluid layout for smaller elements.</p>
-
-              </div>
-            </div>
-
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="con-fluid-row dense">
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <div class="con-fluid-row dense">
 <div class="con-fluid-flex" ng-repeat="item in bigList">
 (<span ng-bind="item.id"></span>) Default to 1/5
 </div>
 </div>
-              </div>
-            </div>
-
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;con-fluid-row dense&quot;&gt;
-&lt;div class=&quot;con-fluid-flex&quot; ng-repeat=&quot;item in bigList&quot;&gt;
-(&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;) Default to 1/5
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-
-        </section>
-          <section id="kssref-4-4" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.4</span
-                  >Panel
-                </a>
-              </h2>
+        </div>
+      </div>
 
 
-              <div class="kss-description">
-                <p>The panel is the main container and the most versatile. It can house most elements and can be configured in a number of layouts.
+
+  </section>
+        <section id="kssref-4-4" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.4 </small>
+
+
+          <div class="kss-description">
+            <p>The panel is the main container and the most versatile. It can house most elements and can be configured in a number of layouts.
 If needed it can have a context menu or a footer for more actions. Since a panel is a raised piece of material, avoid using other raised elements on top of it, unless they are floating (like a action button or context menu)
 The panel can have a footer with a number of actions, try to keep this number as small as possible. The most important action should be to the far right and if it is the primary action it should have a wfm-btn-invis-primary class.</p>
 
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                 <div class="panel material-depth-1">
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Panel'] = !markupShow['Panel']">
+            <span ng-hide="markupShow['Panel']">Show</span>
+            <span ng-show="markupShow['Panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                 &lt;div class=&quot;panel material-depth-1&quot;&gt;
+  &lt;div class=&quot;sub-header&quot;&gt;
+    &lt;h2&gt;Panel title&lt;/h2&gt;
+    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;context-menu-left&quot;&gt;
+          &lt;ul class=&quot;wfm-list&quot;&gt;
+            &lt;li&gt;Menu item 1&lt;/li&gt;
+            &lt;li&gt;Menu item 2&lt;/li&gt;
+            &lt;li&gt;Menu item 3&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+    &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ &lt;/div&gt;
+  &lt;div class=&quot;con-footer&quot;&gt;
+ 	 &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+           <div class="panel material-depth-1">
   <div class="sub-header">
     <h2>Panel title</h2>
     <div class="head-actions panel-menu">
@@ -463,13 +584,66 @@ The panel can have a footer with a number of actions, try to keep this number as
     <button class="wfm-btn wfm-btn-invis-primary">Options</button>
   </div>
  </div>
-              </div>
-            </div>
+        </div>
+      </div>
 
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html"> &lt;div class=&quot;panel material-depth-1&quot;&gt;
+
+
+  </section>
+        <section id="kssref-4-5" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Multiple search panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.5 </small>
+
+
+          <div class="kss-description">
+            <p>This Searchbar is placed inside the panel sub-header instead of a &lt;h2&gt; to provide advanced search capabilities in that panel.</p>
+<p>Note: The header text is translated in the project but the names of the inputs needs to be translated using $translate.instant() in the controller.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['advSearch'] = !showJs['advSearch']">
+      <span ng-hide="showJs['advSearch']">Show</span>
+     <span ng-show="showJs['advSearch']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['advSearch']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.searchOptions = {
+   keyword: &#39;&#39;,
+   searchKeywordChanged: false,
+   focusingSearch: false,
+   searchFields: [
+     &#39;option1&#39;,&#39;option2&#39;,&#39;option3&#39;,&#39;option4&#39;,&#39;option5&#39;,&#39;option6&#39;
+   ]
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Multiple search panel'] = !markupShow['Multiple search panel']">
+            <span ng-hide="markupShow['Multiple search panel']">Show</span>
+            <span ng-show="markupShow['Multiple search panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Multiple search panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel material-depth-1&quot;&gt;
   &lt;div class=&quot;sub-header&quot;&gt;
-    &lt;h2&gt;Panel title&lt;/h2&gt;
+    &lt;wfm-multiple-search-input search-title=&quot;&#x27;Search&#x27;&quot; search-options=&quot;searchOptions&quot; search-callback=&quot;searchKeyword&quot;&gt;&lt;/wfm-multiple-search-input&gt;
     &lt;div class=&quot;head-actions panel-menu&quot;&gt;
       &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
         &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
@@ -483,55 +657,28 @@ The panel can have a footer with a number of actions, try to keep this number as
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
- &lt;div class=&quot;con-row&quot;&gt;
-    &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
- &lt;/div&gt;
+  &lt;div class=&quot;con-row&quot;&gt;
+    &lt;div class=&quot;con-flex &quot;&gt;
+      Content
+    &lt;/div&gt;
+  &lt;/div&gt;
   &lt;div class=&quot;con-footer&quot;&gt;
- 	 &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
     &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
   &lt;/div&gt;
- &lt;/div&gt;</code></pre>
-            </div>
+&lt;/div&gt;
 
-        </section>
-          <section id="kssref-4-5" class="kss-section kss-section--depth-2">
+              </pre>
+            </code>
+          </div>
+        </div>
 
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.5</span
-                  >Multiple search panel
-                </a>
-              </h2>
-
-
-              <div class="kss-description">
-                <p>This Searchbar is placed inside the panel sub-header instead of a &lt;h2&gt; to provide advanced search capabilities in that panel.</p>
-<p>Note: The header text is translated in the project but the names of the inputs needs to be translated using $translate.instant() in the controller.</p>
-<div class="jsprewrap">
-<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-<div ng-show="showjs">
-    <code><pre>
-$scope.searchOptions = {
-   keyword: &#39;&#39;,
-   searchKeywordChanged: false,
-   focusingSearch: false,
-   searchFields: [
-     &#39;option1&#39;,&#39;option2&#39;,&#39;option3&#39;,&#39;option4&#39;,&#39;option5&#39;,&#39;option6&#39;
-   ]
-};
-    </pre></code>
-</div>
-</div>
-              </div>
-            </div>
-
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="panel material-depth-1">
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <div class="panel material-depth-1">
   <div class="sub-header">
     <wfm-multiple-search-input search-title="'Search'" search-options="searchOptions" search-callback="searchKeyword"></wfm-multiple-search-input>
     <div class="head-actions panel-menu">
@@ -558,57 +705,36 @@ $scope.searchOptions = {
   </div>
 </div>
 
-              </div>
-            </div>
-
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;panel material-depth-1&quot;&gt;
-  &lt;div class=&quot;sub-header&quot;&gt;
-    &lt;wfm-multiple-search-input search-title=&quot;&#x27;Search&#x27;&quot; search-options=&quot;searchOptions&quot; search-callback=&quot;searchKeyword&quot;&gt;&lt;/wfm-multiple-search-input&gt;
-    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
-      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
-        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
-        &lt;span class=&quot;context-menu-left&quot;&gt;
-          &lt;ul class=&quot;wfm-list&quot;&gt;
-            &lt;li&gt;Menu item 1&lt;/li&gt;
-            &lt;li&gt;Menu item 2&lt;/li&gt;
-            &lt;li&gt;Menu item 3&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;con-row&quot;&gt;
-    &lt;div class=&quot;con-flex &quot;&gt;
-      Content
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;con-footer&quot;&gt;
-    &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
-    &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-            </div>
-
-        </section>
-          <section id="kssref-4-6" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.6</span
-                  >Panel with sidebar
-                </a>
-              </h2>
+        </div>
+      </div>
 
 
-              <div class="kss-description">
-                <p>The sub header of a regular panel can be repaced to provide a sidebar within the panel.</p>
+
+  </section>
+        <section id="kssref-4-6" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Panel with sidebar
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.6 </small>
+
+
+          <div class="kss-description">
+            <p>The sub header of a regular panel can be repaced to provide a sidebar within the panel.</p>
 <div class="jsprewrap">
-<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-<div ng-show="showjs">
-    <code><pre>
+  <div class="ksscopy kss-style" ng-click="showJs['sidebar'] = !showJs['sidebar']">
+      <span ng-hide="showJs['sidebar']">Show</span>
+     <span ng-show="showJs['sidebar']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['sidebar']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
 $scope.rightPanelOptions = {
     panelState: false,
     sidePanelTitle: &#39;Side panel title&#39;,
@@ -617,18 +743,55 @@ $scope.rightPanelOptions = {
     showBackdrop: true,
     showPopupButton: true
 };
-    </pre></code>
+      </pre>
+    </code>
+  </div>
 </div>
-</div>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="panel material-depth-1">
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Panel with sidebar'] = !markupShow['Panel with sidebar']">
+            <span ng-hide="markupShow['Panel with sidebar']">Show</span>
+            <span ng-show="markupShow['Panel with sidebar']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Panel with sidebar']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel material-depth-1&quot;&gt;
+ &lt;div class=&quot;sub-header&quot;&gt;
+   &lt;h2&gt;Panel with sidebar&lt;/h2&gt;
+	&lt;wfm-right-panel panel-options=&quot;rightPanelOptions&quot;&gt;
+	  &lt;div class=&quot;con-row&quot;&gt;
+	    &lt;div class=&quot;con-flex&quot;&gt;content&lt;/div&gt;
+	    &lt;/div&gt;
+	  &lt;div class=&quot;con-footer&quot;&gt;
+	    &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Action&lt;/button&gt;
+	  &lt;/div&gt;
+	&lt;/wfm-right-panel&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+  &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;con-footer&quot;&gt;
+  &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+  &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <div class="panel material-depth-1">
  <div class="sub-header">
    <h2>Panel with sidebar</h2>
 	<wfm-right-panel panel-options="rightPanelOptions">
@@ -648,57 +811,122 @@ $scope.rightPanelOptions = {
   <button class="wfm-btn wfm-btn-invis-primary">Options</button>
  </div>
 </div>
-              </div>
-            </div>
-
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;panel material-depth-1&quot;&gt;
- &lt;div class=&quot;sub-header&quot;&gt;
-   &lt;h2&gt;Panel with sidebar&lt;/h2&gt;
-	&lt;wfm-right-panel panel-options=&quot;rightPanelOptions&quot;&gt;
-	  &lt;div class=&quot;con-row&quot;&gt;
-	    &lt;div class=&quot;con-flex&quot;&gt;content&lt;/div&gt;
-	    &lt;/div&gt;
-	  &lt;div class=&quot;con-footer&quot;&gt;
-	    &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Action&lt;/button&gt;
-	  &lt;/div&gt;
-	&lt;/wfm-right-panel&gt;
- &lt;/div&gt;
- &lt;div class=&quot;con-row&quot;&gt;
-  &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class=&quot;con-footer&quot;&gt;
-  &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
-  &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
- &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-
-        </section>
-          <section id="kssref-4-7" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.7</span
-                  >Tabbed panel
-                </a>
-              </h2>
+        </div>
+      </div>
 
 
-              <div class="kss-description">
-                <p>When using tabbed panels, one important thing to remember is to order the tabs in a way that makes sense to the workflow.
+
+  </section>
+        <section id="kssref-4-7" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Tabbed panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.7 </small>
+
+
+          <div class="kss-description">
+            <p>When using tabbed panels, one important thing to remember is to order the tabs in a way that makes sense to the workflow.
 Also, avoid several tab panels close together to avoid confusion and maintain focus. For the same reason, modals can not be launched from within tabs.</p>
 
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                 <div class="panel material-depth-1">
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Tabbed panel'] = !markupShow['Tabbed panel']">
+            <span ng-hide="markupShow['Tabbed panel']">Show</span>
+            <span ng-show="markupShow['Tabbed panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Tabbed panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                 &lt;div class=&quot;panel material-depth-1&quot;&gt;
+   &lt;div class=&quot;wfm-slide-tabs tabbed-panel&quot;&gt;
+     &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+       &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+         &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+         &lt;span class=&quot;context-menu-left&quot;&gt;
+           &lt;ul class=&quot;wfm-list&quot;&gt;
+             &lt;li&gt;Menu item 1&lt;/li&gt;
+             &lt;li&gt;Menu item 2&lt;/li&gt;
+             &lt;li&gt;Menu item 3&lt;/li&gt;
+           &lt;/ul&gt;
+         &lt;/span&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+     &lt;md-content class=&quot;md-padding&quot;&gt;
+       &lt;md-tabs md-dynamic-height md-border-bottom &gt;
+         &lt;md-tab label=&quot;Tab title1&quot;&gt;
+           &lt;md-content class=&quot;md-padding&quot;&gt;
+             &lt;div class=&quot;con-row&quot;&gt;
+               &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+             &lt;/div&gt;
+             &lt;div class=&quot;con-footer&quot;&gt;
+               &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+               &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+             &lt;/div&gt;
+           &lt;/md-content&gt;
+         &lt;/md-tab&gt;
+         &lt;md-tab label=&quot;Tab title2&quot;&gt;
+           &lt;md-content class=&quot;md-padding&quot;&gt;
+             &lt;div class=&quot;con-row&quot;&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;con-footer&quot;&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+         &lt;/div&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+     &lt;md-tab label=&quot;Tab title3&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+         &lt;div class=&quot;con-row&quot;&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;con-footer&quot;&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+         &lt;/div&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+     &lt;md-tab label=&quot;Tab title4&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+         &lt;div class=&quot;con-row&quot;&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;con-row&quot;&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Things&lt;/div&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Things&lt;/div&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Things&lt;/div&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Things&lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;con-footer&quot;&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+         &lt;/div&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+   &lt;/md-tabs&gt;
+   &lt;/md-content&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+           <div class="panel material-depth-1">
    <div class="wfm-slide-tabs tabbed-panel">
      <div class="head-actions panel-menu">
        <div tabindex=0 class="context-menu card-context">
@@ -768,50 +996,74 @@ Also, avoid several tab panels close together to avoid confusion and maintain fo
    </md-content>
  </div>
  </div>
-              </div>
-            </div>
+        </div>
+      </div>
 
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html"> &lt;div class=&quot;panel material-depth-1&quot;&gt;
-   &lt;div class=&quot;wfm-slide-tabs tabbed-panel&quot;&gt;
-     &lt;div class=&quot;head-actions panel-menu&quot;&gt;
-       &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
-         &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
-         &lt;span class=&quot;context-menu-left&quot;&gt;
-           &lt;ul class=&quot;wfm-list&quot;&gt;
-             &lt;li&gt;Menu item 1&lt;/li&gt;
-             &lt;li&gt;Menu item 2&lt;/li&gt;
-             &lt;li&gt;Menu item 3&lt;/li&gt;
-           &lt;/ul&gt;
-         &lt;/span&gt;
-       &lt;/div&gt;
+
+
+  </section>
+        <section id="kssref-4-8" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Tabbed panel (badges)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.8 </small>
+
+
+          <div class="kss-description">
+            <p>Adding a <a href="section-1.html#kssref-1-20">badge</a> to the tab label or the context menu icon give the user more information on what can be hidden inside the tab and draw attention to specific tabs.</p>
+
+          </div>
+        </div>
+
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Tabbed panel (badges)'] = !markupShow['Tabbed panel (badges)']">
+            <span ng-hide="markupShow['Tabbed panel (badges)']">Show</span>
+            <span ng-show="markupShow['Tabbed panel (badges)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Tabbed panel (badges)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel material-depth-1&quot;&gt;
+&lt;div class=&quot;wfm-slide-tabs tabbed-panel&quot;&gt;
+   &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context wfm-badge-wrapper&quot;&gt;
+       &lt;i class=&quot;mdi mdi-dots-vertical &quot;&gt;&lt;/i&gt;
+       &lt;wfm-badge badge-model=&quot;5&quot; status=&quot;&#x27;notice-error&#x27;&quot;&gt; &lt;/wfm-badge&gt;
+       &lt;md-tooltip&gt;Options&lt;/md-tooltip&gt;
+       &lt;span class=&quot;context-menu-left&quot;&gt;
+         &lt;ul class=&quot;wfm-list&quot;&gt;
+           &lt;li&gt;Menu item 1&lt;/li&gt;
+           &lt;li&gt;Menu item 2&lt;/li&gt;
+           &lt;li&gt;Menu item 3&lt;/li&gt;
+         &lt;/ul&gt;
+       &lt;/span&gt;
      &lt;/div&gt;
-     &lt;md-content class=&quot;md-padding&quot;&gt;
-       &lt;md-tabs md-dynamic-height md-border-bottom &gt;
-         &lt;md-tab label=&quot;Tab title1&quot;&gt;
-           &lt;md-content class=&quot;md-padding&quot;&gt;
-             &lt;div class=&quot;con-row&quot;&gt;
-               &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
-             &lt;/div&gt;
-             &lt;div class=&quot;con-footer&quot;&gt;
-               &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
-               &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
-             &lt;/div&gt;
-           &lt;/md-content&gt;
-         &lt;/md-tab&gt;
-         &lt;md-tab label=&quot;Tab title2&quot;&gt;
-           &lt;md-content class=&quot;md-padding&quot;&gt;
-             &lt;div class=&quot;con-row&quot;&gt;
-           &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
-         &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;md-content class=&quot;md-padding&quot;&gt;
+   &lt;md-tabs md-dynamic-height md-border-bottom&gt;
+     &lt;md-tab label=&quot;Tab title1&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+           &lt;div class=&quot;con-row&quot;&gt;
+             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+           &lt;/div&gt;
          &lt;div class=&quot;con-footer&quot;&gt;
-           &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
            &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
          &lt;/div&gt;
        &lt;/md-content&gt;
      &lt;/md-tab&gt;
-     &lt;md-tab label=&quot;Tab title3&quot;&gt;
-       &lt;md-content class=&quot;md-padding&quot;&gt;
+      &lt;md-tab&gt;
+       &lt;md-tab-label class=&quot;wfm-badge-wrapper&quot;&gt;
+         Tab Title 2
+         &lt;wfm-badge badge-model=&quot;10&quot; status=&quot;&#x27;notice-success&#x27;&quot;&gt; &lt;/wfm-badge&gt;
+       &lt;/md-tab-label&gt;
+       &lt;md-tab-body class=&quot;md-padding&quot;&gt;
          &lt;div class=&quot;con-row&quot;&gt;
            &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
          &lt;/div&gt;
@@ -819,55 +1071,23 @@ Also, avoid several tab panels close together to avoid confusion and maintain fo
            &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
            &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
          &lt;/div&gt;
-       &lt;/md-content&gt;
-     &lt;/md-tab&gt;
-     &lt;md-tab label=&quot;Tab title4&quot;&gt;
-       &lt;md-content class=&quot;md-padding&quot;&gt;
-         &lt;div class=&quot;con-row&quot;&gt;
-           &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
-         &lt;/div&gt;
-         &lt;div class=&quot;con-row&quot;&gt;
-           &lt;div class=&quot;con-flex&quot;&gt;Things&lt;/div&gt;
-           &lt;div class=&quot;con-flex&quot;&gt;Things&lt;/div&gt;
-           &lt;div class=&quot;con-flex&quot;&gt;Things&lt;/div&gt;
-           &lt;div class=&quot;con-flex&quot;&gt;Things&lt;/div&gt;
-         &lt;/div&gt;
-         &lt;div class=&quot;con-footer&quot;&gt;
-           &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
-           &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
-         &lt;/div&gt;
-       &lt;/md-content&gt;
+       &lt;/md-tab-body&gt;
      &lt;/md-tab&gt;
    &lt;/md-tabs&gt;
-   &lt;/md-content&gt;
- &lt;/div&gt;
- &lt;/div&gt;</code></pre>
-            </div>
+ &lt;/md-content&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
 
-        </section>
-          <section id="kssref-4-8" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.8</span
-                  >Tabbed panel (badges)
-                </a>
-              </h2>
-
-
-              <div class="kss-description">
-                <p>Adding a <a href="section-1.html#kssref-1-20">badge</a> to the tab label or the context menu icon give the user more information on what can be hidden inside the tab and draw attention to specific tabs.</p>
-
-              </div>
-            </div>
-
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="panel material-depth-1">
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <div class="panel material-depth-1">
 <div class="wfm-slide-tabs tabbed-panel">
    <div class="head-actions panel-menu">
      <div tabindex=0 class="context-menu card-context wfm-badge-wrapper">
@@ -914,17 +1134,64 @@ Also, avoid several tab panels close together to avoid confusion and maintain fo
  </md-content>
 </div>
 </div>
-              </div>
-            </div>
+        </div>
+      </div>
 
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;panel material-depth-1&quot;&gt;
+
+
+  </section>
+        <section id="kssref-4-9" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Wizard panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.9 </small>
+
+
+          <div class="kss-description">
+            <p>In case you want to guide the user through a series of steps you can use a wizard panel.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['wiz'] = !showJs['wiz']">
+      <span ng-hide="showJs['wiz']">Show</span>
+     <span ng-show="showJs['wiz']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['wiz']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.selectedIndex = 0;
+$scope.nextTab = function() {
+ var index = ($scope.selectedIndex === 50) ? 0 : $scope.selectedIndex + 1;
+ $scope.selectedIndex = index;
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Wizard panel'] = !markupShow['Wizard panel']">
+            <span ng-hide="markupShow['Wizard panel']">Show</span>
+            <span ng-show="markupShow['Wizard panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Wizard panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel material-depth-1&quot;&gt;
 &lt;div class=&quot;wfm-slide-tabs tabbed-panel&quot;&gt;
    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
-     &lt;div tabindex=0 class=&quot;context-menu card-context wfm-badge-wrapper&quot;&gt;
-       &lt;i class=&quot;mdi mdi-dots-vertical &quot;&gt;&lt;/i&gt;
-       &lt;wfm-badge badge-model=&quot;5&quot; status=&quot;&#x27;notice-error&#x27;&quot;&gt; &lt;/wfm-badge&gt;
-       &lt;md-tooltip&gt;Options&lt;/md-tooltip&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
        &lt;span class=&quot;context-menu-left&quot;&gt;
          &lt;ul class=&quot;wfm-list&quot;&gt;
            &lt;li&gt;Menu item 1&lt;/li&gt;
@@ -935,73 +1202,59 @@ Also, avoid several tab panels close together to avoid confusion and maintain fo
      &lt;/div&gt;
    &lt;/div&gt;
  &lt;md-content class=&quot;md-padding&quot;&gt;
-   &lt;md-tabs md-dynamic-height md-border-bottom&gt;
+   &lt;md-tabs md-dynamic-height md-border-bottom md-selected=&quot;selectedIndex&quot;&gt;
      &lt;md-tab label=&quot;Tab title1&quot;&gt;
        &lt;md-content class=&quot;md-padding&quot;&gt;
            &lt;div class=&quot;con-row&quot;&gt;
              &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
            &lt;/div&gt;
          &lt;div class=&quot;con-footer&quot;&gt;
-           &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+           &lt;button class=&quot;wizard-step wfm-btn wfm-btn-invis-primary&quot; ng-click=&quot;nextTab()&quot;&gt;Next&lt;/button&gt;
          &lt;/div&gt;
        &lt;/md-content&gt;
      &lt;/md-tab&gt;
-      &lt;md-tab&gt;
-       &lt;md-tab-label class=&quot;wfm-badge-wrapper&quot;&gt;
-         Tab Title 2
-         &lt;wfm-badge badge-model=&quot;10&quot; status=&quot;&#x27;notice-success&#x27;&quot;&gt; &lt;/wfm-badge&gt;
-       &lt;/md-tab-label&gt;
-       &lt;md-tab-body class=&quot;md-padding&quot;&gt;
-         &lt;div class=&quot;con-row&quot;&gt;
-           &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
-         &lt;/div&gt;
+     &lt;md-tab label=&quot;Tab title2&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+           &lt;div class=&quot;con-row&quot;&gt;
+             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+           &lt;/div&gt;
          &lt;div class=&quot;con-footer&quot;&gt;
-           &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
-           &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+           &lt;button class=&quot;wizard-step wfm-btn wfm-btn-invis-primary&quot; ng-click=&quot;nextTab()&quot;&gt;Next&lt;/button&gt;
          &lt;/div&gt;
-       &lt;/md-tab-body&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+     &lt;md-tab label=&quot;Tab title3&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+           &lt;div class=&quot;con-row&quot;&gt;
+             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+           &lt;/div&gt;
+         &lt;div class=&quot;con-footer&quot;&gt;
+           &lt;button class=&quot;wizard-step wfm-btn wfm-btn-invis-primary&quot; ng-click=&quot;nextTab()&quot;&gt;Next&lt;/button&gt;
+         &lt;/div&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+     &lt;md-tab label=&quot;Tab title4&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+           &lt;div class=&quot;con-row&quot;&gt;
+             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+           &lt;/div&gt;
+       &lt;/md-content&gt;
      &lt;/md-tab&gt;
    &lt;/md-tabs&gt;
  &lt;/md-content&gt;
 &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
 
-        </section>
-          <section id="kssref-4-9" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.9</span
-                  >Wizard panel
-                </a>
-              </h2>
-
-
-              <div class="kss-description">
-                <p>In case you want to guide the user through a series of steps you can use a wizard panel.</p>
-<div class="jsprewrap">
-<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-<div ng-show="showjs">
-    <code><pre>
-$scope.selectedIndex = 0;
-$scope.nextTab = function() {
- var index = ($scope.selectedIndex === 50) ? 0 : $scope.selectedIndex + 1;
- $scope.selectedIndex = index;
-};
-    </pre></code>
-</div>
-</div>
-              </div>
-            </div>
-
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="panel material-depth-1">
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <div class="panel material-depth-1">
 <div class="wfm-slide-tabs tabbed-panel">
    <div class="head-actions panel-menu">
      <div tabindex=0 class="context-menu card-context">
@@ -1058,104 +1311,129 @@ $scope.nextTab = function() {
  </md-content>
 </div>
 </div>
-              </div>
-            </div>
-
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;panel material-depth-1&quot;&gt;
-&lt;div class=&quot;wfm-slide-tabs tabbed-panel&quot;&gt;
-   &lt;div class=&quot;head-actions panel-menu&quot;&gt;
-     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
-       &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
-       &lt;span class=&quot;context-menu-left&quot;&gt;
-         &lt;ul class=&quot;wfm-list&quot;&gt;
-           &lt;li&gt;Menu item 1&lt;/li&gt;
-           &lt;li&gt;Menu item 2&lt;/li&gt;
-           &lt;li&gt;Menu item 3&lt;/li&gt;
-         &lt;/ul&gt;
-       &lt;/span&gt;
-     &lt;/div&gt;
-   &lt;/div&gt;
- &lt;md-content class=&quot;md-padding&quot;&gt;
-   &lt;md-tabs md-dynamic-height md-border-bottom md-selected=&quot;selectedIndex&quot;&gt;
-     &lt;md-tab label=&quot;Tab title1&quot;&gt;
-       &lt;md-content class=&quot;md-padding&quot;&gt;
-           &lt;div class=&quot;con-row&quot;&gt;
-             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
-           &lt;/div&gt;
-         &lt;div class=&quot;con-footer&quot;&gt;
-           &lt;button class=&quot;wizard-step wfm-btn wfm-btn-invis-primary&quot; ng-click=&quot;nextTab()&quot;&gt;Next&lt;/button&gt;
-         &lt;/div&gt;
-       &lt;/md-content&gt;
-     &lt;/md-tab&gt;
-     &lt;md-tab label=&quot;Tab title2&quot;&gt;
-       &lt;md-content class=&quot;md-padding&quot;&gt;
-           &lt;div class=&quot;con-row&quot;&gt;
-             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
-           &lt;/div&gt;
-         &lt;div class=&quot;con-footer&quot;&gt;
-           &lt;button class=&quot;wizard-step wfm-btn wfm-btn-invis-primary&quot; ng-click=&quot;nextTab()&quot;&gt;Next&lt;/button&gt;
-         &lt;/div&gt;
-       &lt;/md-content&gt;
-     &lt;/md-tab&gt;
-     &lt;md-tab label=&quot;Tab title3&quot;&gt;
-       &lt;md-content class=&quot;md-padding&quot;&gt;
-           &lt;div class=&quot;con-row&quot;&gt;
-             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
-           &lt;/div&gt;
-         &lt;div class=&quot;con-footer&quot;&gt;
-           &lt;button class=&quot;wizard-step wfm-btn wfm-btn-invis-primary&quot; ng-click=&quot;nextTab()&quot;&gt;Next&lt;/button&gt;
-         &lt;/div&gt;
-       &lt;/md-content&gt;
-     &lt;/md-tab&gt;
-     &lt;md-tab label=&quot;Tab title4&quot;&gt;
-       &lt;md-content class=&quot;md-padding&quot;&gt;
-           &lt;div class=&quot;con-row&quot;&gt;
-             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
-           &lt;/div&gt;
-       &lt;/md-content&gt;
-     &lt;/md-tab&gt;
-   &lt;/md-tabs&gt;
- &lt;/md-content&gt;
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-
-        </section>
-          <section id="kssref-4-10" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.10</span
-                  >Basic Form panel
-                </a>
-              </h2>
+        </div>
+      </div>
 
 
-              <div class="kss-description">
-                <div class="jsprewrap">
-<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-<div ng-show="showjs">
-    <code><pre>
+
+  </section>
+        <section id="kssref-4-10" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Basic Form panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.10 </small>
+
+
+          <div class="kss-description">
+            <div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['form2'] = !showJs['form2']">
+      <span ng-hide="showJs['form2']">Show</span>
+     <span ng-show="showJs['form2']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['form2']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
 $scope.reset = function(form) {
  if (form) {
    form.$setPristine();
    form.$setUntouched();
  }
 };
-    </pre></code>
+      </pre>
+    </code>
+  </div>
 </div>
-</div>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="panel form-panel material-depth-1">
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Basic Form panel'] = !markupShow['Basic Form panel']">
+            <span ng-hide="markupShow['Basic Form panel']">Show</span>
+            <span ng-show="markupShow['Basic Form panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Basic Form panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel form-panel material-depth-1&quot;&gt;
+  &lt;div class=&quot;sub-header&quot;&gt;
+    &lt;h2&gt;Panel title&lt;/h2&gt;
+    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;context-menu-left&quot;&gt;
+          &lt;ul class=&quot;wfm-list&quot;&gt;
+            &lt;li&gt;Menu item 1&lt;/li&gt;
+            &lt;li&gt;Menu item 2&lt;/li&gt;
+            &lt;li&gt;Menu item 3&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;form name=&quot;form&quot; class=&quot;wfm-form&quot; novalidate&gt;
+    &lt;div class=&quot;con-row&quot;&gt;
+      &lt;div class=&quot;con-flex&quot;&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;form.input0&quot; placeholder=&quot;Name&quot; name=&quot;Name&quot; required=&quot;&quot; id=&quot;nameId&quot; autofocus/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Name.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Name.$error.required}&quot;&gt;Name is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Age:&lt;/label&gt;
+          &lt;input type=&quot;number&quot; ng-model=&quot;form.input1&quot; placeholder=&quot;Age&quot; name=&quot;Age&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Age.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Age.$error.required}&quot;&gt;Age is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Password:&lt;/label&gt;
+          &lt;input type=&quot;password&quot; ng-model=&quot;form.input2&quot; placeholder=&quot;Password&quot; name=&quot;Password&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Password.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Password.$error.required}&quot;&gt;Password is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;drop&quot;&gt;How many:&lt;/label&gt;
+          &lt;md-select ng-model=&quot;form.drop&quot; name=&quot;Drop&quot; id=&quot;drop&quot; required=&quot;&quot;&gt;
+            &lt;md-option ng-repeat=&quot;item in demos&quot; ng-value=&quot;item.id&quot;&gt;&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;&lt;/md-option&gt;
+          &lt;/md-select&gt;
+          &lt;div ng-cloak class=&quot;animate-input-message&quot; ng-show=&quot;form.$submitted || form.Drop.$error.required.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Drop.$error.required}&quot;&gt;Pick at least one&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;con-footer&quot;&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(form)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot; type=&quot;submit&quot; ng-click=&quot;update()&quot;&gt;&lt;md-tooltip&gt;Save input if valid&lt;/md-tooltip&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <div class="panel form-panel material-depth-1">
   <div class="sub-header">
     <h2>Panel title</h2>
     <div class="head-actions panel-menu">
@@ -1214,11 +1492,61 @@ $scope.reset = function(form) {
   </form>
 </div>
 
-              </div>
-            </div>
+        </div>
+      </div>
 
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;panel form-panel material-depth-1&quot;&gt;
+
+
+  </section>
+        <section id="kssref-4-11" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Devided Form panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.11 </small>
+
+
+          <div class="kss-description">
+            <p>Dividing the inputs into different sub-categories using headers can make the structure more clear.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['form3'] = !showJs['form3']">
+      <span ng-hide="showJs['form3']">Show</span>
+     <span ng-show="showJs['form3']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['form3']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.reset = function(form) {
+ if (form) {
+   form.$setPristine();
+   form.$setUntouched();
+ }
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Devided Form panel'] = !markupShow['Devided Form panel']">
+            <span ng-hide="markupShow['Devided Form panel']">Show</span>
+            <span ng-show="markupShow['Devided Form panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Devided Form panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel form-panel material-depth-1&quot;&gt;
   &lt;div class=&quot;sub-header&quot;&gt;
     &lt;h2&gt;Panel title&lt;/h2&gt;
     &lt;div class=&quot;head-actions panel-menu&quot;&gt;
@@ -1235,86 +1563,56 @@ $scope.reset = function(form) {
     &lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;form name=&quot;form&quot; class=&quot;wfm-form&quot; novalidate&gt;
+  &lt;form name=&quot;devidedForm&quot; class=&quot;wfm-form&quot; novalidate&gt;
     &lt;div class=&quot;con-row&quot;&gt;
       &lt;div class=&quot;con-flex&quot;&gt;
+        &lt;h3&gt;Personal information&lt;/h3&gt;
         &lt;div class=&quot;form-input-wrap&quot;&gt;
-          &lt;label for=&quot;nameId&quot;&gt;Name:&lt;/label&gt;
-          &lt;input type=&quot;text&quot; ng-model=&quot;form.input0&quot; placeholder=&quot;Name&quot; name=&quot;Name&quot; required=&quot;&quot; id=&quot;nameId&quot; autofocus/&gt;
-          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Name.$touched&quot;&gt;
-            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Name.$error.required}&quot;&gt;Name is required&lt;/div&gt;
+          &lt;label for=&quot;firstNameId&quot;&gt;First Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;devidedForm.input0&quot; placeholder=&quot;Last name&quot; name=&quot;firstName&quot; required=&quot;&quot; id=&quot;firstNameId&quot; autofocus/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;devidedForm.$submitted || devidedForm.firstName.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:devidedForm.firstName.$error.required}&quot;&gt;First name is required&lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
         &lt;div class=&quot;form-input-wrap&quot;&gt;
-          &lt;label for=&quot;nameId&quot;&gt;Age:&lt;/label&gt;
-          &lt;input type=&quot;number&quot; ng-model=&quot;form.input1&quot; placeholder=&quot;Age&quot; name=&quot;Age&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
-          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Age.$touched&quot;&gt;
-            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Age.$error.required}&quot;&gt;Age is required&lt;/div&gt;
+          &lt;label for=&quot;lastNameId&quot;&gt;Last Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;devidedForm.input1&quot; placeholder=&quot;First name&quot; name=&quot;lastName&quot; required=&quot;&quot; id=&quot;lastNameId&quot; autofocus/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;devidedForm.$submitted || devidedForm.lastName.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:devidedForm.lastName.$error.required}&quot;&gt;Last name is required&lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
+        &lt;h3&gt;Preferences&lt;/h3&gt;
         &lt;div class=&quot;form-input-wrap&quot;&gt;
-          &lt;label for=&quot;nameId&quot;&gt;Password:&lt;/label&gt;
-          &lt;input type=&quot;password&quot; ng-model=&quot;form.input2&quot; placeholder=&quot;Password&quot; name=&quot;Password&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
-          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Password.$touched&quot;&gt;
-            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Password.$error.required}&quot;&gt;Password is required&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;form-input-wrap&quot;&gt;
-          &lt;label for=&quot;drop&quot;&gt;How many:&lt;/label&gt;
-          &lt;md-select ng-model=&quot;form.drop&quot; name=&quot;Drop&quot; id=&quot;drop&quot; required=&quot;&quot;&gt;
-            &lt;md-option ng-repeat=&quot;item in demos&quot; ng-value=&quot;item.id&quot;&gt;&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;&lt;/md-option&gt;
-          &lt;/md-select&gt;
-          &lt;div ng-cloak class=&quot;animate-input-message&quot; ng-show=&quot;form.$submitted || form.Drop.$error.required.$touched&quot;&gt;
-            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Drop.$error.required}&quot;&gt;Pick at least one&lt;/div&gt;
+          &lt;label&gt;Pick the best one:&lt;/label&gt;
+          &lt;md-radio-group ng-model=&quot;devidedForm.dessert&quot;&gt;
+            &lt;md-radio-button value=&quot;Option 1&quot; aria-label=&quot;radio&quot;&gt;Cake&lt;/md-radio-button&gt;
+            &lt;md-radio-button value=&quot;Option 2&quot; aria-label=&quot;radio&quot;&gt;Pie&lt;/md-radio-button&gt;
+            &lt;md-radio-button value=&quot;Option 3&quot; aria-label=&quot;radio&quot;&gt;Ice cream&lt;/md-radio-button&gt;
+          &lt;/md-radio-group&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;devidedForm.$submitted || devidedForm.dessert.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:!devidedForm.dessert}&quot;&gt;At least one is required&lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&quot;con-footer&quot;&gt;
-      &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(form)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(devidedForm)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
       &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot; type=&quot;submit&quot; ng-click=&quot;update()&quot;&gt;&lt;md-tooltip&gt;Save input if valid&lt;/md-tooltip&gt;Submit&lt;/button&gt;
     &lt;/div&gt;
   &lt;/form&gt;
 &lt;/div&gt;
-</code></pre>
-            </div>
 
-        </section>
-          <section id="kssref-4-11" class="kss-section kss-section--depth-2">
+              </pre>
+            </code>
+          </div>
+        </div>
 
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.11</span
-                  >Devided Form panel
-                </a>
-              </h2>
-
-
-              <div class="kss-description">
-                <p>Dividing the inputs into different sub-categories using headers can make the structure more clear.</p>
-<div class="jsprewrap">
-<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-<div ng-show="showjs">
-    <code><pre>
-$scope.reset = function(form) {
- if (form) {
-   form.$setPristine();
-   form.$setUntouched();
- }
-};
-    </pre></code>
-</div>
-</div>
-              </div>
-            </div>
-
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="panel form-panel material-depth-1">
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <div class="panel form-panel material-depth-1">
   <div class="sub-header">
     <h2>Panel title</h2>
     <div class="head-actions panel-menu">
@@ -1370,11 +1668,61 @@ $scope.reset = function(form) {
   </form>
 </div>
 
-              </div>
-            </div>
+        </div>
+      </div>
 
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;panel form-panel material-depth-1&quot;&gt;
+
+
+  </section>
+        <section id="kssref-4-12" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Split Form panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.12 </small>
+
+
+          <div class="kss-description">
+            <p>The layout inside the form can be changed to give more space to certain parts, just remember to structure the inputs in a logical way.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['form4'] = !showJs['form4']">
+      <span ng-hide="showJs['form4']">Show</span>
+     <span ng-show="showJs['form4']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['form4']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.reset = function(form) {
+ if (form) {
+   form.$setPristine();
+   form.$setUntouched();
+ }
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Split Form panel'] = !markupShow['Split Form panel']">
+            <span ng-hide="markupShow['Split Form panel']">Show</span>
+            <span ng-show="markupShow['Split Form panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Split Form panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel form-panel material-depth-1&quot;&gt;
   &lt;div class=&quot;sub-header&quot;&gt;
     &lt;h2&gt;Panel title&lt;/h2&gt;
     &lt;div class=&quot;head-actions panel-menu&quot;&gt;
@@ -1391,83 +1739,50 @@ $scope.reset = function(form) {
     &lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;form name=&quot;devidedForm&quot; class=&quot;wfm-form&quot; novalidate&gt;
+  &lt;form name=&quot;splitForm&quot; class=&quot;wfm-form&quot; novalidate&gt;
     &lt;div class=&quot;con-row&quot;&gt;
       &lt;div class=&quot;con-flex&quot;&gt;
-        &lt;h3&gt;Personal information&lt;/h3&gt;
         &lt;div class=&quot;form-input-wrap&quot;&gt;
-          &lt;label for=&quot;firstNameId&quot;&gt;First Name:&lt;/label&gt;
-          &lt;input type=&quot;text&quot; ng-model=&quot;devidedForm.input0&quot; placeholder=&quot;Last name&quot; name=&quot;firstName&quot; required=&quot;&quot; id=&quot;firstNameId&quot; autofocus/&gt;
-          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;devidedForm.$submitted || devidedForm.firstName.$touched&quot;&gt;
-            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:devidedForm.firstName.$error.required}&quot;&gt;First name is required&lt;/div&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;splitForm.input0&quot; placeholder=&quot;Name&quot; name=&quot;Name&quot; required=&quot;&quot; id=&quot;nameId&quot; autofocus/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;splitForm.$submitted || splitForm.Name.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:splitForm.Name.$error.required}&quot;&gt;Name is required&lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
         &lt;div class=&quot;form-input-wrap&quot;&gt;
-          &lt;label for=&quot;lastNameId&quot;&gt;Last Name:&lt;/label&gt;
-          &lt;input type=&quot;text&quot; ng-model=&quot;devidedForm.input1&quot; placeholder=&quot;First name&quot; name=&quot;lastName&quot; required=&quot;&quot; id=&quot;lastNameId&quot; autofocus/&gt;
-          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;devidedForm.$submitted || devidedForm.lastName.$touched&quot;&gt;
-            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:devidedForm.lastName.$error.required}&quot;&gt;Last name is required&lt;/div&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Age:&lt;/label&gt;
+          &lt;input type=&quot;number&quot; ng-model=&quot;splitForm.input1&quot; placeholder=&quot;Age&quot; name=&quot;Age&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;splitForm.$submitted || splitForm.Age.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:splitForm.Age.$error.required}&quot;&gt;Age is required&lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-        &lt;h3&gt;Preferences&lt;/h3&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;con-flex x3&quot;&gt;
         &lt;div class=&quot;form-input-wrap&quot;&gt;
-          &lt;label&gt;Pick the best one:&lt;/label&gt;
-          &lt;md-radio-group ng-model=&quot;devidedForm.dessert&quot;&gt;
-            &lt;md-radio-button value=&quot;Option 1&quot; aria-label=&quot;radio&quot;&gt;Cake&lt;/md-radio-button&gt;
-            &lt;md-radio-button value=&quot;Option 2&quot; aria-label=&quot;radio&quot;&gt;Pie&lt;/md-radio-button&gt;
-            &lt;md-radio-button value=&quot;Option 3&quot; aria-label=&quot;radio&quot;&gt;Ice cream&lt;/md-radio-button&gt;
-          &lt;/md-radio-group&gt;
-          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;devidedForm.$submitted || devidedForm.dessert.$touched&quot;&gt;
-            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:!devidedForm.dessert}&quot;&gt;At least one is required&lt;/div&gt;
-          &lt;/div&gt;
+          &lt;label&gt;Group:&lt;/label&gt;
+          &lt;md-checkbox ng-model=&quot;splitForm.box1&quot; aria-label=&quot;Checkbox&quot;&gt;Option 1&lt;/md-checkbox&gt;
+          &lt;md-checkbox ng-model=&quot;splitForm.box2&quot; aria-label=&quot;Checkbox&quot;&gt;Option 2&lt;/md-checkbox&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&quot;con-footer&quot;&gt;
-      &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(devidedForm)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(splitForm)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
       &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot; type=&quot;submit&quot; ng-click=&quot;update()&quot;&gt;&lt;md-tooltip&gt;Save input if valid&lt;/md-tooltip&gt;Submit&lt;/button&gt;
     &lt;/div&gt;
   &lt;/form&gt;
 &lt;/div&gt;
-</code></pre>
-            </div>
 
-        </section>
-          <section id="kssref-4-12" class="kss-section kss-section--depth-2">
+              </pre>
+            </code>
+          </div>
+        </div>
 
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.12</span
-                  >Split Form panel
-                </a>
-              </h2>
-
-
-              <div class="kss-description">
-                <p>The layout inside the form can be changed to give more space to certain parts, just remember to structure the inputs in a logical way.</p>
-<div class="jsprewrap">
-<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-<div ng-show="showjs">
-    <code><pre>
-$scope.reset = function(form) {
- if (form) {
-   form.$setPristine();
-   form.$setUntouched();
- }
-};
-    </pre></code>
-</div>
-</div>
-              </div>
-            </div>
-
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="panel form-panel material-depth-1">
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <div class="panel form-panel material-depth-1">
   <div class="sub-header">
     <h2>Panel title</h2>
     <div class="head-actions panel-menu">
@@ -1517,87 +1832,110 @@ $scope.reset = function(form) {
   </form>
 </div>
 
-              </div>
-            </div>
-
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;panel form-panel material-depth-1&quot;&gt;
-  &lt;div class=&quot;sub-header&quot;&gt;
-    &lt;h2&gt;Panel title&lt;/h2&gt;
-    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
-      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
-        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
-        &lt;span class=&quot;context-menu-left&quot;&gt;
-          &lt;ul class=&quot;wfm-list&quot;&gt;
-            &lt;li&gt;Menu item 1&lt;/li&gt;
-            &lt;li&gt;Menu item 2&lt;/li&gt;
-            &lt;li&gt;Menu item 3&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;form name=&quot;splitForm&quot; class=&quot;wfm-form&quot; novalidate&gt;
-    &lt;div class=&quot;con-row&quot;&gt;
-      &lt;div class=&quot;con-flex&quot;&gt;
-        &lt;div class=&quot;form-input-wrap&quot;&gt;
-          &lt;label for=&quot;nameId&quot;&gt;Name:&lt;/label&gt;
-          &lt;input type=&quot;text&quot; ng-model=&quot;splitForm.input0&quot; placeholder=&quot;Name&quot; name=&quot;Name&quot; required=&quot;&quot; id=&quot;nameId&quot; autofocus/&gt;
-          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;splitForm.$submitted || splitForm.Name.$touched&quot;&gt;
-            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:splitForm.Name.$error.required}&quot;&gt;Name is required&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;form-input-wrap&quot;&gt;
-          &lt;label for=&quot;nameId&quot;&gt;Age:&lt;/label&gt;
-          &lt;input type=&quot;number&quot; ng-model=&quot;splitForm.input1&quot; placeholder=&quot;Age&quot; name=&quot;Age&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
-          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;splitForm.$submitted || splitForm.Age.$touched&quot;&gt;
-            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:splitForm.Age.$error.required}&quot;&gt;Age is required&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;con-flex x3&quot;&gt;
-        &lt;div class=&quot;form-input-wrap&quot;&gt;
-          &lt;label&gt;Group:&lt;/label&gt;
-          &lt;md-checkbox ng-model=&quot;splitForm.box1&quot; aria-label=&quot;Checkbox&quot;&gt;Option 1&lt;/md-checkbox&gt;
-          &lt;md-checkbox ng-model=&quot;splitForm.box2&quot; aria-label=&quot;Checkbox&quot;&gt;Option 2&lt;/md-checkbox&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;con-footer&quot;&gt;
-      &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(splitForm)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
-      &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot; type=&quot;submit&quot; ng-click=&quot;update()&quot;&gt;&lt;md-tooltip&gt;Save input if valid&lt;/md-tooltip&gt;Submit&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/form&gt;
-&lt;/div&gt;
-</code></pre>
-            </div>
-
-        </section>
-          <section id="kssref-4-13" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.13</span
-                  >Card
-                </a>
-              </h2>
+        </div>
+      </div>
 
 
-              <div class="kss-description">
-                <p>The card is a simpler version of the panel with more direct actions available in the footer.
+
+  </section>
+        <section id="kssref-4-13" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.13 </small>
+
+
+          <div class="kss-description">
+            <p>The card is a simpler version of the panel with more direct actions available in the footer.
 The card can have different colors by applying notice-info, notice-warning, notice-error and notice-success classes to the card element.</p>
 
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <div class="card panel material-depth-1">
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card'] = !markupShow['Card']">
+            <span ng-hide="markupShow['Card']">Show</span>
+            <span ng-show="markupShow['Card']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;card panel material-depth-1&quot;&gt;
+   &lt;div class=&quot;sub-header&quot;&gt;
+     &lt;h2&gt;Card title&lt;/h2&gt;
+   &lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+    &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;card-footer con-row&quot;&gt;
+   &lt;span class=&quot;con-flex card-footer-section&quot;&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-duck&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-alert&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-settings&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+   &lt;/span&gt;
+   &lt;span class=&quot;con-flex line-right card-footer-section&quot;&gt;
+     &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Default&lt;/button&gt;
+     &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Primary&lt;/button&gt;
+   &lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;With color:
+&lt;select ng-model=&quot;selectedClass&quot;&gt;
+&lt;option&gt;notice-success&lt;/option&gt;
+&lt;option&gt;notice-info&lt;/option&gt;
+&lt;option&gt;notice-error&lt;/option&gt;
+&lt;option&gt;notice-warning&lt;/option&gt;
+&lt;/select&gt;
+&lt;/h3&gt;
+&lt;div class=&quot;card panel material-depth-1&quot; ng-class=&quot;selectedClass&quot;&gt;
+   &lt;div class=&quot;sub-header&quot;&gt;
+     &lt;h2&gt;Colorful card title&lt;/h2&gt;
+   &lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+    &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;card-footer con-row&quot;&gt;
+   &lt;span class=&quot;con-flex card-footer-section&quot;&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-duck&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-alert&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-settings&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+   &lt;/span&gt;
+   &lt;span class=&quot;con-flex line-right card-footer-section&quot;&gt;
+     &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Default&lt;/button&gt;
+     &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Primary&lt;/button&gt;
+   &lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <div class="card panel material-depth-1">
    <div class="sub-header">
      <h2>Card title</h2>
    </div>
@@ -1655,95 +1993,72 @@ The card can have different colors by applying notice-info, notice-warning, noti
    </span>
  </div>
 </div>
-              </div>
-            </div>
-
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;card panel material-depth-1&quot;&gt;
-   &lt;div class=&quot;sub-header&quot;&gt;
-     &lt;h2&gt;Card title&lt;/h2&gt;
-   &lt;/div&gt;
- &lt;div class=&quot;con-row&quot;&gt;
-    &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class=&quot;card-footer con-row&quot;&gt;
-   &lt;span class=&quot;con-flex card-footer-section&quot;&gt;
-     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
-       &lt;i class=&quot;mdi mdi-duck&quot;&gt;&lt;/i&gt;
-     &lt;/div&gt;
-     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
-       &lt;i class=&quot;mdi mdi-alert&quot;&gt;&lt;/i&gt;
-     &lt;/div&gt;
-     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
-       &lt;i class=&quot;mdi mdi-settings&quot;&gt;&lt;/i&gt;
-     &lt;/div&gt;
-   &lt;/span&gt;
-   &lt;span class=&quot;con-flex line-right card-footer-section&quot;&gt;
-     &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Default&lt;/button&gt;
-     &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Primary&lt;/button&gt;
-   &lt;/span&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;h3&gt;With color:
-&lt;select ng-model=&quot;selectedClass&quot;&gt;
-&lt;option&gt;notice-success&lt;/option&gt;
-&lt;option&gt;notice-info&lt;/option&gt;
-&lt;option&gt;notice-error&lt;/option&gt;
-&lt;option&gt;notice-warning&lt;/option&gt;
-&lt;/select&gt;
-&lt;/h3&gt;
-&lt;div class=&quot;card panel material-depth-1&quot; ng-class=&quot;selectedClass&quot;&gt;
-   &lt;div class=&quot;sub-header&quot;&gt;
-     &lt;h2&gt;Colorful card title&lt;/h2&gt;
-   &lt;/div&gt;
- &lt;div class=&quot;con-row&quot;&gt;
-    &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class=&quot;card-footer con-row&quot;&gt;
-   &lt;span class=&quot;con-flex card-footer-section&quot;&gt;
-     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
-       &lt;i class=&quot;mdi mdi-duck&quot;&gt;&lt;/i&gt;
-     &lt;/div&gt;
-     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
-       &lt;i class=&quot;mdi mdi-alert&quot;&gt;&lt;/i&gt;
-     &lt;/div&gt;
-     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
-       &lt;i class=&quot;mdi mdi-settings&quot;&gt;&lt;/i&gt;
-     &lt;/div&gt;
-   &lt;/span&gt;
-   &lt;span class=&quot;con-flex line-right card-footer-section&quot;&gt;
-     &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Default&lt;/button&gt;
-     &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Primary&lt;/button&gt;
-   &lt;/span&gt;
- &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-
-        </section>
-          <section id="kssref-4-14" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.14</span
-                  >Card list
-                </a>
-              </h2>
+        </div>
+      </div>
 
 
-              <div class="kss-description">
-                <p>The single select card list only allows for one card open at any given time, this is useful when the content needs more focused attention.
+
+  </section>
+        <section id="kssref-4-14" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card list
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.14 </small>
+
+
+          <div class="kss-description">
+            <p>The single select card list only allows for one card open at any given time, this is useful when the content needs more focused attention.
 It is encouraged to add as much relevant information as possible to the header of the card (while avoiding text wrapping). Any html elements provided within the &lt;card-header&gt; and/or &lt;card-body&gt; tags will be rendered accordingly.</p>
 
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <wfm-card-list >
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list'] = !markupShow['Card list']">
+            <span ng-hide="markupShow['Card list']">Show</span>
+            <span ng-show="markupShow['Card list']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card list']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;wfm-card-list &gt;
+	&lt;wfm-card ng-repeat=&quot;item in items&quot;&gt;
+		&lt;card-header tabindex=&quot;-1&quot;&gt;
+     &lt;div tabindex=&quot;0&quot;&gt;
+			&lt;span&gt;&lt;i class=&quot;mdi&quot; ng-class=&quot;item.title&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+				&lt;b&gt;Single card title&lt;/b&gt;
+			&lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+     &lt;/div&gt;
+		&lt;/card-header&gt;
+		&lt;card-body class=&quot;panel&quot;&gt;
+ 			&lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ 			&lt;/div&gt;
+  		&lt;div class=&quot;con-footer&quot;&gt;
+	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		&lt;/div&gt;
+		&lt;/card-body&gt;
+	&lt;/wfm-card&gt;
+&lt;/wfm-card-list&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <wfm-card-list >
 	<wfm-card ng-repeat="item in items">
 		<card-header tabindex="-1">
      <div tabindex="0">
@@ -1763,22 +2078,53 @@ It is encouraged to add as much relevant information as possible to the header o
 		</card-body>
 	</wfm-card>
 </wfm-card-list>
-              </div>
-            </div>
+        </div>
+      </div>
 
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;wfm-card-list &gt;
+
+
+  </section>
+        <section id="kssref-4-15" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card list (multiple)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.15 </small>
+
+
+          <div class="kss-description">
+            <p>The multi select card list can have any number of cards open to allow for easy comparison of content.</p>
+
+          </div>
+        </div>
+
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (multiple)'] = !markupShow['Card list (multiple)']">
+            <span ng-hide="markupShow['Card list (multiple)']">Show</span>
+            <span ng-show="markupShow['Card list (multiple)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card list (multiple)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;wfm-card-list multi-select&gt;
 	&lt;wfm-card ng-repeat=&quot;item in items&quot;&gt;
 		&lt;card-header tabindex=&quot;-1&quot;&gt;
      &lt;div tabindex=&quot;0&quot;&gt;
 			&lt;span&gt;&lt;i class=&quot;mdi&quot; ng-class=&quot;item.title&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-				&lt;b&gt;Single card title&lt;/b&gt;
-			&lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+				&lt;b&gt;Multi card title&lt;/b&gt;
+         &lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
      &lt;/div&gt;
 		&lt;/card-header&gt;
 		&lt;card-body class=&quot;panel&quot;&gt;
  			&lt;div class=&quot;con-row demo-outline&quot;&gt;
-    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content
+         &lt;/div&gt;
  			&lt;/div&gt;
   		&lt;div class=&quot;con-footer&quot;&gt;
 	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
@@ -1786,33 +2132,18 @@ It is encouraged to add as much relevant information as possible to the header o
   		&lt;/div&gt;
 		&lt;/card-body&gt;
 	&lt;/wfm-card&gt;
-&lt;/wfm-card-list&gt;</code></pre>
-            </div>
+&lt;/wfm-card-list&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
 
-        </section>
-          <section id="kssref-4-15" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.15</span
-                  >Card list (multiple)
-                </a>
-              </h2>
-
-
-              <div class="kss-description">
-                <p>The multi select card list can have any number of cards open to allow for easy comparison of content.</p>
-
-              </div>
-            </div>
-
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <wfm-card-list multi-select>
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <wfm-card-list multi-select>
 	<wfm-card ng-repeat="item in items">
 		<card-header tabindex="-1">
      <div tabindex="0">
@@ -1833,57 +2164,73 @@ It is encouraged to add as much relevant information as possible to the header o
 		</card-body>
 	</wfm-card>
 </wfm-card-list>
-              </div>
-            </div>
-
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;wfm-card-list multi-select&gt;
-	&lt;wfm-card ng-repeat=&quot;item in items&quot;&gt;
-		&lt;card-header tabindex=&quot;-1&quot;&gt;
-     &lt;div tabindex=&quot;0&quot;&gt;
-			&lt;span&gt;&lt;i class=&quot;mdi&quot; ng-class=&quot;item.title&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-				&lt;b&gt;Multi card title&lt;/b&gt;
-         &lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-     &lt;/div&gt;
-		&lt;/card-header&gt;
-		&lt;card-body class=&quot;panel&quot;&gt;
- 			&lt;div class=&quot;con-row demo-outline&quot;&gt;
-    		&lt;div class=&quot;con-flex&quot;&gt;Content
-         &lt;/div&gt;
- 			&lt;/div&gt;
-  		&lt;div class=&quot;con-footer&quot;&gt;
-	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
-    		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
-  		&lt;/div&gt;
-		&lt;/card-body&gt;
-	&lt;/wfm-card&gt;
-&lt;/wfm-card-list&gt;</code></pre>
-            </div>
-
-        </section>
-          <section id="kssref-4-16" class="kss-section kss-section--depth-2">
-
-            <div class="kss-style">
-              <h2 class="kss-title kss-title--level-2">
-              <a class="kss-title__permalink">
-                <span class="kss-title__ref">4.16</span
-                  >Card list (open by default)
-                </a>
-              </h2>
+        </div>
+      </div>
 
 
-              <div class="kss-description">
-                <p>The multi select cards can be set to be open by default.</p>
 
-              </div>
-            </div>
+  </section>
+        <section id="kssref-4-16" class="kss-section material-depth-1 kss-section--depth-2">
 
-            <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__heading kss-style">
-                Example
-              </div>
-              <div class="kss-modifier__example">
-                <wfm-card-list multi-select>
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card list (open by default)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.16 </small>
+
+
+          <div class="kss-description">
+            <p>The multi select cards can be set to be open by default.</p>
+
+          </div>
+        </div>
+
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (open by default)'] = !markupShow['Card list (open by default)']">
+            <span ng-hide="markupShow['Card list (open by default)']">Show</span>
+            <span ng-show="markupShow['Card list (open by default)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card list (open by default)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;wfm-card-list multi-select&gt;
+	  &lt;wfm-card ng-repeat=&quot;item in items&quot; open=&quot;item.bool&quot;&gt;
+		 &lt;card-header tabindex=&quot;-1&quot;&gt;
+      &lt;div tabindex=&quot;0&quot;&gt;
+			  &lt;span&gt;&lt;i class=&quot;mdi&quot; ng-class=&quot;item.title&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+				 &lt;b&gt;Multi card title&lt;/b&gt;
+			  &lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+      &lt;/div&gt;
+		 &lt;/card-header&gt;
+		 &lt;card-body class=&quot;panel&quot;&gt;
+ 			 &lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		 &lt;div class=&quot;con-flex&quot;&gt;Content
+          &lt;/div&gt;
+ 			 &lt;/div&gt;
+  		 &lt;div class=&quot;con-footer&quot;&gt;
+	 			  &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		 &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		 &lt;/div&gt;
+		 &lt;/card-body&gt;
+	  &lt;/wfm-card&gt;
+&lt;/wfm-card-list&gt;
+
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <wfm-card-list multi-select>
 	  <wfm-card ng-repeat="item in items" open="item.bool">
 		 <card-header tabindex="-1">
       <div tabindex="0">
@@ -1905,47 +2252,24 @@ It is encouraged to add as much relevant information as possible to the header o
 	  </wfm-card>
 </wfm-card-list>
 
-              </div>
-            </div>
-
-            <div class="kss-markup kss-style">
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;wfm-card-list multi-select&gt;
-	  &lt;wfm-card ng-repeat=&quot;item in items&quot; open=&quot;item.bool&quot;&gt;
-		 &lt;card-header tabindex=&quot;-1&quot;&gt;
-      &lt;div tabindex=&quot;0&quot;&gt;
-			  &lt;span&gt;&lt;i class=&quot;mdi&quot; ng-class=&quot;item.title&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-				 &lt;b&gt;Multi card title&lt;/b&gt;
-			  &lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-      &lt;/div&gt;
-		 &lt;/card-header&gt;
-		 &lt;card-body class=&quot;panel&quot;&gt;
- 			 &lt;div class=&quot;con-row demo-outline&quot;&gt;
-    		 &lt;div class=&quot;con-flex&quot;&gt;Content
-          &lt;/div&gt;
- 			 &lt;/div&gt;
-  		 &lt;div class=&quot;con-footer&quot;&gt;
-	 			  &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
-    		 &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
-  		 &lt;/div&gt;
-		 &lt;/card-body&gt;
-	  &lt;/wfm-card&gt;
-&lt;/wfm-card-list&gt;
-</code></pre>
-            </div>
-
-        </section>
-      </article>
-
-      <script src="public/kss.js"></script>
-      <script src="public/prettify.js"></script>
-
-      <script>
-      prettyPrint();
-      </script>
-
-      
+        </div>
+      </div>
 
 
-      <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
-    </body>
-    </html>
+
+  </section>
+</article>
+
+<script src="public/kss.js"></script>
+<script src="public/prettify.js"></script>
+
+<script>
+prettyPrint();
+</script>
+
+
+
+
+<!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>
