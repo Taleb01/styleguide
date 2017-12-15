@@ -181,6 +181,7 @@
 
   <article role="main">
     <article role="main" class="kss-main">
+
       <div id="kssref-2" class="kss-section section-hero kss-section--depth-1">
 
           <div class="kss-style">
@@ -197,9 +198,34 @@
 
           </div>
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Components')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
     </div>
+
         <section id="kssref-2-1" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
@@ -216,7 +242,31 @@
 
           </div>
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Date picker')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
           <div class="ksscopy kss-style" ng-click="markupShow['Date picker'] = !markupShow['Date picker']">
@@ -246,6 +296,7 @@
 
 
   </section>
+
         <section id="kssref-2-2" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
@@ -298,7 +349,31 @@ $scope.dateRangeCustomValidators = [{
 </div>
           </div>
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Date range picker')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
           <div class="ksscopy kss-style" ng-click="markupShow['Date range picker'] = !markupShow['Date range picker']">
@@ -344,6 +419,7 @@ $scope.dateRangeCustomValidators = [{
 
 
   </section>
+
         <section id="kssref-2-3" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
@@ -389,7 +465,31 @@ $scope.dateRangeCustomValidators = [{
 </div>
           </div>
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Line chart')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
           <div class="ksscopy kss-style" ng-click="markupShow['Line chart'] = !markupShow['Line chart']">
@@ -447,6 +547,7 @@ $scope.dateRangeCustomValidators = [{
 
 
   </section>
+
         <section id="kssref-2-4" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
@@ -471,7 +572,31 @@ The pickers are self-adjusted to the user&#39;s time-format setting, i.e. meridi
 
           </div>
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Time range Picker')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
           <div class="ksscopy kss-style" ng-click="markupShow['Time range Picker'] = !markupShow['Time range Picker']">
@@ -505,6 +630,7 @@ The pickers are self-adjusted to the user&#39;s time-format setting, i.e. meridi
 
 
   </section>
+
         <section id="kssref-2-5" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
@@ -547,7 +673,31 @@ $scope.displaySuccess = function() {
 </div>
           </div>
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Notices')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
           <div class="ksscopy kss-style" ng-click="markupShow['Notices'] = !markupShow['Notices']">
@@ -595,6 +745,7 @@ $scope.displaySuccess = function() {
 
 
   </section>
+
         <section id="kssref-2-6" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
@@ -635,7 +786,31 @@ $scope.getPageData = function(pageIndex) {
 </div>
           </div>
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Pagination')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
           <div class="ksscopy kss-style" ng-click="markupShow['Pagination'] = !markupShow['Pagination']">
@@ -665,6 +840,7 @@ $scope.getPageData = function(pageIndex) {
 
 
   </section>
+
         <section id="kssref-2-7" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
@@ -688,7 +864,31 @@ $scope.getPageData = function(pageIndex) {
 
           </div>
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Working hours picker')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
           <div class="ksscopy kss-style" ng-click="markupShow['Working hours picker'] = !markupShow['Working hours picker']">
@@ -718,6 +918,7 @@ $scope.getPageData = function(pageIndex) {
 
 
   </section>
+
         <section id="kssref-2-8" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
@@ -736,7 +937,31 @@ The directive accepts the &quot;float-number&quot; tag attribute. Without it the
 
           </div>
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Numeric value')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
           <div class="ksscopy kss-style" ng-click="markupShow['Numeric value'] = !markupShow['Numeric value']">
@@ -788,6 +1013,7 @@ The directive accepts the &quot;float-number&quot; tag attribute. Without it the
 
 
   </section>
+
         <section id="kssref-2-9" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
@@ -882,7 +1108,31 @@ $scope.output = function (selectedItem){
 </div>
           </div>
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Skill picker')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
           <div class="ksscopy kss-style" ng-click="markupShow['Skill picker'] = !markupShow['Skill picker']">

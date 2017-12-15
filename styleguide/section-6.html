@@ -117,6 +117,7 @@
 
   <article role="main">
     <article role="main" class="kss-main">
+
       <div id="kssref-6" class="kss-section section-hero kss-section--depth-1">
 
           <div class="kss-style">
@@ -134,9 +135,34 @@ By keeping common terms we also save translation resources.</p>
 
           </div>
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Language')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
     </div>
+
         <section id="kssref-6-1" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
@@ -167,7 +193,31 @@ By keeping common terms we also save translation resources.</p>
 </table>
           </div>
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('How we use words')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
   </section>
 </article>
