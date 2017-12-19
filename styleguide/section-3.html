@@ -62,6 +62,14 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">3.1</span
+                ><span class="kss-nav__name">Color shorthand</span>
+
+              </li>
+            </a>
+          <a href="section-3.html#kssref-3-2">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">3.2</span
                 ><span class="kss-nav__name">Main colors</span>
 
               </li>
@@ -133,15 +141,7 @@
             <p>Colors are used to indicate states of some elements (green for selected items, orange for warnings, red for errors and so on) or to make things blend in/stick out more.
 In general, the smaller and more separate something is, the more saturated it can be to grab attention.
 By providing common color variables we can have different themes and still keep a consistent feeling.
-In the example below you can see how the colors are represented in different themes. You can also see the preferred text color for that color.
-There are some predefined colors for standard text that will adapt to the theme automatically:
- <table class="wfm-table">
-   <thead><tr><th>Variable</th><th>Description</th></tr></thead>
-   <tbody>
-     <tr><td>$text-color-standard</td><td>Standard color used in panels</td></tr>
-     <tr><td>$text-color-muted</td><td>Slightly muted color for use on disabled/secondary text</td></tr>
-   </tbody>
- </table></p>
+In the example below you can see how the colors are represented in different themes. You can also see the preferred text color for that color.</p>
 
           </div>
         </div>
@@ -178,10 +178,87 @@ There are some predefined colors for standard text that will adapt to the theme 
           <div class="kss-style">
             <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
-              Main colors
+              Color shorthand
             </a>
           </h2>
           <small class="kss-title__ref">3.1 </small>
+
+
+          <div class="kss-description">
+            <p>These colors should be used as default when building new components</p>
+<table class="wfm-table">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Uses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$primary</td>
+<td>Used for navbars, primary actions and backgrounds </td>
+</tr>
+<tr>
+<td>$secondary</td>
+<td>Used for headers and passive elements</td>
+</tr>
+<tr>
+<td>$highlight</td>
+<td>Used for selected and active elements</td>
+</tr>
+<tr>
+<td>$hover</td>
+<td>Used for hover backgrounds or inactive elements</td>
+</tr>
+</tbody>
+</table>
+<p>There are some predefined colors for standard text that will adapt to the theme automatically:</p>
+ <table class="wfm-table">
+   <thead><tr><th>Variable</th><th>Description</th></tr></thead>
+   <tbody>
+     <tr><td>$text-color-standard</td><td>Standard color used in panels</td></tr>
+     <tr><td>$text-color-muted</td><td>Slightly muted color for use on disabled/secondary text</td></tr>
+   </tbody>
+ </table>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Color shorthand')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+  </section>
+
+        <section id="kssref-3-2" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Main colors
+            </a>
+          </h2>
+          <small class="kss-title__ref">3.2 </small>
 
 
           <div class="kss-description">
