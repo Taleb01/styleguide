@@ -18,6 +18,101 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   );
 
 
+  $templateCache.put('directives/calendar-picker/calendar-picker.gregorian.template.tpl.html',
+    "<wfm-calendar-picker-header class=\"con-row between-date-info-wrapper\">\n" +
+    "    <div class=\"con-flex\" ng-class=\"{'notice-warning':!vm.isValid, 'notice-info':vm.isValid}\">\n" +
+    "        <div tabindex=0 class=\"context-menu card-context\" ng-click=\"vm.hightLightToday()\">\n" +
+    "            <i class=\"mdi mdi-calendar-range\"></i>\n" +
+    "            <md-tooltip>Display Today</md-tooltip>\n" +
+    "        </div>\n" +
+    "        <span ng-if=\"vm.dateRangeText.length > 0\">{{vm.dateRangeText | translate}}</span>\n" +
+    "    </div>\n" +
+    "</wfm-calendar-picker-header>\n" +
+    "<wfm-calendar-picker-body class=\"con-row\">\n" +
+    "    <div class=\"con-flex date-info-wrapper\" ng-if=\"vm.singleDatePicker == undefined\">\n" +
+    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='start-date' || vm.disable=='all'}\" ng-click=\"vm.resetStartDate()\">\n" +
+    "            <span class=\"date-info-label\" translate>From</span>\n" +
+    "            <h1 class=\"date-info\">{{vm.pickStartDate | amDateFormat:\"LL\"}}</h1>\n" +
+    "            <div class=\"clear-select-date-grow-out\">\n" +
+    "                <i class=\"mdi mdi-close\"></i>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='end-date' || vm.disable=='all'}\" ng-click=\"vm.resetEndDate()\">\n" +
+    "            <span class=\"date-info-label\" translate>To</span>\n" +
+    "            <h1 class=\"date-info\">{{vm.pickEndDate | amDateFormat:\"LL\"}}</h1>\n" +
+    "            <div class=\"clear-select-date-grow-out\">\n" +
+    "                <i class=\"mdi mdi-close\"></i>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"con-flex date-info-wrapper\" ng-if=\"vm.singleDatePicker !== undefined\">\n" +
+    "        <div class=\"select-date-info-wrapper single-select-mode pointer\" ng-click=\"vm.resetDate()\">\n" +
+    "            <span class=\"date-info-label\">SELECTED DATE</span>\n" +
+    "            <h1 class=\"date-info\">{{vm.pickDate | amDateFormat:\"LL\"}}</h1>\n" +
+    "            <div class=\"clear-select-date-grow-out\">\n" +
+    "                <i class=\"mdi mdi-close\"></i>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"con-flex date-info-calendar-wrapper\">\n" +
+    "        <div uib-datepicker ng-model=\"vm.pickDate\" ng-class=\"{'non-pointer':vm.disable === 'all'}\" ng-change=\"vm.switchDate()\" datepicker-options=\"vm.options\"></div>\n" +
+    "    </div>\n" +
+    "</wfm-calendar-picker-body>\n"
+  );
+
+
+  $templateCache.put('directives/calendar-picker/calendar-picker.jalaali.template.tpl.html',
+    "<wfm-calendar-picker-header class=\"con-row between-date-info-wrapper\">\n" +
+    "        <div class=\"con-flex\" ng-class=\"{'notice-warning':!vm.isValid, 'notice-info':vm.isValid}\">\n" +
+    "            <div tabindex=0 class=\"context-menu card-context\" ng-click=\"vm.hightLightToday()\">\n" +
+    "                <i class=\"mdi mdi-calendar-range\"></i>\n" +
+    "                <md-tooltip>Display Today</md-tooltip>\n" +
+    "            </div>\n" +
+    "            <span ng-if=\"vm.dateRangeText.length > 0\">{{vm.dateRangeText | translate}}</span>\n" +
+    "        </div>\n" +
+    "    </wfm-calendar-picker-header>\n" +
+    "    <wfm-calendar-picker-body class=\"con-row\">\n" +
+    "        <div class=\"con-flex date-info-wrapper\" ng-if=\"vm.singleDatePicker == undefined\">\n" +
+    "            <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='start-date' || vm.disable=='all'}\" ng-click=\"vm.resetStartDate()\">\n" +
+    "                <span class=\"date-info-label\" translate>From</span>\n" +
+    "                <h1 class=\"date-info jallali-start-date\">{{vm.pickStartDate | persianDate:'fullDate'}}</h1>\n" +
+    "                <div class=\"clear-select-date-grow-out\">\n" +
+    "                    <i class=\"mdi mdi-close\"></i>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "            <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='end-date' || vm.disable=='all'}\" ng-click=\"vm.resetEndDate()\">\n" +
+    "                <span class=\"date-info-label\" translate>To</span>\n" +
+    "                <h1 class=\"date-info jallali-end-date\">{{vm.pickEndDate | persianDate:'fullDate'}}</h1>\n" +
+    "                <div class=\"clear-select-date-grow-out\">\n" +
+    "                    <i class=\"mdi mdi-close\"></i>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"con-flex date-info-wrapper\" ng-if=\"vm.singleDatePicker !== undefined\">\n" +
+    "            <div class=\"select-date-info-wrapper single-select-mode pointer\" ng-click=\"vm.resetDate()\">\n" +
+    "                <span class=\"date-info-label\" translate>SelectedDate</span>\n" +
+    "                <h1 class=\"date-info\">{{vm.pickDate | persianDate:'fullDate'}}</h1>\n" +
+    "                <div class=\"clear-select-date-grow-out\">\n" +
+    "                    <i class=\"mdi mdi-close\"></i>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"con-flex date-info-calendar-wrapper\">\n" +
+    "            <persian-datepicker ng-model=\"vm.pickDate\" ng-class=\"{'non-pointer':vm.disable === 'all'}\" ng-change=\"vm.switchDate()\" show-weeks=\"vm.showWeek\" custom-class=\"vm.options.customClass()\"></persian-datepicker>\n" +
+    "        </div>\n" +
+    "    </wfm-calendar-picker-body>\n"
+  );
+
+
+  $templateCache.put('directives/card-panel/card-panel.template.tpl.html',
+    "<div class=\"panel material-depth-1\">\n" +
+    "    <div class=\"card-panel-header-wrapper pointer\" ng-class=\"vm.setColorClass()\" ng-style=\"vm.setColor()\" ng-transclude=\"header\"\n" +
+    "        card-animate=\"{{vm.open}}\" id=\"{{vm.id}}\" pre-open=\"{{vm.preOpen}}\"></div>\n" +
+    "    <div class=\"card-panel-content-wrapper hidden\" ng-transclude=\"content\" id=\"{{vm.id}}\"></div>\n" +
+    "</div>"
+  );
+
+
   $templateCache.put('directives/cultural-datepicker/cultural-datepicker.tpl.html',
     "<div ng-if=\"isJalaali\" class=\"wfm-datepicker-wrap\" style=\"display:inline-block; min-height:290px;\">\n" +
     "  <persian-datepicker ng-model=\"dt\" show-weeks=\"true\" class=\"wfm-datepicker\"></persian-datepicker>\n" +
@@ -199,6 +294,26 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "  <i class=\"mdi mdi-alert-octagon\"></i>\n" +
     "  <span translate>StartTimeAndEndTimeMustBeSet</span>\n" +
     "</div>\n"
+  );
+
+
+  $templateCache.put('directives/tree-picker/tree_data.tpl.html',
+    "<div class=\"tree\">\n" +
+    "  <ol ng-model=\"vm.data\" style=\"padding:0;\">\n" +
+    "    <li node-id=\"$index\" ng-repeat=\"node in vm.data[vm.nodeChildrenName]\" ng-include=\"'tree_child_renderer.html'\"></li>\n" +
+    "  </ol>\n" +
+    "</div>\n" +
+    "<script type=\"text/ng-template\" id=\"tree_child_renderer.html\">\n" +
+    "  <div class=\"tree-toggle-group\" tree-animate>\n" +
+    "    <div class=\"toggle-handle\">\n" +
+    "      <i ng-hide=\"!node[vm.nodeChildrenName] || node[vm.nodeChildrenName].length==0 \" class=\"mdi mdi-chevron-right\"></i>\n" +
+    "    </div>\n" +
+    "    <div class=\"tree-handle-wrapper\" ng-class=\"{'selected-true': node[vm.nodeSelectedMark], 'semi-true': node[vm.NodeSemiSelected]}\" ng-click=\"vm.selectNode(this)\" ng-bind=\"node[vm.nodeDisplayName]\"></div>\n" +
+    "  </div>\n" +
+    "  <ol ng-model=\"node\">\n" +
+    "    <li node-id=\"$index\" ng-repeat=\"node in node[vm.nodeChildrenName]\" ng-include=\"'tree_child_renderer.html'\" class=\"hidden\"></li>\n" +
+    "  </ol>\n" +
+    "</script>"
   );
 
 

@@ -172,7 +172,7 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">4.14</span
-                ><span class="kss-nav__name">Card list</span>
+                ><span class="kss-nav__name">Card list (multiple open)</span>
 
               </li>
             </a>
@@ -180,7 +180,7 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">4.15</span
-                ><span class="kss-nav__name">Card list (multiple)</span>
+                ><span class="kss-nav__name">Card list (pre-open)</span>
 
               </li>
             </a>
@@ -188,7 +188,31 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">4.16</span
-                ><span class="kss-nav__name">Card list (open by default)</span>
+                ><span class="kss-nav__name">Card list (single open)</span>
+
+              </li>
+            </a>
+          <a href="section-4.html#kssref-4-17">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.17</span
+                ><span class="kss-nav__name">Card list (simple color bar)</span>
+
+              </li>
+            </a>
+          <a href="section-4.html#kssref-4-18">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.18</span
+                ><span class="kss-nav__name">Card list (special simple color bar)</span>
+
+              </li>
+            </a>
+          <a href="section-4.html#kssref-4-19">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">4.19</span
+                ><span class="kss-nav__name">Card list (linear color bar)</span>
 
               </li>
             </a>
@@ -2355,20 +2379,26 @@ The card can have different colors by applying notice-info, notice-warning, noti
           <div class="kss-style">
             <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
-              Card list
+              Card list (multiple open)
             </a>
           </h2>
           <small class="kss-title__ref">4.14 </small>
 
 
           <div class="kss-description">
-            <p>The single select card list only allows for one card open at any given time, this is useful when the content needs more focused attention.
-It is encouraged to add as much relevant information as possible to the header of the card (while avoiding text wrapping). Any html elements provided within the &lt;card-header&gt; and/or &lt;card-body&gt; tags will be rendered accordingly.</p>
-
+            <p>The card list consists of expandable panels-like cards. The header part is used for displaying a title and other indicators. The content part could contains any type of html elements.
+By default, card list items support open multiple cards at the same time.</p>
+<table class="wfm-table">
+<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+<tr><td>pre-open</td><td>Bind to a repeated card that should be open.</td><td>false</td></tr>
+<tr><td>open</td><td>can be set to &#39;single&#39; to open one card at a time, closing previously open ones</td><td>false</td></tr>
+<tr><td>color</td><td>Bind a object that defines colors on all cards, can include linear gradient to indicate order or scale</td><td>false</td></tr>
+<tr><td>color-condition</td><td>Options for what color goes on what card</td><td>false</td></tr>
+</table>
           </div>
         </div>
         <!--Only for resource page-->
-        <div ng-cloak ng-if="checkResourceSection('Card list')">
+        <div ng-cloak ng-if="checkResourceSection('Card list (multiple open)')">
           <div class="con-row">
             <div class="con-flex inline-flex">
               <i class="mdi mdi-filter-outline"></i>
@@ -2394,25 +2424,22 @@ It is encouraged to add as much relevant information as possible to the header o
         <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
-          <div class="ksscopy kss-style" ng-click="markupShow['Card list'] = !markupShow['Card list']">
-            <span ng-hide="markupShow['Card list']">Show</span>
-            <span ng-show="markupShow['Card list']">Hide</span>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (multiple open)'] = !markupShow['Card list (multiple open)']">
+            <span ng-hide="markupShow['Card list (multiple open)']">Show</span>
+            <span ng-show="markupShow['Card list (multiple open)']">Hide</span>
             markup
             <i class="mdi mdi-code-tags pull-right"></i>
           </div>
-          <div class="animate-show" ng-show="markupShow['Card list']">
+          <div class="animate-show" ng-show="markupShow['Card list (multiple open)']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;wfm-card-list &gt;
-	&lt;wfm-card ng-repeat=&quot;item in items&quot;&gt;
-		&lt;card-header tabindex=&quot;-1&quot;&gt;
-     &lt;div tabindex=&quot;0&quot;&gt;
-			&lt;span&gt;&lt;i class=&quot;mdi&quot; ng-class=&quot;item.title&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-				&lt;b&gt;Single card title&lt;/b&gt;
-			&lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-     &lt;/div&gt;
-		&lt;/card-header&gt;
-		&lt;card-body class=&quot;panel&quot;&gt;
+                &lt;card-panel-list&gt;
+&lt;card-panel ng-repeat=&quot;item in cardListItems&quot; id=&quot;$index&quot;&gt;
+   &lt;card-panel-header&gt;
+       &lt;b&gt;Single card title&lt;/b&gt;
+   &lt;/card-panel-header&gt;
+   &lt;card-panel-content&gt;
+     &lt;div class=&quot;panel&quot;&gt;
  			&lt;div class=&quot;con-row demo-outline&quot;&gt;
     		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
  			&lt;/div&gt;
@@ -2420,9 +2447,10 @@ It is encouraged to add as much relevant information as possible to the header o
 	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
     		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
   		&lt;/div&gt;
-		&lt;/card-body&gt;
-	&lt;/wfm-card&gt;
-&lt;/wfm-card-list&gt;
+		&lt;/div&gt;
+  &lt;/card-panel-content&gt;
+&lt;/card-panel&gt;
+&lt;/card-panel-list&gt;
               </pre>
             </code>
           </div>
@@ -2433,16 +2461,13 @@ It is encouraged to add as much relevant information as possible to the header o
           Example
         </div> -->
         <div class="kss-modifier__example">
-          <wfm-card-list >
-	<wfm-card ng-repeat="item in items">
-		<card-header tabindex="-1">
-     <div tabindex="0">
-			<span><i class="mdi" ng-class="item.title"></i></span>
-				<b>Single card title</b>
-			<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
-     </div>
-		</card-header>
-		<card-body class="panel">
+          <card-panel-list>
+<card-panel ng-repeat="item in cardListItems" id="$index">
+   <card-panel-header>
+       <b>Single card title</b>
+   </card-panel-header>
+   <card-panel-content>
+     <div class="panel">
  			<div class="con-row demo-outline">
     		<div class="con-flex">Content</div>
  			</div>
@@ -2450,9 +2475,10 @@ It is encouraged to add as much relevant information as possible to the header o
 	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
     		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
   		</div>
-		</card-body>
-	</wfm-card>
-</wfm-card-list>
+		</div>
+  </card-panel-content>
+</card-panel>
+</card-panel-list>
         </div>
       </div>
 
@@ -2465,19 +2491,19 @@ It is encouraged to add as much relevant information as possible to the header o
           <div class="kss-style">
             <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
-              Card list (multiple)
+              Card list (pre-open)
             </a>
           </h2>
           <small class="kss-title__ref">4.15 </small>
 
 
           <div class="kss-description">
-            <p>The multi select card list can have any number of cards open to allow for easy comparison of content.</p>
+            <p>By using attribute &#39;pre-open&#39;, selected list items will pre-open on load.</p>
 
           </div>
         </div>
         <!--Only for resource page-->
-        <div ng-cloak ng-if="checkResourceSection('Card list (multiple)')">
+        <div ng-cloak ng-if="checkResourceSection('Card list (pre-open)')">
           <div class="con-row">
             <div class="con-flex inline-flex">
               <i class="mdi mdi-filter-outline"></i>
@@ -2503,36 +2529,33 @@ It is encouraged to add as much relevant information as possible to the header o
         <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
-          <div class="ksscopy kss-style" ng-click="markupShow['Card list (multiple)'] = !markupShow['Card list (multiple)']">
-            <span ng-hide="markupShow['Card list (multiple)']">Show</span>
-            <span ng-show="markupShow['Card list (multiple)']">Hide</span>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (pre-open)'] = !markupShow['Card list (pre-open)']">
+            <span ng-hide="markupShow['Card list (pre-open)']">Show</span>
+            <span ng-show="markupShow['Card list (pre-open)']">Hide</span>
             markup
             <i class="mdi mdi-code-tags pull-right"></i>
           </div>
-          <div class="animate-show" ng-show="markupShow['Card list (multiple)']">
+          <div class="animate-show" ng-show="markupShow['Card list (pre-open)']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;wfm-card-list multi-select&gt;
-	&lt;wfm-card ng-repeat=&quot;item in items&quot;&gt;
-		&lt;card-header tabindex=&quot;-1&quot;&gt;
-     &lt;div tabindex=&quot;0&quot;&gt;
-			&lt;span&gt;&lt;i class=&quot;mdi&quot; ng-class=&quot;item.title&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-				&lt;b&gt;Multi card title&lt;/b&gt;
-         &lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-     &lt;/div&gt;
-		&lt;/card-header&gt;
-		&lt;card-body class=&quot;panel&quot;&gt;
+                &lt;card-panel-list&gt;
+&lt;card-panel ng-repeat=&quot;item in cardListItems&quot; pre-open=&quot;item.Selected&quot; id=&quot;$index&quot;&gt;
+   &lt;card-panel-header&gt;
+       &lt;b&gt;Single card title&lt;/b&gt;
+   &lt;/card-panel-header&gt;
+   &lt;card-panel-content&gt;
+     &lt;div class=&quot;panel&quot;&gt;
  			&lt;div class=&quot;con-row demo-outline&quot;&gt;
-    		&lt;div class=&quot;con-flex&quot;&gt;Content
-         &lt;/div&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
  			&lt;/div&gt;
   		&lt;div class=&quot;con-footer&quot;&gt;
 	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
     		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
   		&lt;/div&gt;
-		&lt;/card-body&gt;
-	&lt;/wfm-card&gt;
-&lt;/wfm-card-list&gt;
+		&lt;/div&gt;
+  &lt;/card-panel-content&gt;
+&lt;/card-panel&gt;
+&lt;/card-panel-list&gt;
               </pre>
             </code>
           </div>
@@ -2543,27 +2566,24 @@ It is encouraged to add as much relevant information as possible to the header o
           Example
         </div> -->
         <div class="kss-modifier__example">
-          <wfm-card-list multi-select>
-	<wfm-card ng-repeat="item in items">
-		<card-header tabindex="-1">
-     <div tabindex="0">
-			<span><i class="mdi" ng-class="item.title"></i></span>
-				<b>Multi card title</b>
-         <span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
-     </div>
-		</card-header>
-		<card-body class="panel">
+          <card-panel-list>
+<card-panel ng-repeat="item in cardListItems" pre-open="item.Selected" id="$index">
+   <card-panel-header>
+       <b>Single card title</b>
+   </card-panel-header>
+   <card-panel-content>
+     <div class="panel">
  			<div class="con-row demo-outline">
-    		<div class="con-flex">Content
-         </div>
+    		<div class="con-flex">Content</div>
  			</div>
   		<div class="con-footer">
 	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
     		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
   		</div>
-		</card-body>
-	</wfm-card>
-</wfm-card-list>
+		</div>
+  </card-panel-content>
+</card-panel>
+</card-panel-list>
         </div>
       </div>
 
@@ -2576,19 +2596,19 @@ It is encouraged to add as much relevant information as possible to the header o
           <div class="kss-style">
             <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
-              Card list (open by default)
+              Card list (single open)
             </a>
           </h2>
           <small class="kss-title__ref">4.16 </small>
 
 
           <div class="kss-description">
-            <p>The multi select cards can be set to be open by default.</p>
+            <p>By using attribute &#39;open=&quot;single&quot;&#39;, the card list only allows one card to be open at a time.</p>
 
           </div>
         </div>
         <!--Only for resource page-->
-        <div ng-cloak ng-if="checkResourceSection('Card list (open by default)')">
+        <div ng-cloak ng-if="checkResourceSection('Card list (single open)')">
           <div class="con-row">
             <div class="con-flex inline-flex">
               <i class="mdi mdi-filter-outline"></i>
@@ -2614,37 +2634,33 @@ It is encouraged to add as much relevant information as possible to the header o
         <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
-          <div class="ksscopy kss-style" ng-click="markupShow['Card list (open by default)'] = !markupShow['Card list (open by default)']">
-            <span ng-hide="markupShow['Card list (open by default)']">Show</span>
-            <span ng-show="markupShow['Card list (open by default)']">Hide</span>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (single open)'] = !markupShow['Card list (single open)']">
+            <span ng-hide="markupShow['Card list (single open)']">Show</span>
+            <span ng-show="markupShow['Card list (single open)']">Hide</span>
             markup
             <i class="mdi mdi-code-tags pull-right"></i>
           </div>
-          <div class="animate-show" ng-show="markupShow['Card list (open by default)']">
+          <div class="animate-show" ng-show="markupShow['Card list (single open)']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;wfm-card-list multi-select&gt;
-	  &lt;wfm-card ng-repeat=&quot;item in items&quot; open=&quot;item.bool&quot;&gt;
-		 &lt;card-header tabindex=&quot;-1&quot;&gt;
-      &lt;div tabindex=&quot;0&quot;&gt;
-			  &lt;span&gt;&lt;i class=&quot;mdi&quot; ng-class=&quot;item.title&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-				 &lt;b&gt;Multi card title&lt;/b&gt;
-			  &lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-      &lt;/div&gt;
-		 &lt;/card-header&gt;
-		 &lt;card-body class=&quot;panel&quot;&gt;
- 			 &lt;div class=&quot;con-row demo-outline&quot;&gt;
-    		 &lt;div class=&quot;con-flex&quot;&gt;Content
-          &lt;/div&gt;
- 			 &lt;/div&gt;
-  		 &lt;div class=&quot;con-footer&quot;&gt;
-	 			  &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
-    		 &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
-  		 &lt;/div&gt;
-		 &lt;/card-body&gt;
-	  &lt;/wfm-card&gt;
-&lt;/wfm-card-list&gt;
-
+                &lt;card-panel-list&gt;
+&lt;card-panel ng-repeat=&quot;item in cardListItems&quot; open=&quot;single&quot; id=&quot;$index&quot;&gt;
+   &lt;card-panel-header&gt;
+       &lt;b&gt;Single card title&lt;/b&gt;
+   &lt;/card-panel-header&gt;
+   &lt;card-panel-content&gt;
+     &lt;div class=&quot;panel&quot;&gt;
+ 			&lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ 			&lt;/div&gt;
+  		&lt;div class=&quot;con-footer&quot;&gt;
+	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		&lt;/div&gt;
+		&lt;/div&gt;
+  &lt;/card-panel-content&gt;
+&lt;/card-panel&gt;
+&lt;/card-panel-list&gt;
               </pre>
             </code>
           </div>
@@ -2655,28 +2671,414 @@ It is encouraged to add as much relevant information as possible to the header o
           Example
         </div> -->
         <div class="kss-modifier__example">
-          <wfm-card-list multi-select>
-	  <wfm-card ng-repeat="item in items" open="item.bool">
-		 <card-header tabindex="-1">
-      <div tabindex="0">
-			  <span><i class="mdi" ng-class="item.title"></i></span>
-				 <b>Multi card title</b>
-			  <span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+          <card-panel-list>
+<card-panel ng-repeat="item in cardListItems" open="single" id="$index">
+   <card-panel-header>
+       <b>Single card title</b>
+   </card-panel-header>
+   <card-panel-content>
+     <div class="panel">
+ 			<div class="con-row demo-outline">
+    		<div class="con-flex">Content</div>
+ 			</div>
+  		<div class="con-footer">
+	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  		</div>
+		</div>
+  </card-panel-content>
+</card-panel>
+</card-panel-list>
+        </div>
       </div>
-		 </card-header>
-		 <card-body class="panel">
- 			 <div class="con-row demo-outline">
-    		 <div class="con-flex">Content
-          </div>
- 			 </div>
-  		 <div class="con-footer">
-	 			  <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
-    		 <button class="wfm-btn wfm-btn-invis-primary">Options</button>
-  		 </div>
-		 </card-body>
-	  </wfm-card>
-</wfm-card-list>
 
+
+
+  </section>
+
+        <section id="kssref-4-17" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card list (simple color bar)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.17 </small>
+
+
+          <div class="kss-description">
+            <p>By using attribute &#39;color&#39;, header part of card list items will contain a simple color bar on the left.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
+      <span ng-hide="showJs['cardDemo1']">Show</span>
+     <span ng-show="showJs['cardDemo1']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['cardDemo1']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+         $scope.simpleColor = {
+           render: &#39;class&#39;,
+           className: &#39;brown&#39;
+          }
+
+         css code example:
+         .brown {
+            border-color: $brown-100;
+          }
+
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Card list (simple color bar)')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (simple color bar)'] = !markupShow['Card list (simple color bar)']">
+            <span ng-hide="markupShow['Card list (simple color bar)']">Show</span>
+            <span ng-show="markupShow['Card list (simple color bar)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card list (simple color bar)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;card-panel-list&gt;
+&lt;card-panel ng-repeat=&quot;item in cardListItems&quot; color=&quot;simpleColor&quot; id=&quot;$index&quot;&gt;
+   &lt;card-panel-header&gt;
+       &lt;b&gt;Single card title&lt;/b&gt;
+   &lt;/card-panel-header&gt;
+   &lt;card-panel-content&gt;
+     &lt;div class=&quot;panel&quot;&gt;
+ 			&lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ 			&lt;/div&gt;
+  		&lt;div class=&quot;con-footer&quot;&gt;
+	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		&lt;/div&gt;
+		&lt;/div&gt;
+  &lt;/card-panel-content&gt;
+&lt;/card-panel&gt;
+&lt;/card-panel-list&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <card-panel-list>
+<card-panel ng-repeat="item in cardListItems" color="simpleColor" id="$index">
+   <card-panel-header>
+       <b>Single card title</b>
+   </card-panel-header>
+   <card-panel-content>
+     <div class="panel">
+ 			<div class="con-row demo-outline">
+    		<div class="con-flex">Content</div>
+ 			</div>
+  		<div class="con-footer">
+	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  		</div>
+		</div>
+  </card-panel-content>
+</card-panel>
+</card-panel-list>
+        </div>
+      </div>
+
+
+
+  </section>
+
+        <section id="kssref-4-18" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card list (special simple color bar)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.18 </small>
+
+
+          <div class="kss-description">
+            <p>By using a combination of attributes &#39;color&#39; and &#39;color-condition&#39;, header part of the card list items will contain simple color bars on the left by matching condition.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['cardDemo2'] = !showJs['cardDemo2']">
+      <span ng-hide="showJs['cardDemo2']">Show</span>
+     <span ng-show="showJs['cardDemo2']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['cardDemo2']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+         $scope.simpleColor2 = {
+           render: &#39;condition&#39;,
+           condition: { &#39;color1&#39;: &#39;brown&#39;, &#39;color2&#39;: &#39;orange&#39;, &#39;color3&#39;: &#39;purple&#39; }
+          }
+
+         css code example:
+         .brown {
+            border-color: $brown-100;
+          }
+
+         .purple {
+            border-color: $purple-300;
+          }
+
+         .orange {
+            border-color: $orange-400;
+          }
+
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Card list (special simple color bar)')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (special simple color bar)'] = !markupShow['Card list (special simple color bar)']">
+            <span ng-hide="markupShow['Card list (special simple color bar)']">Show</span>
+            <span ng-show="markupShow['Card list (special simple color bar)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card list (special simple color bar)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;card-panel-list&gt;
+&lt;card-panel ng-repeat=&quot;item in cardListItems&quot; color=&quot;simpleColor2&quot; color-condition=&quot;item.Color&quot; id=&quot;$index&quot;&gt;
+   &lt;card-panel-header&gt;
+       &lt;b&gt;Single card title&lt;/b&gt;
+   &lt;/card-panel-header&gt;
+   &lt;card-panel-content&gt;
+     &lt;div class=&quot;panel&quot;&gt;
+ 			&lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ 			&lt;/div&gt;
+  		&lt;div class=&quot;con-footer&quot;&gt;
+	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		&lt;/div&gt;
+		&lt;/div&gt;
+  &lt;/card-panel-content&gt;
+&lt;/card-panel&gt;
+&lt;/card-panel-list&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <card-panel-list>
+<card-panel ng-repeat="item in cardListItems" color="simpleColor2" color-condition="item.Color" id="$index">
+   <card-panel-header>
+       <b>Single card title</b>
+   </card-panel-header>
+   <card-panel-content>
+     <div class="panel">
+ 			<div class="con-row demo-outline">
+    		<div class="con-flex">Content</div>
+ 			</div>
+  		<div class="con-footer">
+	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  		</div>
+		</div>
+  </card-panel-content>
+</card-panel>
+</card-panel-list>
+        </div>
+      </div>
+
+
+
+  </section>
+
+        <section id="kssref-4-19" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card list (linear color bar)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.19 </small>
+
+
+          <div class="kss-description">
+            <p>By using attribute &#39;color&#39;, header part of card list items will contains simple color bar on the left by matching condition.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['cardDemo3'] = !showJs['cardDemo3']">
+      <span ng-hide="showJs['cardDemo3']">Show</span>
+     <span ng-show="showJs['cardDemo3']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['cardDemo3']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+         $scope.simpleColor3 = {
+          render: &#39;linear&#39;,
+          rgba: &#39;rgba(156, 39, 176, 1)&#39;
+          }
+
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Card list (linear color bar)')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (linear color bar)'] = !markupShow['Card list (linear color bar)']">
+            <span ng-hide="markupShow['Card list (linear color bar)']">Show</span>
+            <span ng-show="markupShow['Card list (linear color bar)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card list (linear color bar)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;card-panel-list&gt;
+&lt;card-panel ng-repeat=&quot;item in cardListItems&quot; color=&quot;simpleColor3&quot; id=&quot;$index&quot;&gt;
+   &lt;card-panel-header&gt;
+       &lt;b&gt;Single card title&lt;/b&gt;
+   &lt;/card-panel-header&gt;
+   &lt;card-panel-content&gt;
+     &lt;div class=&quot;panel&quot;&gt;
+ 			&lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ 			&lt;/div&gt;
+  		&lt;div class=&quot;con-footer&quot;&gt;
+	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		&lt;/div&gt;
+		&lt;/div&gt;
+  &lt;/card-panel-content&gt;
+&lt;/card-panel&gt;
+&lt;/card-panel-list&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <card-panel-list>
+<card-panel ng-repeat="item in cardListItems" color="simpleColor3" id="$index">
+   <card-panel-header>
+       <b>Single card title</b>
+   </card-panel-header>
+   <card-panel-content>
+     <div class="panel">
+ 			<div class="con-row demo-outline">
+    		<div class="con-flex">Content</div>
+ 			</div>
+  		<div class="con-footer">
+	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  		</div>
+		</div>
+  </card-panel-content>
+</card-panel>
+</card-panel-list>
         </div>
       </div>
 

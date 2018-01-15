@@ -56,7 +56,7 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">2.1</span
-                ><span class="kss-nav__name">Date picker</span>
+                ><span class="kss-nav__name">Single date picker</span>
 
               </li>
             </a>
@@ -72,7 +72,7 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">2.3</span
-                ><span class="kss-nav__name">Line chart</span>
+                ><span class="kss-nav__name">Date range picker with custom validation</span>
 
               </li>
             </a>
@@ -80,7 +80,7 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">2.4</span
-                ><span class="kss-nav__name">Time range Picker</span>
+                ><span class="kss-nav__name">Date range picker with only weeks/monthes interval</span>
 
               </li>
             </a>
@@ -88,7 +88,7 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">2.5</span
-                ><span class="kss-nav__name">Notices</span>
+                ><span class="kss-nav__name">Date range picker with preselected date</span>
 
               </li>
             </a>
@@ -96,7 +96,7 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">2.6</span
-                ><span class="kss-nav__name">Pagination</span>
+                ><span class="kss-nav__name">Line chart</span>
 
               </li>
             </a>
@@ -104,15 +104,7 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">2.7</span
-                ><span class="kss-nav__name">Working hours picker</span>
-
-              </li>
-            </a>
-          <a href="section-2.html#kssref-2-8">
-            <li class="kss-nav__menu-item">
-
-              <span class="kss-nav__ref">2.8</span
-                ><span class="kss-nav__name">Numeric value</span>
+                ><span class="kss-nav__name">Time range Picker</span>
 
               </li>
             </a>
@@ -120,6 +112,38 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">2.9</span
+                ><span class="kss-nav__name">Pagination</span>
+
+              </li>
+            </a>
+          <a href="section-2.html#kssref-2-10">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">2.10</span
+                ><span class="kss-nav__name">Working hours picker</span>
+
+              </li>
+            </a>
+          <a href="section-2.html#kssref-2-11">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">2.11</span
+                ><span class="kss-nav__name">Notices</span>
+
+              </li>
+            </a>
+          <a href="section-2.html#kssref-2-12">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">2.12</span
+                ><span class="kss-nav__name">Numeric value</span>
+
+              </li>
+            </a>
+          <a href="section-2.html#kssref-2-13">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">2.13</span
                 ><span class="kss-nav__name">Skill picker</span>
 
               </li>
@@ -231,19 +255,22 @@
           <div class="kss-style">
             <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
-              Date picker
+              Single date picker
             </a>
           </h2>
           <small class="kss-title__ref">2.1 </small>
 
 
           <div class="kss-description">
-            <p>The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes  to make it more compatible with material design.</p>
+            <p>The single date picker is based on bootstraps datepicker and use to take a single date easily.
+To use the single date picker as pop-up style please wrap it into <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
+Click on the calendar icon (left top corner) to quickly display &#39;today&#39; within calendar view.<br>
+Hover and click on the selected date section to reset the selected date to empty.</p>
 
           </div>
         </div>
         <!--Only for resource page-->
-        <div ng-cloak ng-if="checkResourceSection('Date picker')">
+        <div ng-cloak ng-if="checkResourceSection('Single date picker')">
           <div class="con-row">
             <div class="con-flex inline-flex">
               <i class="mdi mdi-filter-outline"></i>
@@ -269,16 +296,19 @@
         <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
-          <div class="ksscopy kss-style" ng-click="markupShow['Date picker'] = !markupShow['Date picker']">
-            <span ng-hide="markupShow['Date picker']">Show</span>
-            <span ng-show="markupShow['Date picker']">Hide</span>
+          <div class="ksscopy kss-style" ng-click="markupShow['Single date picker'] = !markupShow['Single date picker']">
+            <span ng-hide="markupShow['Single date picker']">Show</span>
+            <span ng-show="markupShow['Single date picker']">Hide</span>
             markup
             <i class="mdi mdi-code-tags pull-right"></i>
           </div>
-          <div class="animate-show" ng-show="markupShow['Date picker']">
+          <div class="animate-show" ng-show="markupShow['Single date picker']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;wfm-cultural-datepicker ng-model=&#x27;dateForDatepicker&#x27;&gt;&lt;/wfm-cultural-datepicker&gt;
+                &lt;h1&gt;With week numbers&lt;/h1&gt;
+&lt;wfm-calendar-picker ng-model=&quot;singleDate&quot; show-week=&quot;true&quot; single-date-picker&gt;&lt;/wfm-calendar-picker&gt;
+&lt;h1&gt;Withput week numbers&lt;/h1&gt;
+&lt;wfm-calendar-picker ng-model=&quot;singleDate&quot; show-week=&quot;false&quot; single-date-picker&gt;&lt;/wfm-calendar-picker&gt;
               </pre>
             </code>
           </div>
@@ -289,7 +319,10 @@
           Example
         </div> -->
         <div class="kss-modifier__example">
-          <wfm-cultural-datepicker ng-model='dateForDatepicker'></wfm-cultural-datepicker>
+          <h1>With week numbers</h1>
+<wfm-calendar-picker ng-model="singleDate" show-week="true" single-date-picker></wfm-calendar-picker>
+<h1>Withput week numbers</h1>
+<wfm-calendar-picker ng-model="singleDate" show-week="false" single-date-picker></wfm-calendar-picker>
         </div>
       </div>
 
@@ -309,44 +342,17 @@
 
 
           <div class="kss-description">
-            <p>A directive for specifying a date-only period. It is composed from datepicker with added validation messages.</p>
+            <p>The date range picker is based on bootstraps datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
+To use the date range picker as pop-up style please wrap it into pop-up menu (section 1.20). <br><br>
+Click on the calendar icon (left top corner) to quickly display &#39;today&#39; within calendar view.<br>
+Hover and click on the selected date section to reset the selected date to empty.</p>
 <table class="wfm-table">
 <tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
-<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs</td><td>true</td></tr>
-<tr><td>template-type</td><td>Declares whether to use <b>inline</b> or <b>popup</b> mode</td><td>false</td></tr>
-<tr><td>invalid-order-message</td><td>Message shown if dates are in wrong order. Standard use is &#39;StartDateMustBeEqualToOrEarlierThanEndDate&#39;</td><td>false</td></tr>
-<tr><td>invalid-empty-message</td><td>Message shown if no dates are entered. Standard use is &#39;StartDateAndEndDateMustBeSet&#39;</td><td>false</td></tr>
-<tr><td>custom-validators</td><td>Define additional validations. The value should be an array of validator-definition objects, which should have <code>key</code>, <code>message</code>, and <code>validate</code> properties defined. The <code>validate</code> attribute must be a function that accepts <code>startDate</code> and <code>endDate</code> as input and returns a boolean to indicate validation result.</td><td>false</td></tr>
+<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs. The date obejct default value is <code>null</code>./td&gt;<td>true</td></tr>
+<tr><td>show-week</td><td>Bind to a Bool type <code>true</code> or <code>false</code> value to display week numbers on the side of calendar view. </td><td>false</td></tr>
+<tr><td>interval-rule</td><td>select special interval rule to validate the date ranges by only <code>week</code> type or <code>month</code> type. </td><td>false</td></tr>
+<tr><td>custom-validation-function</td><td>Define additional validations conditions by a binding function. The reture of custom validation functions should be a string type that display the validate error/warning information. It could be a translate key that support by $translate.</td><td>false</td></tr>
 </table>
-
-<div class="jsprewrap">
-  <div class="ksscopy kss-style" ng-click="showJs['datepicker1'] = !showJs['datepicker1']">
-      <span ng-hide="showJs['datepicker1']">Show</span>
-     <span ng-show="showJs['datepicker1']">Hide</span>
-    JavaScript
-    <i class="mdi mdi-code-tags pull-right"></i>
-  </div>
-  <div class="animate-show" ng-show="showJs['datepicker1']">
-    <code>
-      <pre class="prettyprint linenums lang-js">
-
-$scope.dateRange = {
- startDate: new Date(),
- endDate: new Date()
-};
-$scope.dateRangeTemplateType = &#39;inline&#39;;
-$scope.dateRangeTemplateTypes = [&#39;popup&#39;, &#39;inline&#39;];
-$scope.dateRangeCustomValidators = [{
-    key: &#39;lessThan7Days&#39;,
-    message: &#39;DateRangeMustBeLessThanSevenDays&#39;,
-    validate: function(start, end) {
-        return moment(end).diff(moment(start), &#39;days&#39;) &lt;= 7;
-    }
-}];
-      </pre>
-    </code>
-  </div>
-</div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -385,15 +391,10 @@ $scope.dateRangeCustomValidators = [{
           <div class="animate-show" ng-show="markupShow['Date range picker']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;label&gt;Template type:&lt;/label&gt;
-&lt;md-select ng-model=&quot;dateRangeTemplateType&quot; aria-label=&quot;templateType&quot;&gt;
-  &lt;md-option ng-repeat=&quot;option in dateRangeTemplateTypes&quot; ng-value=&quot;option&quot;&gt;
-	&lt;span ng-bind=&quot;option&quot;&gt;&lt;/span&gt;
-  &lt;/md-option&gt;
-&lt;/md-select&gt;
-&lt;date-range-picker ng-model=&quot;dateRange&quot; template-type=&quot;dateRangeTemplateType&quot; custom-validators=&quot;dateRangeCustomValidators&quot;&gt;
-&lt;/date-range-picker&gt;
-
+                &lt;h1&gt;With week numbers&lt;/h1&gt;
+&lt;wfm-calendar-picker show-week=&quot;true&quot; ng-model=&quot;dateRange1&quot;&gt;&lt;/wfm-calendar-picker&gt;
+&lt;h1&gt;Withput week numbers&lt;/h1&gt;
+&lt;wfm-calendar-picker show-week=&quot;false&quot; ng-model=&quot;dateRange1&quot;&gt;&lt;/wfm-calendar-picker&gt;
               </pre>
             </code>
           </div>
@@ -404,15 +405,10 @@ $scope.dateRangeCustomValidators = [{
           Example
         </div> -->
         <div class="kss-modifier__example">
-          <label>Template type:</label>
-<md-select ng-model="dateRangeTemplateType" aria-label="templateType">
-  <md-option ng-repeat="option in dateRangeTemplateTypes" ng-value="option">
-	<span ng-bind="option"></span>
-  </md-option>
-</md-select>
-<date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType" custom-validators="dateRangeCustomValidators">
-</date-range-picker>
-
+          <h1>With week numbers</h1>
+<wfm-calendar-picker show-week="true" ng-model="dateRange1"></wfm-calendar-picker>
+<h1>Withput week numbers</h1>
+<wfm-calendar-picker show-week="false" ng-model="dateRange1"></wfm-calendar-picker>
         </div>
       </div>
 
@@ -425,10 +421,268 @@ $scope.dateRangeCustomValidators = [{
           <div class="kss-style">
             <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
-              Line chart
+              Date range picker with custom validation
             </a>
           </h2>
           <small class="kss-title__ref">2.3 </small>
+
+
+          <div class="kss-description">
+            <p>The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
+To use the date range picker as pop-up style please wrap it into <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20).
+Define additional validation  conditions by a binding function. The return of custom validation functions should be a string type that display the validate error/warning information. It could be a translate key that support by $translate. <br><br>
+Click on the calendar icon (left top corner) to quickly display &#39;today&#39; within calendar view.<br>
+Hover and click on the selected date section to reset the selected date to empty.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
+      <span ng-hide="showJs['cardDemo1']">Show</span>
+     <span ng-show="showJs['cardDemo1']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['cardDemo1']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+         $scope.customValid = function (data) {
+           if(data.startDate - data.endDate &gt; 0) {
+             return &quot;[custom validate]: your startDate is later than your endDate&quot;;
+           }
+           if(data.startDate - data.endDate &lt; 0) {
+             return &quot;[custom validate]: your startDate is earlier than your endDate&quot;;
+           }
+         }
+
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Date range picker with custom validation')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Date range picker with custom validation'] = !markupShow['Date range picker with custom validation']">
+            <span ng-hide="markupShow['Date range picker with custom validation']">Show</span>
+            <span ng-show="markupShow['Date range picker with custom validation']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Date range picker with custom validation']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;wfm-calendar-picker ng-model=&quot;dateRange2&quot; show-week=&quot;false&quot; custom-validate=&quot;customValid(dateRange2)&quot;&gt;&lt;/wfm-calendar-picker&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <wfm-calendar-picker ng-model="dateRange2" show-week="false" custom-validate="customValid(dateRange2)"></wfm-calendar-picker>
+        </div>
+      </div>
+
+
+
+  </section>
+
+        <section id="kssref-2-4" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Date range picker with only weeks/monthes interval
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.4 </small>
+
+
+          <div class="kss-description">
+            <p>The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
+To use the date range picker as pop-up style please wrap it into pop-up menu (section 1.20). <br><br>
+Click on the calendar icon (left top corner) to quickly display &#39;today&#39; within calendar view.<br>
+Hover and click on the selected date section to reset the selected date to empty.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Date range picker with only weeks/monthes interval')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Date range picker with only weeks/monthes interval'] = !markupShow['Date range picker with only weeks/monthes interval']">
+            <span ng-hide="markupShow['Date range picker with only weeks/monthes interval']">Show</span>
+            <span ng-show="markupShow['Date range picker with only weeks/monthes interval']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Date range picker with only weeks/monthes interval']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;h1&gt;validate only exam with week interval&lt;/h1&gt;
+&lt;wfm-calendar-picker ng-model=&quot;dateRange3&quot; show-week=&quot;false&quot; interval-rule=&quot;week&quot;&gt;&lt;/wfm-calendar-picker&gt;
+&lt;h1&gt;validate only exam with month interval&lt;/h1&gt;
+&lt;wfm-calendar-picker ng-model=&quot;dateRange4&quot; show-week=&quot;false&quot; interval-rule=&quot;month&quot;&gt;&lt;/wfm-calendar-picker&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <h1>validate only exam with week interval</h1>
+<wfm-calendar-picker ng-model="dateRange3" show-week="false" interval-rule="week"></wfm-calendar-picker>
+<h1>validate only exam with month interval</h1>
+<wfm-calendar-picker ng-model="dateRange4" show-week="false" interval-rule="month"></wfm-calendar-picker>
+        </div>
+      </div>
+
+
+
+  </section>
+
+        <section id="kssref-2-5" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Date range picker with preselected date
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.5 </small>
+
+
+          <div class="kss-description">
+            <p>The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
+To use the date range picker as pop-up style please wrap it into pop-up menu (section 1.20). <br><br>
+Click on the calendar icon (left top corner) to quickly display &#39;today&#39; within calendar view.<br>
+Hover and click on the selected date section to reset the selected date to empty.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Date range picker with preselected date')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Date range picker with preselected date'] = !markupShow['Date range picker with preselected date']">
+            <span ng-hide="markupShow['Date range picker with preselected date']">Show</span>
+            <span ng-show="markupShow['Date range picker with preselected date']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Date range picker with preselected date']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;h1&gt;Date range picker with disable selection on endDate&lt;/h1&gt;
+&lt;wfm-calendar-picker ng-model=&quot;dateRange5&quot; show-week=&quot;false&quot; disable=&quot;end-date&quot;&gt;&lt;/wfm-calendar-picker&gt;
+&lt;h1&gt;Date range picker with disable selection on startDate&lt;/h1&gt;
+&lt;wfm-calendar-picker ng-model=&quot;dateRange6&quot; show-week=&quot;false&quot; disable=&quot;start-date&quot;&gt;&lt;/wfm-calendar-picker&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <h1>Date range picker with disable selection on endDate</h1>
+<wfm-calendar-picker ng-model="dateRange5" show-week="false" disable="end-date"></wfm-calendar-picker>
+<h1>Date range picker with disable selection on startDate</h1>
+<wfm-calendar-picker ng-model="dateRange6" show-week="false" disable="start-date"></wfm-calendar-picker>
+        </div>
+      </div>
+
+
+
+  </section>
+
+        <section id="kssref-2-6" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Line chart
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.6 </small>
 
 
           <div class="kss-description">
@@ -548,7 +802,7 @@ $scope.dateRangeCustomValidators = [{
 
   </section>
 
-        <section id="kssref-2-4" class="kss-section material-depth-1 kss-section--depth-2">
+        <section id="kssref-2-7" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
             <h2 class="kss-title kss-title--level-2">
@@ -556,7 +810,7 @@ $scope.dateRangeCustomValidators = [{
               Time range Picker
             </a>
           </h2>
-          <small class="kss-title__ref">2.4 </small>
+          <small class="kss-title__ref">2.7 </small>
 
 
           <div class="kss-description">
@@ -631,7 +885,180 @@ The pickers are self-adjusted to the user&#39;s time-format setting, i.e. meridi
 
   </section>
 
-        <section id="kssref-2-5" class="kss-section material-depth-1 kss-section--depth-2">
+        <section id="kssref-2-9" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Pagination
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.9 </small>
+
+
+          <div class="kss-description">
+            <p>Pagination is a directive which displays a list of availale pages and provides the properties for outer scope to set the pagination options and get data for the given page number.</p>
+<table class="wfm-table">
+<tr><th>Attribute Name</th><th>Description</th><th>Required</th></tr>
+<tr><td>pagination-options</td><td>configurations about the pagination, it contains two properties. &quot;pageNumber&quot; is the current page number; &quot;totalPages&quot; is hwo many pages it sets.</td><td>true</td></tr>
+<tr><td>get-data-for-page-callback</td><td>this is the function which is used by the directive to call to get the data for a given page number.</td><td>true</td></tr>
+</table>
+
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['pagination'] = !showJs['pagination']">
+      <span ng-hide="showJs['pagination']">Show</span>
+     <span ng-show="showJs['pagination']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['pagination']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.paginationOptions = {pageNumber: 1, totalPages: 7};
+$scope.getPageData = function(pageIndex) {
+   angular.log(pageIndex);
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Pagination')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Pagination'] = !markupShow['Pagination']">
+            <span ng-hide="markupShow['Pagination']">Show</span>
+            <span ng-show="markupShow['Pagination']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Pagination']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;wfm-pagination class=&quot;pull-pagination&quot; pagination-options=&quot;paginationOptions&quot; get-data-for-page-callback=&quot;getPageData&quot;&gt;&lt;/wfm-pagination&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <wfm-pagination class="pull-pagination" pagination-options="paginationOptions" get-data-for-page-callback="getPageData"></wfm-pagination>
+        </div>
+      </div>
+
+
+
+  </section>
+
+        <section id="kssref-2-10" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Working hours picker
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.10 </small>
+
+
+          <div class="kss-description">
+            <p>A directive for specifying the week day and time range. It is built taking the time range picker as a dependency.</p>
+<p><table class="wfm-table"></p>
+<p><tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr></p>
+<p><tr><td>working-hours</td><td>The model</td><td>true</td></tr></p>
+<p><tr><td>over-night-switch</td><td>Allow next-day switch</td><td>false</td></tr></p>
+<p><tr><td>time-format-switch</td><td>Allow user to change between 24h/12h format</td><td>false</td></tr>
+</table>
+</br></p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Working hours picker')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Working hours picker'] = !markupShow['Working hours picker']">
+            <span ng-hide="markupShow['Working hours picker']">Show</span>
+            <span ng-show="markupShow['Working hours picker']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Working hours picker']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;work-picker working-hours=&quot;model&quot; over-night-switch=&quot;true&quot; time-format-switch=&quot;true&quot;&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <work-picker working-hours="model" over-night-switch="true" time-format-switch="true">
+        </div>
+      </div>
+
+
+
+  </section>
+
+        <section id="kssref-2-11" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
             <h2 class="kss-title kss-title--level-2">
@@ -639,7 +1066,7 @@ The pickers are self-adjusted to the user&#39;s time-format setting, i.e. meridi
               Notices
             </a>
           </h2>
-          <small class="kss-title__ref">2.5 </small>
+          <small class="kss-title__ref">2.11 </small>
 
 
           <div class="kss-description">
@@ -746,180 +1173,7 @@ $scope.displaySuccess = function() {
 
   </section>
 
-        <section id="kssref-2-6" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink">
-              Pagination
-            </a>
-          </h2>
-          <small class="kss-title__ref">2.6 </small>
-
-
-          <div class="kss-description">
-            <p>Pagination is a directive which displays a list of availale pages and provides the properties for outer scope to set the pagination options and get data for the given page number.</p>
-<table class="wfm-table">
-<tr><th>Attribute Name</th><th>Description</th><th>Required</th></tr>
-<tr><td>pagination-options</td><td>configurations about the pagination, it contains two properties. &quot;pageNumber&quot; is the current page number; &quot;totalPages&quot; is hwo many pages it sets.</td><td>true</td></tr>
-<tr><td>get-data-for-page-callback</td><td>this is the function which is used by the directive to call to get the data for a given page number.</td><td>true</td></tr>
-</table>
-
-<div class="jsprewrap">
-  <div class="ksscopy kss-style" ng-click="showJs['pagination'] = !showJs['pagination']">
-      <span ng-hide="showJs['pagination']">Show</span>
-     <span ng-show="showJs['pagination']">Hide</span>
-    JavaScript
-    <i class="mdi mdi-code-tags pull-right"></i>
-  </div>
-  <div class="animate-show" ng-show="showJs['pagination']">
-    <code>
-      <pre class="prettyprint linenums lang-js">
-
-$scope.paginationOptions = {pageNumber: 1, totalPages: 7};
-$scope.getPageData = function(pageIndex) {
-   angular.log(pageIndex);
-};
-      </pre>
-    </code>
-  </div>
-</div>
-          </div>
-        </div>
-        <!--Only for resource page-->
-        <div ng-cloak ng-if="checkResourceSection('Pagination')">
-          <div class="con-row">
-            <div class="con-flex inline-flex">
-              <i class="mdi mdi-filter-outline"></i>
-              <select ng-model="type.category">
-                <option value="" selected>All</option>
-                <option value="CSS">CSS</option>
-                <option value="JavaScript">JavaScript</option>
-                <option value="Tool">Tools</option>
-                <option value="UI">UI</option>
-                <option value="UX">UX</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
-
-           </div>
-          </div>
-        </div>
-        <!--Only for resource page-->
-
-        <div class="jsprewrap" ng-cloak>
-          <div class="ksscopy kss-style" ng-click="markupShow['Pagination'] = !markupShow['Pagination']">
-            <span ng-hide="markupShow['Pagination']">Show</span>
-            <span ng-show="markupShow['Pagination']">Hide</span>
-            markup
-            <i class="mdi mdi-code-tags pull-right"></i>
-          </div>
-          <div class="animate-show" ng-show="markupShow['Pagination']">
-            <code>
-              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;wfm-pagination class=&quot;pull-pagination&quot; pagination-options=&quot;paginationOptions&quot; get-data-for-page-callback=&quot;getPageData&quot;&gt;&lt;/wfm-pagination&gt;
-              </pre>
-            </code>
-          </div>
-        </div>
-
-        <div class="kss-modifier__wrapper">
-          <!-- <div class="kss-modifier__heading kss-style">
-          Example
-        </div> -->
-        <div class="kss-modifier__example">
-          <wfm-pagination class="pull-pagination" pagination-options="paginationOptions" get-data-for-page-callback="getPageData"></wfm-pagination>
-        </div>
-      </div>
-
-
-
-  </section>
-
-        <section id="kssref-2-7" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink">
-              Working hours picker
-            </a>
-          </h2>
-          <small class="kss-title__ref">2.7 </small>
-
-
-          <div class="kss-description">
-            <p>A directive for specifying the week day and time range. It is built taking the time range picker as a dependency.</p>
-<p><table class="wfm-table"></p>
-<p><tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr></p>
-<p><tr><td>working-hours</td><td>The model</td><td>true</td></tr></p>
-<p><tr><td>over-night-switch</td><td>Allow next-day switch</td><td>false</td></tr></p>
-<p><tr><td>time-format-switch</td><td>Allow user to change between 24h/12h format</td><td>false</td></tr>
-</table>
-</br></p>
-
-          </div>
-        </div>
-        <!--Only for resource page-->
-        <div ng-cloak ng-if="checkResourceSection('Working hours picker')">
-          <div class="con-row">
-            <div class="con-flex inline-flex">
-              <i class="mdi mdi-filter-outline"></i>
-              <select ng-model="type.category">
-                <option value="" selected>All</option>
-                <option value="CSS">CSS</option>
-                <option value="JavaScript">JavaScript</option>
-                <option value="Tool">Tools</option>
-                <option value="UI">UI</option>
-                <option value="UX">UX</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
-
-           </div>
-          </div>
-        </div>
-        <!--Only for resource page-->
-
-        <div class="jsprewrap" ng-cloak>
-          <div class="ksscopy kss-style" ng-click="markupShow['Working hours picker'] = !markupShow['Working hours picker']">
-            <span ng-hide="markupShow['Working hours picker']">Show</span>
-            <span ng-show="markupShow['Working hours picker']">Hide</span>
-            markup
-            <i class="mdi mdi-code-tags pull-right"></i>
-          </div>
-          <div class="animate-show" ng-show="markupShow['Working hours picker']">
-            <code>
-              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;work-picker working-hours=&quot;model&quot; over-night-switch=&quot;true&quot; time-format-switch=&quot;true&quot;&gt;
-              </pre>
-            </code>
-          </div>
-        </div>
-
-        <div class="kss-modifier__wrapper">
-          <!-- <div class="kss-modifier__heading kss-style">
-          Example
-        </div> -->
-        <div class="kss-modifier__example">
-          <work-picker working-hours="model" over-night-switch="true" time-format-switch="true">
-        </div>
-      </div>
-
-
-
-  </section>
-
-        <section id="kssref-2-8" class="kss-section material-depth-1 kss-section--depth-2">
+        <section id="kssref-2-12" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
             <h2 class="kss-title kss-title--level-2">
@@ -927,7 +1181,7 @@ $scope.getPageData = function(pageIndex) {
               Numeric value
             </a>
           </h2>
-          <small class="kss-title__ref">2.8 </small>
+          <small class="kss-title__ref">2.12 </small>
 
 
           <div class="kss-description">
@@ -1014,7 +1268,7 @@ The directive accepts the &quot;float-number&quot; tag attribute. Without it the
 
   </section>
 
-        <section id="kssref-2-9" class="kss-section material-depth-1 kss-section--depth-2">
+        <section id="kssref-2-13" class="kss-section material-depth-1 kss-section--depth-2">
 
           <div class="kss-style">
             <h2 class="kss-title kss-title--level-2">
@@ -1022,7 +1276,7 @@ The directive accepts the &quot;float-number&quot; tag attribute. Without it the
               Skill picker
             </a>
           </h2>
-          <small class="kss-title__ref">2.9 </small>
+          <small class="kss-title__ref">2.13 </small>
 
 
           <div class="kss-description">

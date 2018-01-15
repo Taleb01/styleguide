@@ -74,7 +74,23 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">5.1</span
-                ><span class="kss-nav__name">Tree element</span>
+                ><span class="kss-nav__name">Tree type one - function picker</span>
+
+              </li>
+            </a>
+          <a href="section-5.html#kssref-5-2">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">5.2</span
+                ><span class="kss-nav__name">Tree type two - organization picker</span>
+
+              </li>
+            </a>
+          <a href="section-5.html#kssref-5-3">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">5.3</span
+                ><span class="kss-nav__name">Tree type two - organization picker(unique root)</span>
 
               </li>
             </a>
@@ -163,30 +179,32 @@
           <div class="kss-style">
             <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
-              Tree element
+              Tree type one - function picker
             </a>
           </h2>
           <small class="kss-title__ref">5.1 </small>
 
 
           <div class="kss-description">
-            <p>A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with a left side border. Each tree line has a right align span child that could show an icon if the line is selected.
-Please note thet the &quot;ng-bind&quot; span should be replaced with the normal angular binding.</p>
+            <p>Tree type one is a special tree picker, it allows parent nodes to be selected independently from their children.
+This tree type structure is used to show relations between different items. Selected items are marked with a full checkmark &#39;✓&#39;.</p>
 <div class="jsprewrap">
-  <div class="ksscopy kss-style" ng-click="showJs['tree'] = !showJs['tree']">
-      <span ng-hide="showJs['tree']">Show</span>
-     <span ng-show="showJs['tree']">Hide</span>
+  <div class="ksscopy kss-style" ng-click="showJs['treeDemo1'] = !showJs['treeDemo1']">
+      <span ng-hide="showJs['treeDemo1']">Show</span>
+     <span ng-show="showJs['treeDemo1']">Hide</span>
     JavaScript
     <i class="mdi mdi-code-tags pull-right"></i>
   </div>
-  <div class="animate-show" ng-show="showJs['tree']">
+  <div class="animate-show" ng-show="showJs['treeDemo1']">
     <code>
       <pre class="prettyprint linenums lang-js">
 
-$scope.treeDemos =   [
-    {categories: [{name: &#39;item 1&#39;}, {name: &#39;item 2&#39;}, {name: &#39;item 3&#39;}, {name: &#39;item 2&#39;}], name: &#39;First Group&#39;,},
-    {categories: [{name: &#39;item 1&#39;}, {name: &#39;item 3&#39;}], name: &#39;Second Group&#39;}, {categories: [], name: &#39;Third Group&#39;}
-];
+         $scope.option = {
+          NodeDisplayName: &quot;label&quot;,
+          NodeChildrenName: &quot;nodes&quot;,
+          NodeSelectedMark: &quot;selected&quot;
+          };
+
       </pre>
     </code>
   </div>
@@ -194,7 +212,7 @@ $scope.treeDemos =   [
           </div>
         </div>
         <!--Only for resource page-->
-        <div ng-cloak ng-if="checkResourceSection('Tree element')">
+        <div ng-cloak ng-if="checkResourceSection('Tree type one - function picker')">
           <div class="con-row">
             <div class="con-flex inline-flex">
               <i class="mdi mdi-filter-outline"></i>
@@ -220,49 +238,16 @@ $scope.treeDemos =   [
         <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
-          <div class="ksscopy kss-style" ng-click="markupShow['Tree element'] = !markupShow['Tree element']">
-            <span ng-hide="markupShow['Tree element']">Show</span>
-            <span ng-show="markupShow['Tree element']">Hide</span>
+          <div class="ksscopy kss-style" ng-click="markupShow['Tree type one - function picker'] = !markupShow['Tree type one - function picker']">
+            <span ng-hide="markupShow['Tree type one - function picker']">Show</span>
+            <span ng-show="markupShow['Tree type one - function picker']">Hide</span>
             markup
             <i class="mdi mdi-code-tags pull-right"></i>
           </div>
-          <div class="animate-show" ng-show="markupShow['Tree element']">
+          <div class="animate-show" ng-show="markupShow['Tree type one - function picker']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;div class=&quot;wfm-block&quot;&gt;
-	&lt;label for=&quot;treeFilterId&quot; class=&quot;input-prepend&quot;&gt;
-	&lt;i class=&quot;mdi mdi-filter-outline&quot;&gt;
-	&lt;md-tooltip&gt;Filter tree&lt;/md-tooltip&gt;&lt;/i&gt;
-	&lt;input type=&quot;text&quot; ng-model=&quot;treeFilter&quot; id=&quot;treeFilterId&quot; placeholder=&quot;Tree filter&quot;/&gt;
-	&lt;/label&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;tree&quot;&gt;
-	&lt;div ui-tree data-drag-enabled=&quot;false&quot;&gt;
-		&lt;ol ui-tree-nodes=&quot;&quot; ng-model=&quot;treeDemos&quot; class=&quot;tree-line&quot; toggle-focus&gt;
-			&lt;li ng-repeat=&quot;item in treeDemos | filter:treeFilter&quot; ui-tree-node ng-include=&quot; &#x27;item_renderer.html&#x27; &quot;&gt;&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script type=&quot;text/ng-template&quot; id=&quot;item_renderer.html&quot;&gt;
-	&lt;div class=&quot;tree-toggle-group&quot;&gt;
-		&lt;div class=&quot;toggle-handle&quot; ng-class=&quot;{open: item.show}&quot; ng-click=&quot;item.show = !item.show&quot;&gt;
-			&lt;i ng-show=&quot;item.categories.length &gt; 0&quot; class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;
-		&lt;/div&gt;
-		&lt;div ui-tree-handle ng-class=&quot;{selected: item.selected}&quot; ng-click=&quot;item.selected=!item.selected&quot;&gt;
-			&lt;span ng-bind=&quot;item.name&quot;&gt;&lt;/span&gt;
-			&lt;span class=&quot;tree-line-right&quot;&gt;&lt;i class=&quot;mdi mdi-check&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;ol ui-tree-nodes=&quot;&quot; ng-model=&quot;item.categories&quot; ng-show=&quot;item.show&quot;&gt;
-		&lt;li  ng-repeat=&quot;item in item.categories | filter:treeFilter&quot; ui-tree-node ng-include=&quot; &#x27;item_renderer.html&#x27; &quot;&gt;
-			test
-		&lt;/li&gt;
-	&lt;/ol&gt;
-&lt;/script&gt;
-
+                &lt;tree-data-one ng-model=&quot;treeDemos1&quot; option=&quot;option&quot;&gt;&lt;/tree-data-one&gt;
               </pre>
             </code>
           </div>
@@ -273,40 +258,194 @@ $scope.treeDemos =   [
           Example
         </div> -->
         <div class="kss-modifier__example">
-          <div class="wfm-block">
-	<label for="treeFilterId" class="input-prepend">
-	<i class="mdi mdi-filter-outline">
-	<md-tooltip>Filter tree</md-tooltip></i>
-	<input type="text" ng-model="treeFilter" id="treeFilterId" placeholder="Tree filter"/>
-	</label>
+          <tree-data-one ng-model="treeDemos1" option="option"></tree-data-one>
+        </div>
+      </div>
+
+
+
+  </section>
+
+        <section id="kssref-5-2" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Tree type two - organization picker
+            </a>
+          </h2>
+          <small class="kss-title__ref">5.2 </small>
+
+
+          <div class="kss-description">
+            <p>Tree type two is a general tree structure using parent-child relation.
+This tree type structure is used to show relations between different items. Selected items are marked with a full checkmark &#39;✓&#39; or semi-checkmark &#39;-&#39;.
+If parent item contains one child item it is marked as selected as well as its parent with semi-checkmark. if all child items are selected, the parent item will mark with full checkmark.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['treeDemo2'] = !showJs['treeDemo2']">
+      <span ng-hide="showJs['treeDemo2']">Show</span>
+     <span ng-show="showJs['treeDemo2']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['treeDemo2']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+         $scope.option2 = {
+          NodeDisplayName: &quot;label&quot;,
+          NodeChildrenName: &quot;nodes&quot;,
+          NodeSelectedMark: &quot;selected&quot;,
+          NodeSemiSelected: &quot;semiSelected&quot;
+          };
+
+      </pre>
+    </code>
+  </div>
 </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Tree type two - organization picker')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
-<div class="tree">
-	<div ui-tree data-drag-enabled="false">
-		<ol ui-tree-nodes="" ng-model="treeDemos" class="tree-line" toggle-focus>
-			<li ng-repeat="item in treeDemos | filter:treeFilter" ui-tree-node ng-include=" 'item_renderer.html' "></li>
-		</ol>
-	</div>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Tree type two - organization picker'] = !markupShow['Tree type two - organization picker']">
+            <span ng-hide="markupShow['Tree type two - organization picker']">Show</span>
+            <span ng-show="markupShow['Tree type two - organization picker']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Tree type two - organization picker']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;tree-data-two ng-model=&quot;treeDemos2&quot; option=&quot;option2&quot;&gt;&lt;/tree-data-two&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <tree-data-two ng-model="treeDemos2" option="option2"></tree-data-two>
+        </div>
+      </div>
+
+
+
+  </section>
+
+        <section id="kssref-5-3" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Tree type two - organization picker(unique root)
+            </a>
+          </h2>
+          <small class="kss-title__ref">5.3 </small>
+
+
+          <div class="kss-description">
+            <p>If the tree data has several first level parents (as root in this description), selection is only allowed for one of them at a time.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['treeDemo3'] = !showJs['treeDemo3']">
+      <span ng-hide="showJs['treeDemo3']">Show</span>
+     <span ng-show="showJs['treeDemo3']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['treeDemo3']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+         $scope.option3 = {
+          NodeDisplayName: &quot;label&quot;,
+          NodeChildrenName: &quot;nodes&quot;,
+          NodeSelectedMark: &quot;selected&quot;,
+          NodeSemiSelected: &quot;semiSelected&quot;,
+          RootSelectUnique: true
+          };
+
+      </pre>
+    </code>
+  </div>
 </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Tree type two - organization picker(unique root)')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
-<script type="text/ng-template" id="item_renderer.html">
-	<div class="tree-toggle-group">
-		<div class="toggle-handle" ng-class="{open: item.show}" ng-click="item.show = !item.show">
-			<i ng-show="item.categories.length > 0" class="mdi mdi-chevron-right"></i>
-		</div>
-		<div ui-tree-handle ng-class="{selected: item.selected}" ng-click="item.selected=!item.selected">
-			<span ng-bind="item.name"></span>
-			<span class="tree-line-right"><i class="mdi mdi-check"></i></span>
-		</div>
-	</div>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
 
-	<ol ui-tree-nodes="" ng-model="item.categories" ng-show="item.show">
-		<li  ng-repeat="item in item.categories | filter:treeFilter" ui-tree-node ng-include=" 'item_renderer.html' ">
-			test
-		</li>
-	</ol>
-</script>
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
 
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Tree type two - organization picker(unique root)'] = !markupShow['Tree type two - organization picker(unique root)']">
+            <span ng-hide="markupShow['Tree type two - organization picker(unique root)']">Show</span>
+            <span ng-show="markupShow['Tree type two - organization picker(unique root)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Tree type two - organization picker(unique root)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;tree-data-two ng-model=&quot;treeDemos3&quot; option=&quot;option3&quot;&gt;&lt;/tree-data-two&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <tree-data-two ng-model="treeDemos3" option="option3"></tree-data-two>
         </div>
       </div>
 
