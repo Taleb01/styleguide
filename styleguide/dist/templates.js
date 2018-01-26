@@ -272,18 +272,22 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
 
   $templateCache.put('directives/time-range-picker/time-range-picker.tpl.html',
     "<div class=\"inline-flex\">\n" +
-    "<timepicker-wrap ng-model=\"startTime\"></timepicker-wrap>\n" +
-    "<timepicker-wrap ng-model=\"endTime\"></timepicker-wrap>\n" +
-    "<div ng-show=\"!disableNextDay || nextDay\">\n" +
-    "  <div tabindex=0 class=\"context-menu card-context\" style=\"margin:0;\" ng-click=\"toggleNextDay()\">\n" +
-    "    <i ng-if=\"!nextDay\" class=\"mdi mdi-weather-sunny\" ng-class=\"{'wfm-btn-invis-disabled': disableNextDay }\">\n" +
-    "      <md-tooltip><span translate>Today</span></md-tooltip>\n" +
-    "    </i>\n" +
-    "    <i ng-if=\"nextDay\" class=\"mdi mdi-weather-night\" ng-class=\"{'wfm-btn-invis-disabled': disableNextDay }\">\n" +
-    "      <md-tooltip><span translate>OverMidnight</span></md-tooltip>\n" +
-    "    </i>\n" +
+    "  <timepicker-wrap ng-model=\"startTime\"></timepicker-wrap>\n" +
+    "  <timepicker-wrap ng-model=\"endTime\"></timepicker-wrap>\n" +
+    "  <div ng-show=\"!disableNextDay || nextDay\">\n" +
+    "    <div tabindex=0 class=\"context-menu card-context\" style=\"margin:0;\" ng-click=\"toggleNextDay()\">\n" +
+    "      <i ng-if=\"!nextDay\" class=\"mdi mdi-weather-sunny\" ng-class=\"{'wfm-btn-invis-disabled': disableNextDay }\">\n" +
+    "        <md-tooltip>\n" +
+    "          <span translate>Today</span>\n" +
+    "        </md-tooltip>\n" +
+    "      </i>\n" +
+    "      <i ng-if=\"nextDay\" class=\"mdi mdi-weather-night\" ng-class=\"{'wfm-btn-invis-disabled': disableNextDay }\">\n" +
+    "        <md-tooltip>\n" +
+    "          <span translate>OverMidnight</span>\n" +
+    "        </md-tooltip>\n" +
+    "      </i>\n" +
+    "    </div>\n" +
     "  </div>\n" +
-    "</div>\n" +
     "</div>\n" +
     "\n" +
     "<div class=\"error-msg-container ng-invalid-order alert-error notice-spacer\">\n" +
@@ -293,7 +297,11 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "<div class=\"error-msg-container ng-invalid-parse alert-error notice-spacer\">\n" +
     "  <i class=\"mdi mdi-alert-octagon\"></i>\n" +
     "  <span translate>StartTimeAndEndTimeMustBeSet</span>\n" +
-    "</div>\n"
+    "</div>\n" +
+    "<div class=\"error-msg-container ng-invalid-range alert-error notice-spacer\">\n" +
+    "  <i class=\"mdi mdi-alert-octagon\"></i>\n" +
+    "  <span>{{invalidTimeRange}}</span>\n" +
+    "</div>"
   );
 
 
@@ -487,12 +495,13 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
 
   $templateCache.put('directives/workinghourspicker/working-hours-picker.tpl.html',
     "<div class=\"con-row\">\n" +
-    "	<div><!--No need for a con-flex here, its in the directive-->\n" +
+    "	<div>\n" +
+    "		<!--No need for a con-flex here, its in the directive-->\n" +
     "		<button type=\"button\" class=\"wfm-fab mini\" ng-click=\"addEmptyWorkingPeriod()\">\n" +
     "			<i class=\"mdi mdi-plus\"></i>\n" +
     "			<md-tooltip>{{'AddEmptyPeriod' | translate}}</md-tooltip>\n" +
     "		</button>\n" +
-    "		<time-range-picker ng-model=\"newWorkingPeriod\" disable-next-day=\"disableNextDay\"></time-range-picker>\n" +
+    "		<time-range-picker ng-model=\"newWorkingPeriod\" max-hours-range=\"maxHoursRange\" disable-next-day=\"disableNextDay\"></time-range-picker>\n" +
     "	</div>\n" +
     "</div>\n" +
     "\n" +
@@ -503,7 +512,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "		</div>\n" +
     "		<div class=\"con-flex working-hours-day\" ng-repeat=\"WeekDay in WorkingPeriod.WeekDaySelections\">\n" +
     "			<md-checkbox ng-model=\"WeekDay.Checked\" aria-label=\"Checkbox\" ng-click=\"enforceRadioBehavior($parent.$index, WeekDay.WeekDay)\">\n" +
-    "					<span translate>{{WeekDay | showWeekdays}}</span>\n" +
+    "				<span translate>{{WeekDay | showWeekdays}}</span>\n" +
     "			</md-checkbox>\n" +
     "		</div>\n" +
     "		<div class=\"con-flex working-hours-action\">\n" +

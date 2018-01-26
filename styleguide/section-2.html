@@ -820,6 +820,7 @@ The pickers are self-adjusted to the user&#39;s time-format setting, i.e. meridi
 <p><tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr></p>
 <p><tr><td>ng-model</td><td>Bind to time range object</td><td>true</td></tr></p>
 <p><tr><td>disable-next-day</td><td>Disable next-day switch</td><td>false</td></tr></p>
+<p><tr><td>max-hours-range</td><td>Max hours that allowed for the time range </td><td>false</td></tr></p>
 <p><tr><td>template-url</td><td>Use a custom template</td><td>false</td></tr>
 </table>
 </br></p>
@@ -863,7 +864,7 @@ The pickers are self-adjusted to the user&#39;s time-format setting, i.e. meridi
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
                  &lt;div class=&quot;con-row&quot;&gt;
-   &lt;time-range-picker ng-model=&quot;timeRange&quot; disable-next-day=&quot;disableNextDay&quot;&gt;&lt;/time-range-picker&gt;
+   &lt;time-range-picker ng-model=&quot;timeRange&quot; disable-next-day=&quot;disableNextDay&quot; max-hours-range=&quot;24&quot;&gt;&lt;/time-range-picker&gt;
  &lt;/div&gt;
               </pre>
             </code>
@@ -876,7 +877,7 @@ The pickers are self-adjusted to the user&#39;s time-format setting, i.e. meridi
         </div> -->
         <div class="kss-modifier__example">
            <div class="con-row">
-   <time-range-picker ng-model="timeRange" disable-next-day="disableNextDay"></time-range-picker>
+   <time-range-picker ng-model="timeRange" disable-next-day="disableNextDay" max-hours-range="24"></time-range-picker>
  </div>
         </div>
       </div>
