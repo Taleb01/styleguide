@@ -3106,7 +3106,8 @@ If you need to display bigger forms of data or need more complex actions such as
 
 
           <div class="kss-description">
-            <p>The big table is used to give data more space and actions. Check out the <a href="http://ui-grid.info/docs/#/tutorial">documentation</a> to see all available functions.</p>
+            <p>The big table is used to give data more space and actions. Check out the <a href="http://ui-grid.info/docs/#/tutorial">documentation</a> to see all available functions.
+Remember to translate the table menu items using ui-i18n</p>
 <div class="jsprewrap">
   <div class="ksscopy kss-style" ng-click="showJs['bigTable'] = !showJs['bigTable']">
       <span ng-hide="showJs['bigTable']">Show</span>
@@ -3125,6 +3126,7 @@ for (var i = 0; i &lt; 100; i++) {
             data[i][&#39;j&#39; + j] = j;
     }
 }
+$scope.gridLang = &#39;en&#39;;
 $scope.gridOptions = {
     exporterCsvFilename: &#39;myFile.csv&#39;,
    exporterOlderExcelCompatibility: true,
@@ -3179,7 +3181,9 @@ $scope.gridOptions.enableGridMenu = true;
           <div class="animate-show" ng-show="markupShow['Big table']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;div ui-grid=&quot;gridOptions&quot; ui-grid-exporter ui-grid-auto-resize ui-grid-selection ui-grid-disable-animation class=&quot;myGrid&quot;&gt;&lt;/div&gt;
+                &lt;div ui-i18n=&quot;{*{gridLang}}&quot; class=&quot;big-table-wrapper&quot;&gt;
+  &lt;div ui-grid=&quot;gridOptions&quot; ui-grid-exporter ui-grid-auto-resize ui-grid-selection ui-grid-disable-animation class=&quot;myGrid&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
 
               </pre>
             </code>
@@ -3191,7 +3195,9 @@ $scope.gridOptions.enableGridMenu = true;
           Example
         </div> -->
         <div class="kss-modifier__example">
-          <div ui-grid="gridOptions" ui-grid-exporter ui-grid-auto-resize ui-grid-selection ui-grid-disable-animation class="myGrid"></div>
+          <div ui-i18n="{*{gridLang}}" class="big-table-wrapper">
+  <div ui-grid="gridOptions" ui-grid-exporter ui-grid-auto-resize ui-grid-selection ui-grid-disable-animation class="myGrid"></div>
+</div>
 
         </div>
       </div>
