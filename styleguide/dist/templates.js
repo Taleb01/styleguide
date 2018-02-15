@@ -224,7 +224,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "  <div class='modalbg' ng-click='$ctrl.show = !$ctrl.show'></div>\n" +
     "  <div class=\"popup-panel panel material-depth-2\" ng-transclude></div>\n" +
     "</div>\n" +
-    "</div>\n"
+    "\n"
   );
 
 
@@ -340,12 +340,12 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "					<div class=\"full-padding\">\n" +
     "						<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index]\" id=\"criteria-{{vm.searchOptions.searchFields[$index]}}\"\n" +
     "						 class=\"con-flex advanced-search-field\" type=\"text\" ng-keyup=\"vm.onSearchFieldInputKeyUp($event)\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}\"\n" +
-    "						 ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]\" />\n" +
+    "						 ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]\" maxlength=\"500\"/>\n" +
     "					</div>\n" +
     "					<div class=\"full-padding\">\n" +
     "						<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index + 1]\" id=\"criteria-{{vm.searchOptions.searchFields[$index + 1]}}\"\n" +
     "						 class=\"con-flex advanced-search-field\" type=\"text\" ng-keyup=\"vm.onSearchFieldInputKeyUp($event)\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}\"\n" +
-    "						 ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]\" />\n" +
+    "						 ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]\" maxlength=\"500\"/>\n" +
     "					</div>\n" +
     "				</div>\n" +
     "				<div class=\"con-footer\">\n" +
