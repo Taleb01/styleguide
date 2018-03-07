@@ -84,6 +84,14 @@
 
               </li>
             </a>
+          <a href="section-6.html#kssref-6-2">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">6.2</span
+                ><span class="kss-nav__name">Translations</span>
+
+              </li>
+            </a>
           </ul>
         </li>
       <li class="kss-nav__menu-item">
@@ -195,6 +203,54 @@ By keeping common terms we also save translation resources.</p>
         </div>
         <!--Only for resource page-->
         <div ng-cloak ng-if="checkResourceSection('How we use words')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+  </section>
+
+        <section id="kssref-6-2" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Translations
+            </a>
+          </h2>
+          <small class="kss-title__ref">6.2 </small>
+
+
+          <div class="kss-description">
+            <p>To support all manner of languages we use <a href="https://github.com/angular-translate/angular-translate">angular-translate</a>.
+It allows us to translate in templates using {&nbsp;{&#39;Key&#39;|translate}&nbsp;} or $translate.instant(&#39;Key&#39;) when translating from JavaScript.
+The format of these are important for us to be able to keep track of what keys are in use.</p>
+<p><b>Jalaali</b></br>
+To show dates in the Jalaali format use this filter: {&nbsp;{DateObj | persianDate:&#39;fullDate&#39;}&nbsp;}.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Translations')">
           <div class="con-row">
             <div class="con-flex inline-flex">
               <i class="mdi mdi-filter-outline"></i>

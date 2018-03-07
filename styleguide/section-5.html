@@ -94,6 +94,14 @@
 
               </li>
             </a>
+          <a href="section-5.html#kssref-5-4">
+            <li class="kss-nav__menu-item">
+
+              <span class="kss-nav__ref">5.4</span
+                ><span class="kss-nav__name">Tree Picker Filter</span>
+
+              </li>
+            </a>
           </ul>
         </li>
       <li class="kss-nav__menu-item">
@@ -199,7 +207,7 @@ This tree type structure is used to show relations between different items. Sele
     <code>
       <pre class="prettyprint linenums lang-js">
 
-         $scope.option = {
+         $scope.treeOption = {
           NodeDisplayName: &quot;label&quot;,
           NodeChildrenName: &quot;nodes&quot;,
           NodeSelectedMark: &quot;selected&quot;
@@ -247,7 +255,7 @@ This tree type structure is used to show relations between different items. Sele
           <div class="animate-show" ng-show="markupShow['Tree type one - function picker']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;tree-data-one ng-model=&quot;treeDemos1&quot; option=&quot;option&quot;&gt;&lt;/tree-data-one&gt;
+                &lt;tree-data-one ng-model=&quot;treeDemos1&quot; option=&quot;treeOption&quot;&gt;&lt;/tree-data-one&gt;
               </pre>
             </code>
           </div>
@@ -258,7 +266,7 @@ This tree type structure is used to show relations between different items. Sele
           Example
         </div> -->
         <div class="kss-modifier__example">
-          <tree-data-one ng-model="treeDemos1" option="option"></tree-data-one>
+          <tree-data-one ng-model="treeDemos1" option="treeOption"></tree-data-one>
         </div>
       </div>
 
@@ -292,7 +300,7 @@ If parent item contains one child item it is marked as selected as well as its p
     <code>
       <pre class="prettyprint linenums lang-js">
 
-         $scope.option2 = {
+         $scope.treeOption2 = {
           NodeDisplayName: &quot;label&quot;,
           NodeChildrenName: &quot;nodes&quot;,
           NodeSelectedMark: &quot;selected&quot;,
@@ -341,7 +349,7 @@ If parent item contains one child item it is marked as selected as well as its p
           <div class="animate-show" ng-show="markupShow['Tree type two - organization picker']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;tree-data-two ng-model=&quot;treeDemos2&quot; option=&quot;option2&quot;&gt;&lt;/tree-data-two&gt;
+                &lt;tree-data-two ng-model=&quot;treeDemos2&quot; option=&quot;treeOption2&quot;&gt;&lt;/tree-data-two&gt;
               </pre>
             </code>
           </div>
@@ -352,7 +360,7 @@ If parent item contains one child item it is marked as selected as well as its p
           Example
         </div> -->
         <div class="kss-modifier__example">
-          <tree-data-two ng-model="treeDemos2" option="option2"></tree-data-two>
+          <tree-data-two ng-model="treeDemos2" option="treeOption2"></tree-data-two>
         </div>
       </div>
 
@@ -384,7 +392,7 @@ If parent item contains one child item it is marked as selected as well as its p
     <code>
       <pre class="prettyprint linenums lang-js">
 
-         $scope.option3 = {
+         $scope.treeOption3 = {
           NodeDisplayName: &quot;label&quot;,
           NodeChildrenName: &quot;nodes&quot;,
           NodeSelectedMark: &quot;selected&quot;,
@@ -434,7 +442,7 @@ If parent item contains one child item it is marked as selected as well as its p
           <div class="animate-show" ng-show="markupShow['Tree type two - organization picker(unique root)']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;tree-data-two ng-model=&quot;treeDemos3&quot; option=&quot;option3&quot;&gt;&lt;/tree-data-two&gt;
+                &lt;tree-data-two ng-model=&quot;treeDemos3&quot; option=&quot;treeOption3&quot;&gt;&lt;/tree-data-two&gt;
               </pre>
             </code>
           </div>
@@ -445,7 +453,100 @@ If parent item contains one child item it is marked as selected as well as its p
           Example
         </div> -->
         <div class="kss-modifier__example">
-          <tree-data-two ng-model="treeDemos3" option="option3"></tree-data-two>
+          <tree-data-two ng-model="treeDemos3" option="treeOption3"></tree-data-two>
+        </div>
+      </div>
+
+
+
+  </section>
+
+        <section id="kssref-5-4" class="kss-section material-depth-1 kss-section--depth-2">
+
+          <div class="kss-style">
+            <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Tree Picker Filter
+            </a>
+          </h2>
+          <small class="kss-title__ref">5.4 </small>
+
+
+          <div class="kss-description">
+            <p>Tree picker filter is a general filter for all types of tree picker and it uses for filter site/team within a organization by input keyword.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['treeDemo4'] = !showJs['treeDemo4']">
+      <span ng-hide="showJs['treeDemo4']">Show</span>
+     <span ng-show="showJs['treeDemo4']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['treeDemo4']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+         $scope.treeOption4 = {
+          NodeDisplayName: &quot;label&quot;,
+          NodeChildrenName: &quot;nodes&quot;,
+          NodeSelectedMark: &quot;selected&quot;,
+          NodeSemiSelected: &quot;semiSelected&quot;,
+          DisplayTreeFilter: true
+          };
+
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Tree Picker Filter')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Tree Picker Filter'] = !markupShow['Tree Picker Filter']">
+            <span ng-hide="markupShow['Tree Picker Filter']">Show</span>
+            <span ng-show="markupShow['Tree Picker Filter']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Tree Picker Filter']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;tree-data-two ng-model=&quot;treeDemos4&quot; option=&quot;treeOption4&quot;&gt;&lt;/tree-data-two&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+        <div class="kss-modifier__example">
+          <tree-data-two ng-model="treeDemos4" option="treeOption4"></tree-data-two>
         </div>
       </div>
 

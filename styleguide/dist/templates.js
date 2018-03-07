@@ -307,6 +307,12 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
 
   $templateCache.put('directives/tree-picker/tree_data.tpl.html',
     "<div class=\"tree\">\n" +
+    "  <label for=\"TreePickerFilter\" class=\"input-prepend\" ng-if=\"vm.displayTreeFilter\">\n" +
+    "    <i class=\"mdi mdi-filter-outline\"></i>\n" +
+    "    <input type=\"text\" id=\"TreePickerFilter\" name=\"TreePickerFilter\" autocomplete=\"off\" ng-model=\"vm.search\" placeholder=\"{{'Filter' | translate}}\"\n" +
+    "    />\n" +
+    "    <tree-filter search=\"vm.search\"></tree-filter>\n" +
+    "  </label>\n" +
     "  <ol ng-model=\"vm.data\" style=\"padding:0;\">\n" +
     "    <li node-id=\"$index\" ng-repeat=\"node in vm.data[vm.nodeChildrenName]\" ng-include=\"'tree_child_renderer.html'\"></li>\n" +
     "  </ol>\n" +
@@ -316,12 +322,12 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "    <div class=\"toggle-handle\">\n" +
     "      <i ng-hide=\"!node[vm.nodeChildrenName] || node[vm.nodeChildrenName].length==0 \" class=\"mdi mdi-chevron-right\"></i>\n" +
     "    </div>\n" +
-    "    <div class=\"tree-handle-wrapper\" ng-class=\"{'selected-true': node[vm.nodeSelectedMark], 'semi-true': node[vm.NodeSemiSelected]}\" ng-click=\"vm.selectNode(this)\" ng-bind=\"node[vm.nodeDisplayName]\"></div>\n" +
+    "    <div class=\"tree-handle-wrapper\" ng-class=\"{'selected-true': node[vm.nodeSelectedMark], 'semi-true': node[vm.nodeSemiSelected]}\" ng-click=\"vm.selectNode(this)\" ng-bind=\"node[vm.nodeDisplayName]\"></div>\n" +
     "  </div>\n" +
     "  <ol ng-model=\"node\">\n" +
-    "    <li node-id=\"$index\" ng-repeat=\"node in node[vm.nodeChildrenName]\" ng-include=\"'tree_child_renderer.html'\" class=\"hidden\"></li>\n" +
+    "    <li node-id=\"$index\" class=\"tree-child hidden\" ng-repeat=\"node in node[vm.nodeChildrenName]\" ng-include=\"'tree_child_renderer.html'\" ></li>\n" +
     "  </ol>\n" +
-    "</script>"
+    "</script>\n"
   );
 
 
