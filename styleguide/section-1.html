@@ -2735,7 +2735,7 @@ $scope.toggleModal = function() {
 	&lt;/div&gt;
 	&lt;div class=&quot;modal-actions&quot;&gt;
 		&lt;aside&gt;
-			&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Apply&lt;/button&gt;
+			&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot; ng-click=&quot;toggleModal()&quot;&gt;Ok&lt;/button&gt;
 		&lt;/aside&gt;
 	&lt;/div&gt;
 &lt;/modal-dialog&gt;
@@ -2757,7 +2757,7 @@ $scope.toggleModal = function() {
 	</div>
 	<div class="modal-actions">
 		<aside>
-			<button class="wfm-btn wfm-btn-invis-primary">Apply</button>
+			<button class="wfm-btn wfm-btn-invis-primary" ng-click="toggleModal()">Ok</button>
 		</aside>
 	</div>
 </modal-dialog>
@@ -2833,8 +2833,8 @@ $scope.toggleModal = function() {
 				&lt;/div&gt;
 				&lt;div class=&quot;modal-actions&quot;&gt;
 					&lt;aside&gt;
-						&lt;button ng-click=&quot;confirmModal1=false&quot; class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Cancel&lt;/button&gt;
-						&lt;button ng-click=&quot;confirmModal1=false&quot; class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Apply&lt;/button&gt;
+						&lt;button ng-click=&quot;confirmModal1=false&quot; class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Yes&lt;/button&gt;
+						&lt;button ng-click=&quot;confirmModal1=false&quot; class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;No&lt;/button&gt;
 					&lt;/aside&gt;
 				&lt;/div&gt;
 			&lt;/div&gt;
@@ -2862,8 +2862,8 @@ $scope.toggleModal = function() {
 				</div>
 				<div class="modal-actions">
 					<aside>
-						<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-default">Cancel</button>
-						<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-primary">Apply</button>
+						<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-default">Yes</button>
+						<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-primary">No</button>
 					</aside>
 				</div>
 			</div>
