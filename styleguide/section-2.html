@@ -1304,7 +1304,7 @@ The directive accepts the &quot;float-number&quot; tag attribute. Without it the
    </tr>
    <tr>
      <td>preselected</td>
-     <td>Send in a item to be preselected on load</td>
+     <td>Send the id of a skill that should be preselected on load</td>
    </tr>
 </tbody>
 </table></p>
@@ -1318,8 +1318,8 @@ The directive accepts the &quot;float-number&quot; tag attribute. Without it the
   <div class="animate-show" ng-show="showJs['skillPicker']">
     <code>
       <pre class="prettyprint linenums lang-js">
-
-vm.mockSkills = [
+&nbsp;
+$scope.mockSkills = [
  {
    Id: &#39;XYZ&#39;,
    Name: &#39;skill1&#39;
@@ -1327,9 +1327,34 @@ vm.mockSkills = [
  {
    Id: &#39;ABC&#39;,
    Name: &#39;skill2&#39;
+ },
+ {
+   Id: &#39;XYZ1&#39;,
+   Name: &#39;skill3&#39;
+ },
+ {
+   Id: &#39;ABC2&#39;,
+   Name: &#39;skill4&#39;
+ },
+ {
+   Id: &#39;XYZ3&#39;,
+   Name: &#39;skill5&#39;
+ },
+ {
+   Id: &#39;ABC4&#39;,
+   Name: &#39;skill6&#39;
+ },
+ {
+   Id: &#39;XYZ5&#39;,
+   Name: &#39;skill7&#39;
+ },
+ {
+   Id: &#39;ABC6&#39;,
+   Name: &#39;skill8&#39;
  }
 ];
-vm.mockedSkillGroups = [
+
+$scope.mockedSkillGroups = [
  {
    Name: &#39;SkillArea1&#39;,
    Id: &#39;123&#39;,
@@ -1351,11 +1376,12 @@ vm.mockedSkillGroups = [
    ]
  }
 ];
-vm.preselectedSkill = {skillIds: [&#39;XYZ&#39;]};
-vm.preselectedSkillGroup = {skillAreaId: [&#39;XYZ&#39;]};
-$scope.output = function (selectedItem){
-  $scope.filterOutput = selectedItem;
-}
+
+$scope.preselectedSkill = { skillIds: [&#39;XYZ1&#39;] };
+$scope.preselectedSkillGroup = { skillAreaId: [&#39;XYZ&#39;] };
+
+$scope.output = function(selectedItem) {
+ $scope.filterOutput = selectedItem;
 };
       </pre>
     </code>
@@ -1399,7 +1425,7 @@ $scope.output = function (selectedItem){
           <div class="animate-show" ng-show="markupShow['Skill picker']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;skill-picker skills=&quot;mockSkills&quot; skill-areas=&quot;mockedSkillGroups&quot; item-to-return=&quot;output&quot; preselected-item=&quot;preselected&quot;&gt;&lt;/skill-picker&gt;
+                &lt;skill-picker skills=&quot;mockSkills&quot; skill-areas=&quot;mockedSkillGroups&quot; item-to-return=&quot;output&quot; preselected-item=&quot;preselectedSkill&quot;&gt;&lt;/skill-picker&gt;
 &lt;p ng-if=&quot;filterOutput&quot;&gt;Selected skill/group: &lt;span ng-bind=&quot;filterOutput.Name&quot;&gt;&lt;/span&gt;&lt;/p&gt;
               </pre>
             </code>
@@ -1411,7 +1437,7 @@ $scope.output = function (selectedItem){
           Example
         </div> -->
         <div class="kss-modifier__example">
-          <skill-picker skills="mockSkills" skill-areas="mockedSkillGroups" item-to-return="output" preselected-item="preselected"></skill-picker>
+          <skill-picker skills="mockSkills" skill-areas="mockedSkillGroups" item-to-return="output" preselected-item="preselectedSkill"></skill-picker>
 <p ng-if="filterOutput">Selected skill/group: <span ng-bind="filterOutput.Name"></span></p>
         </div>
       </div>
