@@ -21,86 +21,100 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   $templateCache.put('directives/calendar-picker/calendar-picker.gregorian.template.tpl.html',
     "<wfm-calendar-picker-header class=\"con-row between-date-info-wrapper\">\n" +
     "    <div class=\"con-flex\" ng-class=\"{'notice-warning':!vm.isValid, 'notice-info':vm.isValid}\">\n" +
-    "        <div tabindex=0 class=\"context-menu card-context\" ng-click=\"vm.hightLightToday()\">\n" +
+    "        <div tabindex=0 class=\"context-menu card-context\" ng-click=\"vm.selectToday()\">\n" +
     "            <i class=\"mdi mdi-calendar-range\"></i>\n" +
-    "            <md-tooltip>Display Today</md-tooltip>\n" +
+    "            <md-tooltip>{{'SelectToday' | translate}}</md-tooltip>\n" +
     "        </div>\n" +
-    "        <span ng-if=\"vm.dateRangeText.length > 0\">{{vm.dateRangeText | translate}}</span>\n" +
+    "        <span ng-if=\"vm.dateRangeText.length > 0\">{{vm.dateRangeText}}</span>\n" +
     "    </div>\n" +
     "</wfm-calendar-picker-header>\n" +
     "<wfm-calendar-picker-body class=\"con-row\">\n" +
     "    <div class=\"con-flex date-info-wrapper\" ng-if=\"vm.singleDatePicker == undefined\">\n" +
-    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='start-date' || vm.disable=='all'}\" ng-click=\"vm.resetStartDate()\">\n" +
-    "            <span class=\"date-info-label\" translate>From</span>\n" +
-    "            <h1 class=\"date-info\">{{vm.pickStartDate | amDateFormat:\"LL\"}}</h1>\n" +
-    "            <div class=\"clear-select-date-grow-out\">\n" +
+    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='start-date' || vm.disable=='all', 'selecting-date': vm.isPickingStartDate}\">\n" +
+    "            <div class=\"select-date-info-inner\" ng-click=\"vm.startToSelectStartDate()\">\n" +
+    "                <span class=\"date-info-label\" translate>From</span>\n" +
+    "                <h1 class=\"date-info\">{{vm.pickStartDate | amDateFormat:\"LL\"}}</h1>\n" +
+    "            </div>\n" +
+    "            <div class=\"clear-select-date-grow-out\" ng-click=\"vm.resetStartDate()\">\n" +
     "                <i class=\"mdi mdi-close\"></i>\n" +
     "            </div>\n" +
     "        </div>\n" +
-    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='end-date' || vm.disable=='all'}\" ng-click=\"vm.resetEndDate()\">\n" +
-    "            <span class=\"date-info-label\" translate>To</span>\n" +
-    "            <h1 class=\"date-info\">{{vm.pickEndDate | amDateFormat:\"LL\"}}</h1>\n" +
-    "            <div class=\"clear-select-date-grow-out\">\n" +
+    "        <hr />\n" +
+    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='end-date' || vm.disable=='all', 'selecting-date': vm.isPickingEndDate}\">\n" +
+    "            <div class=\"select-date-info-inner\" ng-click=\"vm.startToSelectEndDate()\">\n" +
+    "                <span class=\"date-info-label\" translate>To</span>\n" +
+    "                <h1 class=\"date-info\">{{vm.pickEndDate | amDateFormat:\"LL\"}}</h1>\n" +
+    "            </div>\n" +
+    "            <div class=\"clear-select-date-grow-out\" ng-click=\"vm.resetEndDate()\">\n" +
     "                <i class=\"mdi mdi-close\"></i>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"con-flex date-info-wrapper\" ng-if=\"vm.singleDatePicker !== undefined\">\n" +
-    "        <div class=\"select-date-info-wrapper single-select-mode pointer\" ng-click=\"vm.resetDate()\">\n" +
-    "            <span class=\"date-info-label\">SELECTED DATE</span>\n" +
-    "            <h1 class=\"date-info\">{{vm.pickDate | amDateFormat:\"LL\"}}</h1>\n" +
-    "            <div class=\"clear-select-date-grow-out\">\n" +
+    "        <div class=\"select-date-info-wrapper single-select-mode pointer\" ng-class=\"{'selecting-date': vm.isPickingSingleDate}\">\n" +
+    "            <div class=\"select-date-info-inner\">\n" +
+    "                <span class=\"date-info-label\" translate>SelectedDate</span>\n" +
+    "                <h1 class=\"date-info\">{{vm.pickDate | amDateFormat:\"LL\"}}</h1>\n" +
+    "            </div>\n" +
+    "            <div class=\"clear-select-date-grow-out\" ng-click=\"vm.resetDate()\">\n" +
     "                <i class=\"mdi mdi-close\"></i>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"con-flex date-info-calendar-wrapper\">\n" +
-    "        <div uib-datepicker ng-model=\"vm.pickDate\" ng-class=\"{'non-pointer':vm.disable === 'all'}\" ng-change=\"vm.switchDate()\" datepicker-options=\"vm.options\"></div>\n" +
+    "        <div uib-datepicker ng-model=\"vm.pickDate\" ng-class=\"{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.options.showWeeks, 'hide-week-numbers': !vm.options.showWeeks}\" ng-change=\"vm.switchDate()\" datepicker-options=\"vm.options\"></div>\n" +
     "    </div>\n" +
-    "</wfm-calendar-picker-body>\n"
+    "</wfm-calendar-picker-body>"
   );
 
 
   $templateCache.put('directives/calendar-picker/calendar-picker.jalaali.template.tpl.html',
     "<wfm-calendar-picker-header class=\"con-row between-date-info-wrapper\">\n" +
-    "        <div class=\"con-flex\" ng-class=\"{'notice-warning':!vm.isValid, 'notice-info':vm.isValid}\">\n" +
-    "            <div tabindex=0 class=\"context-menu card-context\" ng-click=\"vm.hightLightToday()\">\n" +
-    "                <i class=\"mdi mdi-calendar-range\"></i>\n" +
-    "                <md-tooltip>Display Today</md-tooltip>\n" +
-    "            </div>\n" +
-    "            <span ng-if=\"vm.dateRangeText.length > 0\">{{vm.dateRangeText | translate}}</span>\n" +
+    "    <div class=\"con-flex\" ng-class=\"{'notice-warning':!vm.isValid, 'notice-info':vm.isValid}\">\n" +
+    "        <div tabindex=0 class=\"context-menu card-context\" ng-click=\"vm.selectToday()\">\n" +
+    "            <i class=\"mdi mdi-calendar-range\"></i>\n" +
+    "            <md-tooltip>{{'SelectToday' | translate}}</md-tooltip>\n" +
     "        </div>\n" +
-    "    </wfm-calendar-picker-header>\n" +
-    "    <wfm-calendar-picker-body class=\"con-row\">\n" +
-    "        <div class=\"con-flex date-info-wrapper\" ng-if=\"vm.singleDatePicker == undefined\">\n" +
-    "            <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='start-date' || vm.disable=='all'}\" ng-click=\"vm.resetStartDate()\">\n" +
+    "        <span ng-if=\"vm.dateRangeText.length > 0\">{{vm.dateRangeText}}</span>\n" +
+    "    </div>\n" +
+    "</wfm-calendar-picker-header>\n" +
+    "<wfm-calendar-picker-body class=\"con-row\">\n" +
+    "    <div class=\"con-flex date-info-wrapper\" ng-if=\"vm.singleDatePicker == undefined\">\n" +
+    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='start-date' || vm.disable=='all', 'selecting-date': vm.isPickingStartDate}\">\n" +
+    "            <div class=\"select-date-info-inner\" ng-click=\"vm.startToSelectStartDate()\">\n" +
     "                <span class=\"date-info-label\" translate>From</span>\n" +
     "                <h1 class=\"date-info jallali-start-date\">{{vm.pickStartDate | persianDate:'fullDate'}}</h1>\n" +
-    "                <div class=\"clear-select-date-grow-out\">\n" +
-    "                    <i class=\"mdi mdi-close\"></i>\n" +
-    "                </div>\n" +
     "            </div>\n" +
-    "            <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='end-date' || vm.disable=='all'}\" ng-click=\"vm.resetEndDate()\">\n" +
+    "            <div class=\"clear-select-date-grow-out\" ng-click=\"vm.resetStartDate()\">\n" +
+    "                <i class=\"mdi mdi-close\"></i>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <hr />\n" +
+    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='end-date' || vm.disable=='all', 'selecting-date': vm.isPickingEndDate}\">\n" +
+    "            <div class=\"select-date-info-inner\" ng-click=\"vm.startToSelectEndDate()\">\n" +
     "                <span class=\"date-info-label\" translate>To</span>\n" +
     "                <h1 class=\"date-info jallali-end-date\">{{vm.pickEndDate | persianDate:'fullDate'}}</h1>\n" +
-    "                <div class=\"clear-select-date-grow-out\">\n" +
-    "                    <i class=\"mdi mdi-close\"></i>\n" +
-    "                </div>\n" +
+    "            </div>\n" +
+    "            <div class=\"clear-select-date-grow-out\" ng-click=\"vm.resetEndDate()\">\n" +
+    "                <i class=\"mdi mdi-close\"></i>\n" +
     "            </div>\n" +
     "        </div>\n" +
-    "        <div class=\"con-flex date-info-wrapper\" ng-if=\"vm.singleDatePicker !== undefined\">\n" +
-    "            <div class=\"select-date-info-wrapper single-select-mode pointer\" ng-click=\"vm.resetDate()\">\n" +
+    "    </div>\n" +
+    "    <div class=\"con-flex date-info-wrapper\" ng-if=\"vm.singleDatePicker !== undefined\">\n" +
+    "        <div class=\"select-date-info-wrapper single-select-mode pointer\" ng-class=\"{'selecting-date': vm.isPickingSingleDate}\">\n" +
+    "            <div class=\"select-date-info-inner\">\n" +
     "                <span class=\"date-info-label\" translate>SelectedDate</span>\n" +
     "                <h1 class=\"date-info\">{{vm.pickDate | persianDate:'fullDate'}}</h1>\n" +
-    "                <div class=\"clear-select-date-grow-out\">\n" +
-    "                    <i class=\"mdi mdi-close\"></i>\n" +
-    "                </div>\n" +
+    "            </div>\n" +
+    "            <div class=\"clear-select-date-grow-out\" ng-click=\"vm.resetDate()\">\n" +
+    "                <i class=\"mdi mdi-close\"></i>\n" +
     "            </div>\n" +
     "        </div>\n" +
-    "        <div class=\"con-flex date-info-calendar-wrapper\">\n" +
-    "            <persian-datepicker ng-model=\"vm.pickDate\" ng-class=\"{'non-pointer':vm.disable === 'all'}\" ng-change=\"vm.switchDate()\" show-weeks=\"vm.showWeek\" custom-class=\"vm.options.customClass()\"></persian-datepicker>\n" +
-    "        </div>\n" +
-    "    </wfm-calendar-picker-body>\n"
+    "    </div>\n" +
+    "    <div class=\"con-flex date-info-calendar-wrapper\">\n" +
+    "        <persian-datepicker ng-model=\"vm.pickDate\" ng-class=\"{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.options.showWeeks, 'hide-week-numbers': !vm.options.showWeeks}\" ng-change=\"vm.switchDate()\" show-weeks=\"vm.showWeek\" custom-class=\"vm.options.customClass()\"></persian-datepicker>\n" +
+    "    </div>\n" +
+    "</wfm-calendar-picker-body>"
   );
 
 
