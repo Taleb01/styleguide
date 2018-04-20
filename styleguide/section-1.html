@@ -234,7 +234,7 @@
             <li class="kss-nav__menu-item">
 
               <span class="kss-nav__ref">1.24</span
-                ><span class="kss-nav__name">Modal (mini)</span>
+                ><span class="kss-nav__name">Dialog</span>
 
               </li>
             </a>
@@ -2669,7 +2669,7 @@ Additionally a context menu can not trigger another context menu from within its
 
           <div class="kss-description">
             <p>A modal is launched above the main view and stays there until the user has taken action. It can be quickly dismissed by clicking outside it or on the close icon (this should be treated as a cancel).</p>
-<p>Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.</p>
+<p>Note: In all modals, dialogs and panels the footer links should be buttons, not  &lt;a/&gt; tags.</p>
 <div class="jsprewrap">
   <div class="ksscopy kss-style" ng-click="showJs['modal1'] = !showJs['modal1']">
       <span ng-hide="showJs['modal1']">Show</span>
@@ -2773,21 +2773,21 @@ $scope.toggleModal = function() {
           <div class="kss-style">
             <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
-              Modal (mini)
+              Dialog
             </a>
           </h2>
           <small class="kss-title__ref">1.24 </small>
 
 
           <div class="kss-description">
-            <p>The mini modal is used for confirmation. As opposed to the regular modal it cant be dissmissed without taking an action.</p>
-<p>Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.</p>
+            <p>The dialog is used for confirmation. As opposed to the modal it can not be dissmissed without taking an action.</p>
+<p>Note: In all modals, dialogs and panels the footer links should be buttons, not  &lt;a/&gt; tags.</p>
 <p>Note: Recomended translated text { {&#39;AreYouSureYouWantToDelete&#39; | translate} }</p>
 
           </div>
         </div>
         <!--Only for resource page-->
-        <div ng-cloak ng-if="checkResourceSection('Modal (mini)')">
+        <div ng-cloak ng-if="checkResourceSection('Dialog')">
           <div class="con-row">
             <div class="con-flex inline-flex">
               <i class="mdi mdi-filter-outline"></i>
@@ -2813,13 +2813,13 @@ $scope.toggleModal = function() {
         <!--Only for resource page-->
 
         <div class="jsprewrap" ng-cloak>
-          <div class="ksscopy kss-style" ng-click="markupShow['Modal (mini)'] = !markupShow['Modal (mini)']">
-            <span ng-hide="markupShow['Modal (mini)']">Show</span>
-            <span ng-show="markupShow['Modal (mini)']">Hide</span>
+          <div class="ksscopy kss-style" ng-click="markupShow['Dialog'] = !markupShow['Dialog']">
+            <span ng-hide="markupShow['Dialog']">Show</span>
+            <span ng-show="markupShow['Dialog']">Hide</span>
             markup
             <i class="mdi mdi-code-tags pull-right"></i>
           </div>
-          <div class="animate-show" ng-show="markupShow['Modal (mini)']">
+          <div class="animate-show" ng-show="markupShow['Dialog']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
                 &lt;button ng-click=&#x27;confirmModal1=true&#x27; class=&quot;wfm-btn wfm-btn-default&quot;&gt;Do something dangerous&lt;/button&gt;
