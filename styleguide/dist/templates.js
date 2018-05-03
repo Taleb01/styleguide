@@ -30,7 +30,8 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "</wfm-calendar-picker-header>\n" +
     "<wfm-calendar-picker-body class=\"con-row\">\n" +
     "    <div class=\"con-flex date-info-wrapper\" ng-if=\"vm.singleDatePicker == undefined\">\n" +
-    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='start-date' || vm.disable=='all', 'selecting-date': vm.isPickingStartDate}\">\n" +
+    "        <div class=\"transition-block\" ng-class=\"{'transit-to-start': vm.isPickingStartDate, 'transit-to-end': vm.isPickingEndDate}\"></div>\n" +
+    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='start-date' || vm.disable=='all'}\">\n" +
     "            <div class=\"select-date-info-inner\" ng-click=\"vm.startToSelectStartDate()\">\n" +
     "                <span class=\"date-info-label\" translate>From</span>\n" +
     "                <h1 class=\"date-info\">{{vm.pickStartDate | amDateFormat:\"LL\"}}</h1>\n" +
@@ -40,7 +41,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "            </div>\n" +
     "        </div>\n" +
     "        <hr />\n" +
-    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='end-date' || vm.disable=='all', 'selecting-date': vm.isPickingEndDate}\">\n" +
+    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='end-date' || vm.disable=='all'}\">\n" +
     "            <div class=\"select-date-info-inner\" ng-click=\"vm.startToSelectEndDate()\">\n" +
     "                <span class=\"date-info-label\" translate>To</span>\n" +
     "                <h1 class=\"date-info\">{{vm.pickEndDate | amDateFormat:\"LL\"}}</h1>\n" +
@@ -62,7 +63,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"con-flex date-info-calendar-wrapper\">\n" +
-    "        <div uib-datepicker ng-model=\"vm.pickDate\" ng-class=\"{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.options.showWeeks, 'hide-week-numbers': !vm.options.showWeeks}\" ng-change=\"vm.switchDate()\" datepicker-options=\"vm.options\"></div>\n" +
+    "        <div uib-datepicker ng-model=\"vm.pickDate\" ng-class=\"{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.options.showWeeks, 'hide-week-numbers': !vm.options.showWeeks, 'single-date-calendar': vm.singleDatePicker !== undefined}\" ng-change=\"vm.switchDate()\" datepicker-options=\"vm.options\"></div>\n" +
     "    </div>\n" +
     "</wfm-calendar-picker-body>"
   );
@@ -80,7 +81,8 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "</wfm-calendar-picker-header>\n" +
     "<wfm-calendar-picker-body class=\"con-row\">\n" +
     "    <div class=\"con-flex date-info-wrapper\" ng-if=\"vm.singleDatePicker == undefined\">\n" +
-    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='start-date' || vm.disable=='all', 'selecting-date': vm.isPickingStartDate}\">\n" +
+    "        <div class=\"transition-block\" ng-class=\"{'transit-to-start': vm.isPickingStartDate, 'transit-to-end': vm.isPickingEndDate}\"></div>\n" +
+    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='start-date' || vm.disable=='all'}\">\n" +
     "            <div class=\"select-date-info-inner\" ng-click=\"vm.startToSelectStartDate()\">\n" +
     "                <span class=\"date-info-label\" translate>From</span>\n" +
     "                <h1 class=\"date-info jallali-start-date\">{{vm.pickStartDate | persianDate:'fullDate'}}</h1>\n" +
@@ -90,7 +92,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "            </div>\n" +
     "        </div>\n" +
     "        <hr />\n" +
-    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='end-date' || vm.disable=='all', 'selecting-date': vm.isPickingEndDate}\">\n" +
+    "        <div class=\"select-date-info-wrapper pointer\" ng-class=\"{'disabled': vm.disable=='end-date' || vm.disable=='all'}\">\n" +
     "            <div class=\"select-date-info-inner\" ng-click=\"vm.startToSelectEndDate()\">\n" +
     "                <span class=\"date-info-label\" translate>To</span>\n" +
     "                <h1 class=\"date-info jallali-end-date\">{{vm.pickEndDate | persianDate:'fullDate'}}</h1>\n" +
@@ -112,7 +114,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"con-flex date-info-calendar-wrapper\">\n" +
-    "        <persian-datepicker ng-model=\"vm.pickDate\" ng-class=\"{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.options.showWeeks, 'hide-week-numbers': !vm.options.showWeeks}\" ng-change=\"vm.switchDate()\" show-weeks=\"vm.showWeek\" custom-class=\"vm.options.customClass()\"></persian-datepicker>\n" +
+    "        <persian-datepicker ng-model=\"vm.pickDate\" ng-class=\"{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.options.showWeeks, 'hide-week-numbers': !vm.options.showWeeks, 'single-date-calendar': vm.singleDatePicker !== undefined}\" ng-change=\"vm.switchDate()\" show-weeks=\"vm.showWeek\" custom-class=\"vm.options.customClass()\"></persian-datepicker>\n" +
     "    </div>\n" +
     "</wfm-calendar-picker-body>"
   );
@@ -242,45 +244,76 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   );
 
 
-  $templateCache.put('directives/skill-picker/skill-picker.tpl.html',
+  $templateCache.put('directives/skill-picker/skillPicker.tpl.html',
     "<div class=\"con-row\">\n" +
     "    <div class=\"con-flex\">\n" +
-    "        <md-autocomplete\n" +
-    "        ng-attr-skillsLoaded=\"{{$ctrl.skillsLoaded}}\"\n" +
-    "        md-min-length=\"0\"\n" +
-    "        md-selected-item=\"$ctrl.selectedSkill\"\n" +
-    "        md-search-text=\"skillFilterText.Name\"\n" +
-    "        md-items=\"skill in $ctrl.skills | filter:skillFilterText\"\n" +
-    "        md-selected-item-change=\"$ctrl.selectSkill(skill)\"\n" +
-    "        md-item-text=\"skill.Name\"\n" +
-    "        placeholder=\"{{'SelectSkill' | translate}}\">\n" +
-    "            <md-item-template>\n" +
-    "                <span ng-bind=\"skill.Name\"></span>\n" +
-    "            </md-item-template>\n" +
-    "            <md-not-found ng-cloak>\n" +
-    "                {{'RepViewerNoMoreMatches'|translate}}\n" +
-    "            </md-not-found>\n" +
-    "        </md-autocomplete>\n" +
+    "        <div class=\"wfm-form\"\n" +
+    "             outside-click=\"$ctrl.skillPickerOpen = false\">\n" +
+    "            <div class=\"form-input-wrap\">\n" +
+    "                <div style=\"position: relative\">\n" +
+    "                    <input ng-click=\"$ctrl.skillPickerOpen = !$ctrl.skillPickerOpen\"\n" +
+    "                           ng-keypress=\"$ctrl.skillPickerOpen=true\"\n" +
+    "                           ng-model=\"$ctrl.skillPickerText\"\n" +
+    "                           type=\"text\"\n" +
+    "                           placeholder=\"{{'SelectSkill'|translate}}\">\n" +
+    "                    <i class=\"mdi mdi-close pointer\"\n" +
+    "                       ng-click=\"$ctrl.clearSkillSelection()\"\n" +
+    "                       ng-show=\"$ctrl.skillPickerText\"\n" +
+    "                       style=\"position: absolute; top: 0%; left: 97%;\">\n" +
+    "                        <md-tooltip>{{'Clear'|translate}}</md-tooltip>\n" +
+    "                    </i>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "            <div style=\"position: relative\">\n" +
+    "                <div class=\"wfm-dropdown-panel panel material-depth-1 full-padding\"\n" +
+    "                     ng-show=\"$ctrl.skillPickerOpen\"\n" +
+    "                     style=\"z-index: 999; position: absolute; width: 100%; overflow-y: scroll; max-height: 200px\">\n" +
+    "                    <ul>\n" +
+    "                        <li ng-click=\"$ctrl.skillSelected(skill)\"\n" +
+    "                            ng-repeat=\"skill in $ctrl.skills | filter:$ctrl.skillPickerText\"\n" +
+    "                            style=\"padding: 10px 0px; cursor: pointer\">\n" +
+    "                            <i ng-class=\"$ctrl.getSkillIcon(skill)\"></i>\n" +
+    "                            {{skill.Name}}\n" +
+    "                        </li>\n" +
+    "                    </ul>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"con-flex\">\n" +
-    "        <md-autocomplete\n" +
-    "        ng-attr-skillAreasLoaded=\"{{$ctrl.skillAreasLoaded}}\"\n" +
-    "        md-min-length=\"0\"\n" +
-    "        md-selected-item=\"$ctrl.selectedSkillArea\"\n" +
-    "        md-search-text=\"skillAreaFilterText.Name\"\n" +
-    "        md-items=\"skillArea in $ctrl.skillAreas | filter:skillAreaFilterText\"\n" +
-    "        md-selected-item-change=\"$ctrl.selectSkillArea(skillArea)\"\n" +
-    "        md-item-text=\"skillArea.Name\"\n" +
-    "        placeholder=\"{{'SelectSkillGroup' | translate}}\">\n" +
-    "            <md-item-template>\n" +
-    "                <span ng-bind=\"skillArea.Name\"></span>\n" +
-    "            </md-item-template>\n" +
-    "            <md-not-found ng-cloak>\n" +
-    "                {{'RepViewerNoMoreMatches'|translate}}\n" +
-    "            </md-not-found>\n" +
-    "        </md-autocomplete>\n" +
+    "        <div class=\"wfm-form\"\n" +
+    "             outside-click=\"$ctrl.skillGroupPickerOpen = false\">\n" +
+    "            <div class=\"form-input-wrap\">\n" +
+    "                <div style=\"position: relative\">\n" +
+    "                    <input ng-click=\"$ctrl.skillGroupPickerOpen = !$ctrl.skillGroupPickerOpen\"\n" +
+    "                           ng-keypress=\"$ctrl.skillGroupPickerOpen=true\"\n" +
+    "                           ng-model=\"$ctrl.skillGroupPickerText\"\n" +
+    "                           type=\"text\"\n" +
+    "                           placeholder=\"{{'SelectSkillGroup'|translate}}\">\n" +
+    "                    <i class=\"mdi mdi-close pointer\"\n" +
+    "                       ng-click=\"$ctrl.clearSkillGroupSelection()\"\n" +
+    "                       ng-show=\"$ctrl.skillGroupPickerText\"\n" +
+    "                       style=\"position: absolute; top: 0%; left: 97%;\">\n" +
+    "                        <md-tooltip>{{'Clear'|translate}}</md-tooltip>\n" +
+    "                    </i>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "            <div style=\"position: relative\">\n" +
+    "                <div class=\"wfm-dropdown-panel panel material-depth-1 full-padding\"\n" +
+    "                     ng-show=\"$ctrl.skillGroupPickerOpen\"\n" +
+    "                     style=\"z-index: 999; position: absolute; width: 100%; overflow-y: scroll; max-height: 200px\">\n" +
+    "                    <ul>\n" +
+    "                        <li ng-click=\"$ctrl.skillGroupSelected(skillGroup)\"\n" +
+    "                            ng-repeat=\"skillGroup in $ctrl.skillGroups | filter:$ctrl.skillGroupPickerText\"\n" +
+    "                            style=\"padding: 10px 0px; cursor: pointer\">\n" +
+    "                            {{skillGroup.Name}}\n" +
+    "                        </li>\n" +
+    "                    </ul>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
     "    </div>\n" +
-    "</div>\n"
+    "</div>"
   );
 
 

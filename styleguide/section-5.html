@@ -3,7 +3,10 @@
 <!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
 <!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en" ng-app="styleguideApp"> <!--<![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html class="no-js" lang="en" ng-app="styleguideApp">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <title>Teleopti WFM Living Style Guide</title>
@@ -11,128 +14,145 @@
   <meta name="description" content="Teleopti WFM Styleguide">
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
-  <link type="text/css" rel="stylesheet" href="./public/kss.css"/>
+  <link type="text/css" rel="stylesheet" href="./public/kss.css" />
   <link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
   <link type="text/css" rel="stylesheet" href="./dist/main.min.css" />
   <script src="./dist/dependencies.min.js"></script>
   <script src="./dist/templates.js"></script>
   <script src="./dist/wfmdirectives.min.js"></script>
-  <script src="./dist/main.min.js"></script>
-  
+  <script src="./dist/main.min.js"></script> 
+
+  <style>
+    #ribbon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  </style>
 </head>
+
 <body id="kss-node" ng-view ng-controller="mainCtrl">
 
+  <a href="https://github.com/Teleopti/styleguide" id="ribbon">
+    <img src="public/github-fork--black.png" alt="fork on github">
+  </a>
+  
   <!-- <div tabindex=0 class="context-menu card-context sidebar-toggle material-depth-2" ng-click="hideSidebar = !hideSidebar">
   <i class="mdi mdi-backburger"></i>
   <md-tooltip>Options</md-tooltip>
 </div> -->
-<div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
-  <header class="kss-header line-center">
-    <a href="index.html">
-      <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
-    </a>
-  </header>
-  <nav class="kss-nav">
-    <ul class="kss-nav__menu">
-      <li class="kss-nav__menu-item">
-        <a href="section-0.html">
-          <i class="mdi" ng-class="getChapteIcon('Overview')"></i>
-          <span class="kss-nav__name">Overview</span>
-        </a>
+  <div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
+    <header class="kss-header line-center">
+      <a href="index.html">
+        <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
+      </a>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item">
+          <a href="section-0.html">
+            <i class="mdi" ng-class="getChapteIcon('Overview')"></i>
+            <span class="kss-nav__name">Overview</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-1.html">
-          <i class="mdi" ng-class="getChapteIcon('Elements')"></i>
-          <span class="kss-nav__name">Elements</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-1.html">
+            <i class="mdi" ng-class="getChapteIcon('Elements')"></i>
+            <span class="kss-nav__name">Elements</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-2.html">
-          <i class="mdi" ng-class="getChapteIcon('Components')"></i>
-          <span class="kss-nav__name">Components</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-2.html">
+            <i class="mdi" ng-class="getChapteIcon('Components')"></i>
+            <span class="kss-nav__name">Components</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-3.html">
-          <i class="mdi" ng-class="getChapteIcon('Colors')"></i>
-          <span class="kss-nav__name">Colors</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-3.html">
+            <i class="mdi" ng-class="getChapteIcon('Colors')"></i>
+            <span class="kss-nav__name">Colors</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-4.html">
-          <i class="mdi" ng-class="getChapteIcon('Containers')"></i>
-          <span class="kss-nav__name">Containers</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-4.html">
+            <i class="mdi" ng-class="getChapteIcon('Containers')"></i>
+            <span class="kss-nav__name">Containers</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-5.html">
-          <i class="mdi" ng-class="getChapteIcon('Tree')"></i>
-          <span class="kss-nav__name">Tree</span>
-        </a>
-        <ul class="kss-nav__menu-child">
-          <a href="section-5.html#kssref-5-1">
-            <li class="kss-nav__menu-item">
+        <li class="kss-nav__menu-item">
+          <a href="section-5.html">
+            <i class="mdi" ng-class="getChapteIcon('Tree')"></i>
+            <span class="kss-nav__name">Tree</span>
+          </a>
+          <ul class="kss-nav__menu-child">
+               
+            <a href="section-5.html#kssref-5-1">
+              <li class="kss-nav__menu-item">
 
-              <span class="kss-nav__ref">5.1</span
-                ><span class="kss-nav__name">Tree type one - function picker</span>
+                <span class="kss-nav__ref">5.1</span>
+                <span class="kss-nav__name">Tree type one - function picker</span>
 
               </li>
             </a>
-          <a href="section-5.html#kssref-5-2">
-            <li class="kss-nav__menu-item">
+              
+            <a href="section-5.html#kssref-5-2">
+              <li class="kss-nav__menu-item">
 
-              <span class="kss-nav__ref">5.2</span
-                ><span class="kss-nav__name">Tree type two - organization picker</span>
-
-              </li>
-            </a>
-          <a href="section-5.html#kssref-5-3">
-            <li class="kss-nav__menu-item">
-
-              <span class="kss-nav__ref">5.3</span
-                ><span class="kss-nav__name">Tree type two - organization picker(unique root)</span>
+                <span class="kss-nav__ref">5.2</span>
+                <span class="kss-nav__name">Tree type two - organization picker</span>
 
               </li>
             </a>
-          <a href="section-5.html#kssref-5-4">
-            <li class="kss-nav__menu-item">
+              
+            <a href="section-5.html#kssref-5-3">
+              <li class="kss-nav__menu-item">
 
-              <span class="kss-nav__ref">5.4</span
-                ><span class="kss-nav__name">Tree Picker Filter</span>
+                <span class="kss-nav__ref">5.3</span>
+                <span class="kss-nav__name">Tree type two - organization picker(unique root)</span>
 
               </li>
             </a>
+              
+            <a href="section-5.html#kssref-5-4">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">5.4</span>
+                <span class="kss-nav__name">Tree Picker Filter</span>
+
+              </li>
+            </a>
+             
           </ul>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-6.html">
-          <i class="mdi" ng-class="getChapteIcon('Language')"></i>
-          <span class="kss-nav__name">Language</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-6.html">
+            <i class="mdi" ng-class="getChapteIcon('Language')"></i>
+            <span class="kss-nav__name">Language</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-7.html">
-          <i class="mdi" ng-class="getChapteIcon('Icons')"></i>
-          <span class="kss-nav__name">Icons</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-7.html">
+            <i class="mdi" ng-class="getChapteIcon('Icons')"></i>
+            <span class="kss-nav__name">Icons</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-8.html">
-          <i class="mdi" ng-class="getChapteIcon('Helper classes')"></i>
-          <span class="kss-nav__name">Helper classes</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-8.html">
+            <i class="mdi" ng-class="getChapteIcon('Helper classes')"></i>
+            <span class="kss-nav__name">Helper classes</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-9.html">
-          <i class="mdi" ng-class="getChapteIcon('Naming and best practice')"></i>
-          <span class="kss-nav__name">Naming and best practice</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-9.html">
+            <i class="mdi" ng-class="getChapteIcon('Naming and best practice')"></i>
+            <span class="kss-nav__name">Naming and best practice</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-10.html">
-          <i class="mdi" ng-class="getChapteIcon('Resources')"></i>
-          <span class="kss-nav__name">Resources</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-10.html">
+            <i class="mdi" ng-class="getChapteIcon('Resources')"></i>
+            <span class="kss-nav__name">Resources</span>
+          </a>
         </li>
       </ul>
       <br/>
@@ -140,20 +160,19 @@
   </div>
 
   <article role="main">
-    <article role="main" class="kss-main">
+  <article role="main" class="kss-main">
+      
+    <div id="kssref-5" class="kss-section section-hero kss-section--depth-1">
 
-      <div id="kssref-5" class="kss-section section-hero kss-section--depth-1">
-
-          <div class="kss-style">
-            <h1 class="kss-title kss-title--level-1">
+        <div class="kss-style">
+          <h1 class="kss-title kss-title--level-1">
             <a class="kss-title__permalink">
               Tree
             </a>
           </h1>
           <small class="kss-title__ref">5 </small>
 
-
-        </div>
+         </div>
         <!--Only for resource page-->
         <div ng-cloak ng-if="checkResourceSection('Tree')">
           <div class="con-row">
@@ -170,29 +189,31 @@
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
-
+ 
     </div>
-
         <section id="kssref-5-1" class="kss-section material-depth-1 kss-section--depth-2">
 
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Tree type one - function picker
             </a>
           </h2>
           <small class="kss-title__ref">5.1 </small>
 
-
+ 
           <div class="kss-description">
             <p>Tree type one is a special tree picker, it allows parent nodes to be selected independently from their children.
 This tree type structure is used to show relations between different items. Selected items are marked with a full checkmark &#39;✓&#39;.</p>
@@ -235,12 +256,15 @@ This tree type structure is used to show relations between different items. Sele
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -265,26 +289,24 @@ This tree type structure is used to show relations between different items. Sele
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <tree-data-one ng-model="treeDemos1" option="treeOption"></tree-data-one>
+          <div class="kss-modifier__example">
+            <tree-data-one ng-model="treeDemos1" option="treeOption"></tree-data-one>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-5-2" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-5-2" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Tree type two - organization picker
             </a>
           </h2>
           <small class="kss-title__ref">5.2 </small>
 
-
+ 
           <div class="kss-description">
             <p>Tree type two is a general tree structure using parent-child relation.
 This tree type structure is used to show relations between different items. Selected items are marked with a full checkmark &#39;✓&#39; or semi-checkmark &#39;-&#39;.
@@ -329,12 +351,15 @@ If parent item contains one child item it is marked as selected as well as its p
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -359,26 +384,24 @@ If parent item contains one child item it is marked as selected as well as its p
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <tree-data-two ng-model="treeDemos2" option="treeOption2"></tree-data-two>
+          <div class="kss-modifier__example">
+            <tree-data-two ng-model="treeDemos2" option="treeOption2"></tree-data-two>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-5-3" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-5-3" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Tree type two - organization picker(unique root)
             </a>
           </h2>
           <small class="kss-title__ref">5.3 </small>
 
-
+ 
           <div class="kss-description">
             <p>If the tree data has several first level parents (as root in this description), selection is only allowed for one of them at a time.</p>
 <div class="jsprewrap">
@@ -422,12 +445,15 @@ If parent item contains one child item it is marked as selected as well as its p
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -452,26 +478,24 @@ If parent item contains one child item it is marked as selected as well as its p
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <tree-data-two ng-model="treeDemos3" option="treeOption3"></tree-data-two>
+          <div class="kss-modifier__example">
+            <tree-data-two ng-model="treeDemos3" option="treeOption3"></tree-data-two>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-5-4" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-5-4" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Tree Picker Filter
             </a>
           </h2>
           <small class="kss-title__ref">5.4 </small>
 
-
+ 
           <div class="kss-description">
             <p>Tree picker filter is a general filter for all types of tree picker and it uses for filter site/team within a organization by input keyword.</p>
 <div class="jsprewrap">
@@ -515,12 +539,15 @@ If parent item contains one child item it is marked as selected as well as its p
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -545,26 +572,23 @@ If parent item contains one child item it is marked as selected as well as its p
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <tree-data-two ng-model="treeDemos4" option="treeOption4"></tree-data-two>
+          <div class="kss-modifier__example">
+            <tree-data-two ng-model="treeDemos4" option="treeOption4"></tree-data-two>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+      
+  </article>
 
-  </section>
-</article>
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
 
-<script src="public/kss.js"></script>
-<script src="public/prettify.js"></script>
-
-<script>
-prettyPrint();
-</script>
-
-
-
-
-<!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+  <script>
+    prettyPrint();
+  </script>   
+  <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
+
 </html>

@@ -3,7 +3,10 @@
 <!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
 <!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en" ng-app="styleguideApp"> <!--<![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html class="no-js" lang="en" ng-app="styleguideApp">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <title>Teleopti WFM Living Style Guide</title>
@@ -11,192 +14,217 @@
   <meta name="description" content="Teleopti WFM Styleguide">
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
-  <link type="text/css" rel="stylesheet" href="./public/kss.css"/>
+  <link type="text/css" rel="stylesheet" href="./public/kss.css" />
   <link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
   <link type="text/css" rel="stylesheet" href="./dist/main.min.css" />
   <script src="./dist/dependencies.min.js"></script>
   <script src="./dist/templates.js"></script>
   <script src="./dist/wfmdirectives.min.js"></script>
-  <script src="./dist/main.min.js"></script>
-  
+  <script src="./dist/main.min.js"></script> 
+
+  <style>
+    #ribbon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  </style>
 </head>
+
 <body id="kss-node" ng-view ng-controller="mainCtrl">
 
+  <a href="https://github.com/Teleopti/styleguide" id="ribbon">
+    <img src="public/github-fork--black.png" alt="fork on github">
+  </a>
+  
   <!-- <div tabindex=0 class="context-menu card-context sidebar-toggle material-depth-2" ng-click="hideSidebar = !hideSidebar">
   <i class="mdi mdi-backburger"></i>
   <md-tooltip>Options</md-tooltip>
 </div> -->
-<div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
-  <header class="kss-header line-center">
-    <a href="index.html">
-      <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
-    </a>
-  </header>
-  <nav class="kss-nav">
-    <ul class="kss-nav__menu">
-      <li class="kss-nav__menu-item">
-        <a href="section-0.html">
-          <i class="mdi" ng-class="getChapteIcon('Overview')"></i>
-          <span class="kss-nav__name">Overview</span>
-        </a>
+  <div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
+    <header class="kss-header line-center">
+      <a href="index.html">
+        <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
+      </a>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item">
+          <a href="section-0.html">
+            <i class="mdi" ng-class="getChapteIcon('Overview')"></i>
+            <span class="kss-nav__name">Overview</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-1.html">
-          <i class="mdi" ng-class="getChapteIcon('Elements')"></i>
-          <span class="kss-nav__name">Elements</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-1.html">
+            <i class="mdi" ng-class="getChapteIcon('Elements')"></i>
+            <span class="kss-nav__name">Elements</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-2.html">
-          <i class="mdi" ng-class="getChapteIcon('Components')"></i>
-          <span class="kss-nav__name">Components</span>
-        </a>
-        <ul class="kss-nav__menu-child">
-          <a href="section-2.html#kssref-2-1">
-            <li class="kss-nav__menu-item">
+        <li class="kss-nav__menu-item">
+          <a href="section-2.html">
+            <i class="mdi" ng-class="getChapteIcon('Components')"></i>
+            <span class="kss-nav__name">Components</span>
+          </a>
+          <ul class="kss-nav__menu-child">
+               
+            <a href="section-2.html#kssref-2-1">
+              <li class="kss-nav__menu-item">
 
-              <span class="kss-nav__ref">2.1</span
-                ><span class="kss-nav__name">Single date picker</span>
-
-              </li>
-            </a>
-          <a href="section-2.html#kssref-2-2">
-            <li class="kss-nav__menu-item">
-
-              <span class="kss-nav__ref">2.2</span
-                ><span class="kss-nav__name">Date range picker</span>
+                <span class="kss-nav__ref">2.1</span>
+                <span class="kss-nav__name">Single date picker</span>
 
               </li>
             </a>
-          <a href="section-2.html#kssref-2-3">
-            <li class="kss-nav__menu-item">
+              
+            <a href="section-2.html#kssref-2-2">
+              <li class="kss-nav__menu-item">
 
-              <span class="kss-nav__ref">2.3</span
-                ><span class="kss-nav__name">Date range picker with custom validation</span>
-
-              </li>
-            </a>
-          <a href="section-2.html#kssref-2-4">
-            <li class="kss-nav__menu-item">
-
-              <span class="kss-nav__ref">2.4</span
-                ><span class="kss-nav__name">Date range picker with only weeks/monthes interval</span>
+                <span class="kss-nav__ref">2.2</span>
+                <span class="kss-nav__name">Date range picker</span>
 
               </li>
             </a>
-          <a href="section-2.html#kssref-2-5">
-            <li class="kss-nav__menu-item">
+              
+            <a href="section-2.html#kssref-2-3">
+              <li class="kss-nav__menu-item">
 
-              <span class="kss-nav__ref">2.5</span
-                ><span class="kss-nav__name">Date range picker with preselected date</span>
-
-              </li>
-            </a>
-          <a href="section-2.html#kssref-2-6">
-            <li class="kss-nav__menu-item">
-
-              <span class="kss-nav__ref">2.6</span
-                ><span class="kss-nav__name">Line chart</span>
+                <span class="kss-nav__ref">2.3</span>
+                <span class="kss-nav__name">Date range picker with custom validation</span>
 
               </li>
             </a>
-          <a href="section-2.html#kssref-2-7">
-            <li class="kss-nav__menu-item">
+              
+            <a href="section-2.html#kssref-2-4">
+              <li class="kss-nav__menu-item">
 
-              <span class="kss-nav__ref">2.7</span
-                ><span class="kss-nav__name">Time range Picker</span>
-
-              </li>
-            </a>
-          <a href="section-2.html#kssref-2-9">
-            <li class="kss-nav__menu-item">
-
-              <span class="kss-nav__ref">2.9</span
-                ><span class="kss-nav__name">Pagination</span>
+                <span class="kss-nav__ref">2.4</span>
+                <span class="kss-nav__name">Date range picker with only weeks/monthes interval</span>
 
               </li>
             </a>
-          <a href="section-2.html#kssref-2-10">
-            <li class="kss-nav__menu-item">
+              
+            <a href="section-2.html#kssref-2-5">
+              <li class="kss-nav__menu-item">
 
-              <span class="kss-nav__ref">2.10</span
-                ><span class="kss-nav__name">Working hours picker</span>
-
-              </li>
-            </a>
-          <a href="section-2.html#kssref-2-11">
-            <li class="kss-nav__menu-item">
-
-              <span class="kss-nav__ref">2.11</span
-                ><span class="kss-nav__name">Notices</span>
+                <span class="kss-nav__ref">2.5</span>
+                <span class="kss-nav__name">Date range picker with preselected date</span>
 
               </li>
             </a>
-          <a href="section-2.html#kssref-2-12">
-            <li class="kss-nav__menu-item">
+              
+            <a href="section-2.html#kssref-2-6">
+              <li class="kss-nav__menu-item">
 
-              <span class="kss-nav__ref">2.12</span
-                ><span class="kss-nav__name">Numeric value</span>
-
-              </li>
-            </a>
-          <a href="section-2.html#kssref-2-13">
-            <li class="kss-nav__menu-item">
-
-              <span class="kss-nav__ref">2.13</span
-                ><span class="kss-nav__name">Skill picker</span>
+                <span class="kss-nav__ref">2.6</span>
+                <span class="kss-nav__name">Line chart</span>
 
               </li>
             </a>
+              
+            <a href="section-2.html#kssref-2-7">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.7</span>
+                <span class="kss-nav__name">Time range Picker</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-9">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.9</span>
+                <span class="kss-nav__name">Pagination</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-10">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.10</span>
+                <span class="kss-nav__name">Working hours picker</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-11">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.11</span>
+                <span class="kss-nav__name">Notices</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-12">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.12</span>
+                <span class="kss-nav__name">Numeric value</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-13">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.13</span>
+                <span class="kss-nav__name">Skill picker</span>
+
+              </li>
+            </a>
+             
           </ul>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-3.html">
-          <i class="mdi" ng-class="getChapteIcon('Colors')"></i>
-          <span class="kss-nav__name">Colors</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-3.html">
+            <i class="mdi" ng-class="getChapteIcon('Colors')"></i>
+            <span class="kss-nav__name">Colors</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-4.html">
-          <i class="mdi" ng-class="getChapteIcon('Containers')"></i>
-          <span class="kss-nav__name">Containers</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-4.html">
+            <i class="mdi" ng-class="getChapteIcon('Containers')"></i>
+            <span class="kss-nav__name">Containers</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-5.html">
-          <i class="mdi" ng-class="getChapteIcon('Tree')"></i>
-          <span class="kss-nav__name">Tree</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-5.html">
+            <i class="mdi" ng-class="getChapteIcon('Tree')"></i>
+            <span class="kss-nav__name">Tree</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-6.html">
-          <i class="mdi" ng-class="getChapteIcon('Language')"></i>
-          <span class="kss-nav__name">Language</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-6.html">
+            <i class="mdi" ng-class="getChapteIcon('Language')"></i>
+            <span class="kss-nav__name">Language</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-7.html">
-          <i class="mdi" ng-class="getChapteIcon('Icons')"></i>
-          <span class="kss-nav__name">Icons</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-7.html">
+            <i class="mdi" ng-class="getChapteIcon('Icons')"></i>
+            <span class="kss-nav__name">Icons</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-8.html">
-          <i class="mdi" ng-class="getChapteIcon('Helper classes')"></i>
-          <span class="kss-nav__name">Helper classes</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-8.html">
+            <i class="mdi" ng-class="getChapteIcon('Helper classes')"></i>
+            <span class="kss-nav__name">Helper classes</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-9.html">
-          <i class="mdi" ng-class="getChapteIcon('Naming and best practice')"></i>
-          <span class="kss-nav__name">Naming and best practice</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-9.html">
+            <i class="mdi" ng-class="getChapteIcon('Naming and best practice')"></i>
+            <span class="kss-nav__name">Naming and best practice</span>
+          </a>
         </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-10.html">
-          <i class="mdi" ng-class="getChapteIcon('Resources')"></i>
-          <span class="kss-nav__name">Resources</span>
-        </a>
+        <li class="kss-nav__menu-item">
+          <a href="section-10.html">
+            <i class="mdi" ng-class="getChapteIcon('Resources')"></i>
+            <span class="kss-nav__name">Resources</span>
+          </a>
         </li>
       </ul>
       <br/>
@@ -204,19 +232,19 @@
   </div>
 
   <article role="main">
-    <article role="main" class="kss-main">
+  <article role="main" class="kss-main">
+      
+    <div id="kssref-2" class="kss-section section-hero kss-section--depth-1">
 
-      <div id="kssref-2" class="kss-section section-hero kss-section--depth-1">
-
-          <div class="kss-style">
-            <h1 class="kss-title kss-title--level-1">
+        <div class="kss-style">
+          <h1 class="kss-title kss-title--level-1">
             <a class="kss-title__permalink">
               Components
             </a>
           </h1>
           <small class="kss-title__ref">2 </small>
 
-
+ 
           <div class="kss-description">
             <p>This chapter details the use of more javascript heavy components and directives. Most of these need some configuration from the js side to make them work.</p>
 
@@ -238,29 +266,31 @@
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
-
+ 
     </div>
-
         <section id="kssref-2-1" class="kss-section material-depth-1 kss-section--depth-2">
 
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Single date picker
             </a>
           </h2>
           <small class="kss-title__ref">2.1 </small>
 
-
+ 
           <div class="kss-description">
             <p>The single date picker is based on Bootstrap&#39;s datepicker and use to take a single date easily.
 To use the single date picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
@@ -285,12 +315,15 @@ Hover and click on the selected date section to reset the selected date to empty
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -318,29 +351,27 @@ Hover and click on the selected date section to reset the selected date to empty
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <h1>With week numbers</h1>
+          <div class="kss-modifier__example">
+            <h1>With week numbers</h1>
 <wfm-calendar-picker ng-model="singleDate" show-week="true" single-date-picker></wfm-calendar-picker>
 <h1>Without week numbers</h1>
 <wfm-calendar-picker ng-model="singleDate2" show-week="false" single-date-picker></wfm-calendar-picker>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-2-2" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-2-2" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Date range picker
             </a>
           </h2>
           <small class="kss-title__ref">2.2 </small>
 
-
+ 
           <div class="kss-description">
             <p>The date range picker is based on Bootstrap&#39;s datepicker and all we do is wrapping it and applying some special classes to make it more compatible with material design.
 To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
@@ -371,12 +402,15 @@ Hover and click on the selected date section to reset the selected date to empty
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -404,29 +438,27 @@ Hover and click on the selected date section to reset the selected date to empty
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <h1>With week numbers</h1>
+          <div class="kss-modifier__example">
+            <h1>With week numbers</h1>
 <wfm-calendar-picker show-week="true" ng-model="dateRange1"></wfm-calendar-picker>
 <h1>Without week numbers</h1>
 <wfm-calendar-picker show-week="false" ng-model="dateRange2"></wfm-calendar-picker>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-2-3" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-2-3" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Date range picker with custom validation
             </a>
           </h2>
           <small class="kss-title__ref">2.3 </small>
 
-
+ 
           <div class="kss-description">
             <p>The date range picker is based on Bootstrap&#39;s datepicker and all we do is wrapping it and applying some special classes to make it more compatible with material design.
 To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20).
@@ -445,11 +477,8 @@ Hover and click on the selected date section to reset the selected date to empty
       <pre class="prettyprint linenums lang-js">
 
          $scope.customValid = function (data) {
-           if(data.startDate - data.endDate &gt; 0) {
-             return &quot;[custom validation]: your startDate is later than your endDate&quot;;
-           }
-           if(data.startDate - data.endDate &lt; 0) {
-             return &quot;[custom validation]: your startDate is earlier than your endDate&quot;;
+           if(moment(data.endDate).diff(moment(data.startDate), &#39;days&#39;) &gt; 7) {
+             return &quot;[custom validation]: your end date is 7 days later than your start date&quot;;
            }
          }
 
@@ -475,12 +504,15 @@ Hover and click on the selected date section to reset the selected date to empty
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -505,26 +537,24 @@ Hover and click on the selected date section to reset the selected date to empty
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <wfm-calendar-picker ng-model="anotherDateRange" show-week="false" custom-validate="customValid(anotherDateRange)"></wfm-calendar-picker>
+          <div class="kss-modifier__example">
+            <wfm-calendar-picker ng-model="anotherDateRange" show-week="false" custom-validate="customValid(anotherDateRange)"></wfm-calendar-picker>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-2-4" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-2-4" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Date range picker with only weeks/monthes interval
             </a>
           </h2>
           <small class="kss-title__ref">2.4 </small>
 
-
+ 
           <div class="kss-description">
             <p>The datepicker is based on Bootstrap&#39;s datepicker and all we do is wrapping it and applying some special classes to make it more compatible with material design.
 To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
@@ -549,12 +579,15 @@ Hover and click on the selected date section to reset the selected date to empty
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -582,29 +615,27 @@ Hover and click on the selected date section to reset the selected date to empty
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <h1>validate only exam with week interval</h1>
+          <div class="kss-modifier__example">
+            <h1>validate only exam with week interval</h1>
 <wfm-calendar-picker ng-model="dateRange3" show-week="false" interval-rule="week"></wfm-calendar-picker>
 <h1>validate only exam with month interval</h1>
 <wfm-calendar-picker ng-model="dateRange4" show-week="false" interval-rule="month"></wfm-calendar-picker>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-2-5" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-2-5" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Date range picker with preselected date
             </a>
           </h2>
           <small class="kss-title__ref">2.5 </small>
 
-
+ 
           <div class="kss-description">
             <p>The datepicker is based on Bootstrap&#39;s datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
 To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
@@ -629,12 +660,15 @@ Hover and click on the selected date section to reset the selected date to empty
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -662,29 +696,27 @@ Hover and click on the selected date section to reset the selected date to empty
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <h1>Date range picker with disabling endDate selection. </h1>
+          <div class="kss-modifier__example">
+            <h1>Date range picker with disabling endDate selection. </h1>
 <wfm-calendar-picker ng-model="dateRange5" show-week="false" disable="end-date"></wfm-calendar-picker>
 <h1>Date range picker with disabling startDate selection. </h1>
 <wfm-calendar-picker ng-model="dateRange6" show-week="false" disable="start-date"></wfm-calendar-picker>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-2-6" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-2-6" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Line chart
             </a>
           </h2>
           <small class="kss-title__ref">2.6 </small>
 
-
+ 
           <div class="kss-description">
             <p>A chart used to present complex data. We use <a href="http://c3js.org/gettingstarted.html">default C3</a> or the <a href="http://jettro.github.io/c3-angular-directive/#download">C3 chart directive</a> to get nice features like legends, zoom and period selection.</p>
 <p>Note: Column-values in the directive should be replaced with a variable to keep the html clean.</p>
@@ -735,12 +767,15 @@ Hover and click on the selected date section to reset the selected date to empty
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -779,8 +814,8 @@ Hover and click on the selected date section to reset the selected date to empty
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <h3>Bind to chart with zoom and select</h3>
+          <div class="kss-modifier__example">
+            <h3>Bind to chart with zoom and select</h3>
 <div class="wfm-chart" id="myChart"></div>
 <h3>c3 directive</h3>
 <c3chart class="wfm-chart" bindto-id="chart2">
@@ -795,24 +830,22 @@ Hover and click on the selected date section to reset the selected date to empty
 	column-values="50,20,10,40,15,25"
 	column-type="line"/>
 </c3chart>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-2-7" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-2-7" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Time range Picker
             </a>
           </h2>
           <small class="kss-title__ref">2.7 </small>
 
-
+ 
           <div class="kss-description">
             <p>A directive for managing time range. The time range is represented by any object that have <code>startTime</code> and <code>endTime</code> keys, each with a js Date object as value. The range can be overnight if <code>disable-next-day</code> is set to false. In that case, a <code>+ 1</code> sign will be shown to indicate the end time is at the second day.
 The pickers are self-adjusted to the user&#39;s time-format setting, i.e. meridian will be used for 12-h format and disabled for 24-h format with correct meridian texts.</p>
@@ -843,12 +876,15 @@ The pickers are self-adjusted to the user&#39;s time-format setting, i.e. meridi
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -875,28 +911,26 @@ The pickers are self-adjusted to the user&#39;s time-format setting, i.e. meridi
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-           <div class="con-row">
+          <div class="kss-modifier__example">
+             <div class="con-row">
    <time-range-picker ng-model="timeRange" disable-next-day="disableNextDay" max-hours-range="24"></time-range-picker>
  </div>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-2-9" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-2-9" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Pagination
             </a>
           </h2>
           <small class="kss-title__ref">2.9 </small>
 
-
+ 
           <div class="kss-description">
             <p>Pagination is a directive which displays a list of availale pages and provides the properties for outer scope to set the pagination options and get data for the given page number.</p>
 <table class="wfm-table">
@@ -942,12 +976,15 @@ $scope.getPageData = function(pageIndex) {
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -972,26 +1009,24 @@ $scope.getPageData = function(pageIndex) {
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <wfm-pagination class="pull-pagination" pagination-options="paginationOptions" get-data-for-page-callback="getPageData"></wfm-pagination>
+          <div class="kss-modifier__example">
+            <wfm-pagination class="pull-pagination" pagination-options="paginationOptions" get-data-for-page-callback="getPageData"></wfm-pagination>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-2-10" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-2-10" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Working hours picker
             </a>
           </h2>
           <small class="kss-title__ref">2.10 </small>
 
-
+ 
           <div class="kss-description">
             <p>A directive for specifying the week day and time range. It is built taking the time range picker as a dependency.</p>
 <p><table class="wfm-table"></p>
@@ -1020,12 +1055,15 @@ $scope.getPageData = function(pageIndex) {
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -1050,26 +1088,24 @@ $scope.getPageData = function(pageIndex) {
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <work-picker working-hours="model" over-night-switch="true" time-format-switch="true">
+          <div class="kss-modifier__example">
+            <work-picker working-hours="model" over-night-switch="true" time-format-switch="true">
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-2-11" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-2-11" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Notices
             </a>
           </h2>
           <small class="kss-title__ref">2.11 </small>
 
-
+ 
           <div class="kss-description">
             <p>Notices are temporary alerts that should quickly show up and disappear when appropriate.
 They can indicate to the user that an event or action has taken place or that something is stopping the current action.
@@ -1117,12 +1153,15 @@ $scope.displaySuccess = function() {
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -1156,8 +1195,8 @@ $scope.displaySuccess = function() {
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          
+          <div class="kss-modifier__example">
+            
 <!-- Some examples of how triggering a notice -->
 <button class="wfm-btn wfm-btn-default" ng-click="displaySuccessNew();">Trigger success</button>
 <button class="wfm-btn wfm-btn-default" ng-click="displayInfoNew();">Trigger info</button>
@@ -1167,24 +1206,22 @@ $scope.displaySuccess = function() {
 <!-- The code below is included by default in our index.html. NO NEED TO REPEAT IT-->
 <wfm-notice notices="wfmNotices"></wfm-notice>
 
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-2-12" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-2-12" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Numeric value
             </a>
           </h2>
           <small class="kss-title__ref">2.12 </small>
 
-
+ 
           <div class="kss-description">
             <p>A directive for making an input[text] behave like an input[number].
 Locale-aware number strings (e.g. 1.234,01 in Swedish) entered directly into the input field are accepted as text and parsed manually with the correct ng-locale (using the correct group separator and decimal separator).
@@ -1208,12 +1245,15 @@ The directive accepts the &quot;float-number&quot; tag attribute. Without it the
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -1249,8 +1289,8 @@ The directive accepts the &quot;float-number&quot; tag attribute. Without it the
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-            <form name="form" class="wfm-form">
+          <div class="kss-modifier__example">
+              <form name="form" class="wfm-form">
       <label>Localized number: <input type="text" ng-model="numericValueInput" name="Example" placeholder="0 ~ 1000000" numeric-value min="0" max="1000000"/></label>
       <p>
             Integer: <span ng-bind="numericValueInputResult"></span>
@@ -1262,51 +1302,73 @@ The directive accepts the &quot;float-number&quot; tag attribute. Without it the
   </form>
   
         
+          </div>
         </div>
-      </div>
 
 
+             </section>
+            <section id="kssref-2-13" class="kss-section material-depth-1 kss-section--depth-2">
 
-  </section>
-
-        <section id="kssref-2-13" class="kss-section material-depth-1 kss-section--depth-2">
-
-          <div class="kss-style">
-            <h2 class="kss-title kss-title--level-2">
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
             <a class="kss-title__permalink">
               Skill picker
             </a>
           </h2>
           <small class="kss-title__ref">2.13 </small>
 
-
+ 
           <div class="kss-description">
             <p>The skill picker is used to switch between selected skills and selected skill groups.</p>
-<p><table class="wfm-table"></p>
-<p><thead>
-    <tr>
-        <th>Attribute Name</th>
-        <th>Usage</th>
-    </tr>
-</thead></p>
-<p><tbody>
-    <tr>
-        <td>skills</td>
-        <td>Model for binding skills</td>
-    </tr>
-    <tr>
-        <td>skill-areas</td>
-        <td>Model for binding skill groups</td>
-    </tr>
-   <tr>
-     <td>item-to-return</td>
-     <td>The currently selected item (skill or group) returned as a callback function</td>
-   </tr>
-   <tr>
-     <td>preselected</td>
-     <td>Send the id of a skill that should be preselected on load</td>
-   </tr>
-</tbody>
+<p><table class="wfm-table">
+    <thead>
+        <tr>
+            <th>Attribute Name</th>
+            <th>Usage</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>skills</td>
+            <td>Model for binding skills. Array of skill objects</td>
+        </tr>
+        <tr>
+            <td>skill-groups</td>
+            <td>Model for binding skill groups. Array of skillgroup objects</td>
+        </tr>
+        <tr>
+            <td>skill-picker-open</td>
+            <td>Property for showing and hiding the drop-down with skills. Boolean. Optional</td>
+        </tr>
+        <tr>
+            <td>skill-group-picker-open</td>
+            <td>Property for showing and hiding the drop-down with skillgroups. Boolean. Optional</td>
+        </tr>
+        <tr>
+            <td>on-skill-selected</td>
+            <td>Callback function triggered when a skill is selected. The selected skill object as the only argument.</td>
+        </tr>
+        <tr>
+            <td>on-skill-group-selected</td>
+            <td>Callback function triggered when a skillgroup is selected. The selected skillgroup object as the only argument.</td>
+        </tr>
+        <tr>
+            <td>preselected-skill</td>
+            <td>Skill object to be displayed as the component loads</td>
+        </tr>
+        <tr>
+            <td>preselected-skill-group</td>
+            <td>Skillgroup object to be displayed as the component loads</td>
+        </tr>
+        <tr>
+            <td>on-clear-skill-selection</td>
+            <td>Callback function triggered when clearing the skill selection with x.</td>
+        </tr>
+        <tr>
+            <td>on-clear-skill-group-selection</td>
+            <td>Callback function triggered when clearing the skillgroup selection with x.</td>
+        </tr>
+    </tbody>
 </table></p>
 <div class="jsprewrap">
   <div class="ksscopy kss-style" ng-click="showJs['skillPicker'] = !showJs['skillPicker']">
@@ -1376,13 +1438,6 @@ $scope.mockedSkillGroups = [
    ]
  }
 ];
-
-$scope.preselectedSkill = { skillIds: [&#39;XYZ1&#39;] };
-$scope.preselectedSkillGroup = { skillAreaId: [&#39;XYZ&#39;] };
-
-$scope.output = function(selectedItem) {
- $scope.filterOutput = selectedItem;
-};
       </pre>
     </code>
   </div>
@@ -1405,12 +1460,15 @@ $scope.output = function(selectedItem) {
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -1425,8 +1483,20 @@ $scope.output = function(selectedItem) {
           <div class="animate-show" ng-show="markupShow['Skill picker']">
             <code>
               <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
-                &lt;skill-picker skills=&quot;mockSkills&quot; skill-areas=&quot;mockedSkillGroups&quot; item-to-return=&quot;output&quot; preselected-item=&quot;preselectedSkill&quot;&gt;&lt;/skill-picker&gt;
-&lt;p ng-if=&quot;filterOutput&quot;&gt;Selected skill/group: &lt;span ng-bind=&quot;filterOutput.Name&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+                &lt;the-skill-picker class=&quot;con-flex&quot;
+     skills=&quot;mockSkills&quot;
+     skill-groups=&quot;mockedSkillGroups&quot;
+     skill-picker-open=&quot;skillPickerOpen&quot;
+     skill-group-picker-open=&quot;skillGroupPickerOpen&quot;
+     on-skill-selected=&quot;clickedSkillInPicker(skill)&quot;
+     on-skill-group-selected=&quot;clickedSkillGroupInPicker(skillGroup)&quot;
+     preselected-skill=&quot;selectedSkill&quot;
+     preselected-skill-group=&quot;selectedSkillGroup&quot;
+     on-clear-skill-selection=&quot;clearSkillSelection()&quot;
+     on-clear-skill-group-selection=&quot;clearSkillGroupSelection()&quot;&gt;
+&lt;/the-skill-picker&gt;
+&lt;p ng-if=&quot;selectedSkill&quot;&gt;Selected skill: &lt;span ng-bind=&quot;selectedSkill.Name&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p ng-if=&quot;selectedSkillGroup&quot;&gt;Selected skillgroup: &lt;span ng-bind=&quot;selectedSkillGroup.Name&quot;&gt;&lt;/span&gt;&lt;/p&gt;
               </pre>
             </code>
           </div>
@@ -1436,27 +1506,36 @@ $scope.output = function(selectedItem) {
           <!-- <div class="kss-modifier__heading kss-style">
           Example
         </div> -->
-        <div class="kss-modifier__example">
-          <skill-picker skills="mockSkills" skill-areas="mockedSkillGroups" item-to-return="output" preselected-item="preselectedSkill"></skill-picker>
-<p ng-if="filterOutput">Selected skill/group: <span ng-bind="filterOutput.Name"></span></p>
+          <div class="kss-modifier__example">
+            <the-skill-picker class="con-flex"
+     skills="mockSkills"
+     skill-groups="mockedSkillGroups"
+     skill-picker-open="skillPickerOpen"
+     skill-group-picker-open="skillGroupPickerOpen"
+     on-skill-selected="clickedSkillInPicker(skill)"
+     on-skill-group-selected="clickedSkillGroupInPicker(skillGroup)"
+     preselected-skill="selectedSkill"
+     preselected-skill-group="selectedSkillGroup"
+     on-clear-skill-selection="clearSkillSelection()"
+     on-clear-skill-group-selection="clearSkillGroupSelection()">
+</the-skill-picker>
+<p ng-if="selectedSkill">Selected skill: <span ng-bind="selectedSkill.Name"></span></p>
+<p ng-if="selectedSkillGroup">Selected skillgroup: <span ng-bind="selectedSkillGroup.Name"></span></p>
+          </div>
         </div>
-      </div>
 
 
+             </section>
+      
+  </article>
 
-  </section>
-</article>
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
 
-<script src="public/kss.js"></script>
-<script src="public/prettify.js"></script>
-
-<script>
-prettyPrint();
-</script>
-
-
-
-
-<!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+  <script>
+    prettyPrint();
+  </script>   
+  <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
+
 </html>
