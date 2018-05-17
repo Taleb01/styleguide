@@ -643,3 +643,11 @@ md-tooltip {
 
 .searchItem:focus > li {
   background: #66c2ff; }
+
+/*Fix for old skill picker, remove when possible*/
+.md-virtual-repeat-container.md-autocomplete-suggestions {
+  position: absolute !important;
+  top: 40px;
+  right: 20px;
+  left: 20px;
+  height: 225.5px; }

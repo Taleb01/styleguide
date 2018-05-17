@@ -244,6 +244,48 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   );
 
 
+  $templateCache.put('directives/skill-picker-old/skill-picker.old.tpl.html',
+    "<div class=\"con-row\">\n" +
+    "    <div class=\"con-flex\">\n" +
+    "        <md-autocomplete\n" +
+    "        ng-attr-skillsLoaded=\"{{$ctrl.skillsLoaded}}\"\n" +
+    "        md-min-length=\"0\"\n" +
+    "        md-selected-item=\"$ctrl.selectedSkill\"\n" +
+    "        md-search-text=\"skillFilterText.Name\"\n" +
+    "        md-items=\"skill in $ctrl.skills | filter:skillFilterText\"\n" +
+    "        md-selected-item-change=\"$ctrl.selectSkill(skill)\"\n" +
+    "        md-item-text=\"skill.Name\"\n" +
+    "        placeholder=\"{{'SelectSkill' | translate}}\">\n" +
+    "            <md-item-template>\n" +
+    "                <span ng-bind=\"skill.Name\"></span>\n" +
+    "            </md-item-template>\n" +
+    "            <md-not-found ng-cloak>\n" +
+    "                {{'RepViewerNoMoreMatches'|translate}}\n" +
+    "            </md-not-found>\n" +
+    "        </md-autocomplete>\n" +
+    "    </div>\n" +
+    "    <div class=\"con-flex\">\n" +
+    "        <md-autocomplete\n" +
+    "        ng-attr-skillAreasLoaded=\"{{$ctrl.skillAreasLoaded}}\"\n" +
+    "        md-min-length=\"0\"\n" +
+    "        md-selected-item=\"$ctrl.selectedSkillArea\"\n" +
+    "        md-search-text=\"skillAreaFilterText.Name\"\n" +
+    "        md-items=\"skillArea in $ctrl.skillAreas | filter:skillAreaFilterText\"\n" +
+    "        md-selected-item-change=\"$ctrl.selectSkillArea(skillArea)\"\n" +
+    "        md-item-text=\"skillArea.Name\"\n" +
+    "        placeholder=\"{{'SelectSkillGroup' | translate}}\">\n" +
+    "            <md-item-template>\n" +
+    "                <span ng-bind=\"skillArea.Name\"></span>\n" +
+    "            </md-item-template>\n" +
+    "            <md-not-found ng-cloak>\n" +
+    "                {{'RepViewerNoMoreMatches'|translate}}\n" +
+    "            </md-not-found>\n" +
+    "        </md-autocomplete>\n" +
+    "    </div>\n" +
+    "</div>\n"
+  );
+
+
   $templateCache.put('directives/skill-picker/skillPicker.tpl.html',
     "<div class=\"con-row\">\n" +
     "    <div class=\"con-flex\">\n" +
