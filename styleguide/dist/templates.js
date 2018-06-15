@@ -289,31 +289,20 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   $templateCache.put('directives/skill-picker/skillPicker.tpl.html',
     "<div class=\"con-row\">\n" +
     "    <div class=\"con-flex\">\n" +
-    "        <div class=\"wfm-form\"\n" +
-    "             outside-click=\"$ctrl.skillPickerOpen = false\">\n" +
+    "        <div class=\"wfm-form\" outside-click=\"$ctrl.skillPickerOpen = false\">\n" +
     "            <div class=\"form-input-wrap\">\n" +
     "                <div style=\"position: relative\">\n" +
-    "                    <input ng-click=\"$ctrl.skillPickerOpen = !$ctrl.skillPickerOpen\"\n" +
-    "                           ng-keypress=\"$ctrl.skillPickerOpen=true\"\n" +
-    "                           ng-model=\"$ctrl.skillPickerText\"\n" +
-    "                           type=\"text\"\n" +
-    "                           placeholder=\"{{'SelectSkill'|translate}}\">\n" +
-    "                    <i class=\"mdi mdi-close pointer\"\n" +
-    "                       ng-click=\"$ctrl.clearSkillSelection()\"\n" +
-    "                       ng-show=\"$ctrl.skillPickerText\"\n" +
-    "                       style=\"position: absolute; top: 0%; left: 97%;\">\n" +
+    "                    <input ng-click=\"$ctrl.skillPickerOpen = !$ctrl.skillPickerOpen\" ng-keypress=\"$ctrl.skillPickerOpen=true\" ng-model=\"$ctrl.skillPickerText\"\n" +
+    "                        type=\"text\" placeholder=\"{{'SelectSkill'|translate}}\">\n" +
+    "                    <i class=\"mdi mdi-close pointer\" ng-click=\"$ctrl.clearSkillSelection()\" ng-show=\"$ctrl.skillPickerText\" style=\"position: absolute; top: 0%; left: 97%;\">\n" +
     "                        <md-tooltip>{{'Clear'|translate}}</md-tooltip>\n" +
     "                    </i>\n" +
     "                </div>\n" +
     "            </div>\n" +
     "            <div style=\"position: relative\">\n" +
-    "                <div class=\"wfm-dropdown-panel panel material-depth-1 full-padding\"\n" +
-    "                     ng-show=\"$ctrl.skillPickerOpen\"\n" +
-    "                     style=\"z-index: 999; position: absolute; width: 100%; overflow-y: scroll; max-height: 200px\">\n" +
+    "                <div class=\"wfm-dropdown-panel panel material-depth-1 full-padding\" ng-show=\"$ctrl.skillPickerOpen\" style=\"z-index: 999; position: absolute; width: 100%; overflow-y: scroll; max-height: 200px\">\n" +
     "                    <ul>\n" +
-    "                        <li ng-click=\"$ctrl.skillSelected(skill)\"\n" +
-    "                            ng-repeat=\"skill in $ctrl.skills | filter:$ctrl.skillPickerText\"\n" +
-    "                            style=\"padding: 10px 0px; cursor: pointer\">\n" +
+    "                        <li ng-click=\"$ctrl.skillSelected(skill)\" ng-repeat=\"skill in $ctrl.skills | filter:{Name:$ctrl.skillPickerText}\" style=\"padding: 10px 0px; cursor: pointer\">\n" +
     "                            <i ng-class=\"$ctrl.getSkillIcon(skill)\"></i>\n" +
     "                            {{skill.Name}}\n" +
     "                        </li>\n" +
@@ -323,30 +312,20 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"con-flex\">\n" +
-    "        <div class=\"wfm-form\"\n" +
-    "             outside-click=\"$ctrl.skillGroupPickerOpen = false\">\n" +
+    "        <div class=\"wfm-form\" outside-click=\"$ctrl.skillGroupPickerOpen = false\">\n" +
     "            <div class=\"form-input-wrap\">\n" +
     "                <div style=\"position: relative\">\n" +
-    "                    <input ng-click=\"$ctrl.skillGroupPickerOpen = !$ctrl.skillGroupPickerOpen\"\n" +
-    "                           ng-keypress=\"$ctrl.skillGroupPickerOpen=true\"\n" +
-    "                           ng-model=\"$ctrl.skillGroupPickerText\"\n" +
-    "                           type=\"text\"\n" +
-    "                           placeholder=\"{{'SelectSkillGroup'|translate}}\">\n" +
-    "                    <i class=\"mdi mdi-close pointer\"\n" +
-    "                       ng-click=\"$ctrl.clearSkillGroupSelection()\"\n" +
-    "                       ng-show=\"$ctrl.skillGroupPickerText\"\n" +
-    "                       style=\"position: absolute; top: 0%; left: 97%;\">\n" +
+    "                    <input ng-click=\"$ctrl.skillGroupPickerOpen = !$ctrl.skillGroupPickerOpen\" ng-keypress=\"$ctrl.skillGroupPickerOpen=true\"\n" +
+    "                        ng-model=\"$ctrl.skillGroupPickerText\" type=\"text\" placeholder=\"{{'SelectSkillGroup'|translate}}\">\n" +
+    "                    <i class=\"mdi mdi-close pointer\" ng-click=\"$ctrl.clearSkillGroupSelection()\" ng-show=\"$ctrl.skillGroupPickerText\" style=\"position: absolute; top: 0%; left: 97%;\">\n" +
     "                        <md-tooltip>{{'Clear'|translate}}</md-tooltip>\n" +
     "                    </i>\n" +
     "                </div>\n" +
     "            </div>\n" +
     "            <div style=\"position: relative\">\n" +
-    "                <div class=\"wfm-dropdown-panel panel material-depth-1 full-padding\"\n" +
-    "                     ng-show=\"$ctrl.skillGroupPickerOpen\"\n" +
-    "                     style=\"z-index: 999; position: absolute; width: 100%; overflow-y: scroll; max-height: 200px\">\n" +
+    "                <div class=\"wfm-dropdown-panel panel material-depth-1 full-padding\" ng-show=\"$ctrl.skillGroupPickerOpen\" style=\"z-index: 999; position: absolute; width: 100%; overflow-y: scroll; max-height: 200px\">\n" +
     "                    <ul>\n" +
-    "                        <li ng-click=\"$ctrl.skillGroupSelected(skillGroup)\"\n" +
-    "                            ng-repeat=\"skillGroup in $ctrl.skillGroups | filter:$ctrl.skillGroupPickerText\"\n" +
+    "                        <li ng-click=\"$ctrl.skillGroupSelected(skillGroup)\" ng-repeat=\"skillGroup in $ctrl.skillGroups | filter:$ctrl.skillGroupPickerText\"\n" +
     "                            style=\"padding: 10px 0px; cursor: pointer\">\n" +
     "                            {{skillGroup.Name}}\n" +
     "                        </li>\n" +
