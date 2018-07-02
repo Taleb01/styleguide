@@ -93,16 +93,16 @@ body {
     height: 100%;
     padding: 0.5rem; }
   .kss-nav__menu > .kss-nav__menu-item > a:hover {
-    background: rgba(0, 0, 0, 0.06); }
+    background: rgba(0, 0, 0, 0.12); }
 
 .kss-nav__menu-child {
-  background: rgba(0, 0, 0, 0.06); }
+  background: rgba(0, 0, 0, 0.12); }
   .kss-nav__menu-child .kss-nav__menu-item:hover {
-    background: rgba(0, 0, 0, 0.06) !important; }
+    background: rgba(0, 0, 0, 0.12) !important; }
 
 .section-hero {
-  background: #0099FF !important;
-  outline: 420px solid #0099FF;
+  background: #0099ff !important;
+  outline: 420px solid #0099ff;
   z-index: -1;
   position: relative; }
   .section-hero .kss-style {
@@ -160,7 +160,7 @@ md-tooltip {
     color: #d1d1d1; }
 
 .classictheme-background {
-  background: rgba(0, 0, 0, 0.06) !important;
+  background: rgba(0, 0, 0, 0.12) !important;
   color: rgba(0, 0, 0, 0.87);
   overflow-x: hidden; }
 
@@ -174,7 +174,7 @@ md-tooltip {
   background: transparent !important; }
 
 .swatch-list .blue-500-swatch {
-  background: #0099FF !important; }
+  background: #0099ff !important; }
   .swatch-list .blue-500-swatch p {
     color: white; }
 
@@ -185,32 +185,32 @@ md-tooltip {
   background: #99d6ff !important; }
 
 .swatch-list .green-500-swatch {
-  background: #8BC34A !important; }
+  background: #8bc34a !important; }
 
 .swatch-list .green-300-swatch {
-  background: #9CCC65 !important; }
+  background: #9ccc65 !important; }
 
 .swatch-list .green-100-swatch {
   background: #c2e085 !important; }
 
 .swatch-list .purple-100-swatch {
-  background: #E1BEE7 !important; }
+  background: #e1bee7 !important; }
 
 .swatch-list .purple-300-swatch {
-  background: #BA68C8 !important; }
+  background: #ba68c8 !important; }
   .swatch-list .purple-300-swatch p {
     color: white; }
 
 .swatch-list .purple-500-swatch {
-  background: #9C27B0 !important; }
+  background: #9c27b0 !important; }
   .swatch-list .purple-500-swatch p {
     color: white; }
 
 .swatch-list .brown-100-swatch {
-  background: #D7CCC8 !important; }
+  background: #d7ccc8 !important; }
 
 .swatch-list .brown-300-swatch {
-  background: #A1887F !important; }
+  background: #a1887f !important; }
   .swatch-list .brown-300-swatch p {
     color: white; }
 
@@ -220,10 +220,10 @@ md-tooltip {
     color: white; }
 
 .swatch-list .teal-100-swatch {
-  background: #B2DFDB !important; }
+  background: #b2dfdb !important; }
 
 .swatch-list .teal-300-swatch {
-  background: #4DB6AC !important; }
+  background: #4db6ac !important; }
 
 .swatch-list .teal-500-swatch {
   background: #009688 !important; }
@@ -231,29 +231,29 @@ md-tooltip {
     color: white; }
 
 .swatch-list .pink-500-swatch {
-  background: #E91E63 !important; }
+  background: #e91e63 !important; }
   .swatch-list .pink-500-swatch p {
     color: white; }
 
 .swatch-list .pink-300-swatch {
-  background: #F06292 !important; }
+  background: #f06292 !important; }
   .swatch-list .pink-300-swatch p {
     color: white; }
 
 .swatch-list .pink-100-swatch {
-  background: #F8BBD0 !important; }
+  background: #f8bbd0 !important; }
 
 .swatch-list .orange-400-swatch {
   background: #ffc285 !important; }
 
 .swatch-list .orange-500-swatch {
-  background: #FFA726 !important; }
+  background: #ffa726 !important; }
 
 .swatch-list .orange-600-swatch {
-  background: #FB8C00 !important; }
+  background: #fb8c00 !important; }
 
 .swatch-list .red-800-swatch {
-  background: #D32F2F !important; }
+  background: #d32f2f !important; }
   .swatch-list .red-800-swatch p {
     color: white; }
 
@@ -269,10 +269,10 @@ md-tooltip {
     color: white; }
 
 .swatch-list .gray-300-swatch {
-  background: #E0E0E0 !important; }
+  background: #e0e0e0 !important; }
 
 .swatch-list .gray-012-swatch {
-  background: rgba(0, 0, 0, 0.06) !important; }
+  background: rgba(0, 0, 0, 0.12) !important; }
 
 .swatch-list .gray-026-swatch {
   background: rgba(0, 0, 0, 0.26) !important; }
@@ -284,7 +284,7 @@ md-tooltip {
   background: black !important; }
 
 .swatch-list .gray-500-swatch {
-  background: #9E9E9E !important; }
+  background: #9e9e9e !important; }
 
 .swatch-list .white-swatch {
   background: #ffffff !important; }
