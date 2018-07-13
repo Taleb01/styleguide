@@ -294,7 +294,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "                <div style=\"position: relative\">\n" +
     "                    <input ng-click=\"$ctrl.skillPickerOpen = !$ctrl.skillPickerOpen\" ng-keypress=\"$ctrl.skillPickerOpen=true\" ng-model=\"$ctrl.skillPickerText\"\n" +
     "                        type=\"text\" placeholder=\"{{'SelectSkill'|translate}}\">\n" +
-    "                    <i class=\"mdi mdi-close pointer\" ng-click=\"$ctrl.clearSkillSelection()\" ng-show=\"$ctrl.skillPickerText\" style=\"position: absolute; top: 0%; left: 97%;\">\n" +
+    "                    <i class=\"mdi mdi-close pointer\" ng-click=\"$ctrl.clearSkillSelection()\" ng-show=\"$ctrl.skillPickerText\" style=\"position: absolute; top: 0; right: 0;\">\n" +
     "                        <md-tooltip>{{'Clear'|translate}}</md-tooltip>\n" +
     "                    </i>\n" +
     "                </div>\n" +
@@ -317,7 +317,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "                <div style=\"position: relative\">\n" +
     "                    <input ng-click=\"$ctrl.skillGroupPickerOpen = !$ctrl.skillGroupPickerOpen\" ng-keypress=\"$ctrl.skillGroupPickerOpen=true\"\n" +
     "                        ng-model=\"$ctrl.skillGroupPickerText\" type=\"text\" placeholder=\"{{'SelectSkillGroup'|translate}}\">\n" +
-    "                    <i class=\"mdi mdi-close pointer\" ng-click=\"$ctrl.clearSkillGroupSelection()\" ng-show=\"$ctrl.skillGroupPickerText\" style=\"position: absolute; top: 0%; left: 97%;\">\n" +
+    "                    <i class=\"mdi mdi-close pointer\" ng-click=\"$ctrl.clearSkillGroupSelection()\" ng-show=\"$ctrl.skillGroupPickerText\" style=\"position: absolute; top: 0; right: 0;\">\n" +
     "                        <md-tooltip>{{'Clear'|translate}}</md-tooltip>\n" +
     "                    </i>\n" +
     "                </div>\n" +
