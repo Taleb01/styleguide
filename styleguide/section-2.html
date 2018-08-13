@@ -1392,40 +1392,67 @@ The directive accepts the &quot;float-number&quot; tag attribute. Without it the
 &nbsp;
 $scope.mockSkills = [
  {
+      Id: &#39;-1&#39;,
+      Name: &#39;no skills (test)&#39;,
+      SkillType: &#39;SkillTypeChat&#39;,
+      DoDisplayData: true
+ },
+ {
    Id: &#39;XYZ&#39;,
-   Name: &#39;skill1&#39;
+   Name: &#39;skill1&#39;,
+   SkillType: &#39;SkillTypeChat&#39;,
+   DoDisplayData: true
  },
  {
    Id: &#39;ABC&#39;,
-   Name: &#39;skill2&#39;
+   Name: &#39;skill2&#39;,
+   SkillType: &#39;SkillTypeEmail&#39;,
+   DoDisplayData: true
  },
  {
    Id: &#39;XYZ1&#39;,
-   Name: &#39;skill3&#39;
+   Name: &#39;skill3&#39;,
+   SkillType: &#39;SkillTypeInboundTelephony&#39;,
+   DoDisplayData: true
  },
  {
    Id: &#39;ABC2&#39;,
-   Name: &#39;skill4&#39;
+   Name: &#39;skill4&#39;,
+   SkillType: &#39;SkillTypeRetail&#39;,
+   DoDisplayData: true
  },
  {
    Id: &#39;XYZ3&#39;,
-   Name: &#39;skill5&#39;
+   Name: &#39;skill5&#39;,
+   SkillType: &#39;SkillTypeBackoffice&#39;,
+   DoDisplayData: true
  },
  {
    Id: &#39;ABC4&#39;,
-   Name: &#39;skill6&#39;
+   Name: &#39;skill6&#39;,
+   SkillType: &#39;SkillTypeProject&#39;,
+   DoDisplayData: true
  },
  {
    Id: &#39;XYZ5&#39;,
-   Name: &#39;skill7&#39;
+   Name: &#39;skill7&#39;,
+   SkillType: &#39;SkillTypeFax&#39;,
+   DoDisplayData: true
  },
  {
    Id: &#39;ABC6&#39;,
-   Name: &#39;skill8&#39;
+   Name: &#39;skill8&#39;,
+   SkillType: &#39;SkillTypeTime&#39;,
+   DoDisplayData: true
  }
 ];
 
 $scope.mockedSkillGroups = [
+ {
+   Name: &#39;No skillgroup found (test)&#39;,
+   Id: &#39;-1&#39;,
+   Skills: []
+ },
  {
    Name: &#39;SkillArea1&#39;,
    Id: &#39;123&#39;,
